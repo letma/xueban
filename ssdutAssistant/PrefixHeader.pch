@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  ssdutAssistant
+//
+//  Created by OurEDA on 3/7/15.
+//  Copyright (c) 2015 OurEDA. All rights reserved.
+//
+
+#ifndef ssdutAssistant_PrefixHeader_pch
+#define ssdutAssistant_PrefixHeader_pch
+
+
+#import <AFNetworking/AFNetworking.h>
+#import "Global.h"
+
+#endif
