@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1873B6E21B4CDFD900B5E1AE /* VerticalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873B6E01B4CDFD900B5E1AE /* VerticalViewCell.m */; };
+		1873B6E31B4CDFD900B5E1AE /* VerticalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1873B6E11B4CDFD900B5E1AE /* VerticalViewCell.xib */; };
 		18C744751B46F25000FAAC12 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C744741B46F25000FAAC12 /* TabBarViewController.m */; };
 		18C744791B46F2A900FAAC12 /* ERPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C744771B46F2A900FAAC12 /* ERPViewController.m */; };
 		18C7447A1B46F2A900FAAC12 /* ERPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C744781B46F2A900FAAC12 /* ERPViewController.xib */; };
@@ -61,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1873B6DF1B4CDFD900B5E1AE /* VerticalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalViewCell.h; sourceTree = "<group>"; };
+		1873B6E01B4CDFD900B5E1AE /* VerticalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalViewCell.m; sourceTree = "<group>"; };
+		1873B6E11B4CDFD900B5E1AE /* VerticalViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerticalViewCell.xib; sourceTree = "<group>"; };
 		18C7446B1B46E7B400FAAC12 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18C744721B46F04800FAAC12 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		18C744731B46F25000FAAC12 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -276,6 +281,9 @@
 				FA2B314C1B4C02E900C040BD /* WeekDayButton.h */,
 				FA2B314D1B4C02E900C040BD /* WeekDayButton.m */,
 				FA2B314F1B4C030500C040BD /* WeekDayButton.xib */,
+				1873B6DF1B4CDFD900B5E1AE /* VerticalViewCell.h */,
+				1873B6E01B4CDFD900B5E1AE /* VerticalViewCell.m */,
+				1873B6E11B4CDFD900B5E1AE /* VerticalViewCell.xib */,
 			);
 			name = CourseListItems;
 			sourceTree = "<group>";
@@ -534,6 +542,7 @@
 				FA5B71F11B4809A600F6870C /* ERPLibraryViewController.xib in Resources */,
 				FA2992751B4AA5EA0088DC7E /* CourseListView67.xib in Resources */,
 				FA2B314B1B4BC60B00C040BD /* SectionView.xib in Resources */,
+				1873B6E31B4CDFD900B5E1AE /* VerticalViewCell.xib in Resources */,
 				FA5B72001B480A7700F6870C /* ERPExamViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +597,7 @@
 				FA2B314E1B4C02E900C040BD /* WeekDayButton.m in Sources */,
 				FA5B720E1B480AB300F6870C /* ERPNoticeViewController.m in Sources */,
 				FA29926F1B4A85A40088DC7E /* CourseListView.m in Sources */,
+				1873B6E21B4CDFD900B5E1AE /* VerticalViewCell.m in Sources */,
 				18C744791B46F2A900FAAC12 /* ERPViewController.m in Sources */,
 				18C744751B46F25000FAAC12 /* TabBarViewController.m in Sources */,
 				FA5B71D41B4781DE00F6870C /* BigTableViewCell.m in Sources */,

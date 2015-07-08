@@ -26,12 +26,13 @@
 /*
  *如果这个button被点击时调用
  *weekDay字体变粗 line变成奇怪的棕色  HelveticaNeue-Bold #828282 
+ *把今天和所选的button比较 若相同line变绿 否则便棕
 */
--(void)clickedOn;
+-(void)clickedOnByTodayTag:(NSInteger )todayTag WithButtonTag:(NSInteger)buttonTag;
 
 /*
  *如果其他button被点击 上一button要恢复状态时调用
- *weekDay字体变细 line变成白色    HelveticaNeue  #ffffff
+ *weekDay字体变细 line变成clearcolor    HelveticaNeue  #ffffff
  */
 -(void)clickedOut;
 @end

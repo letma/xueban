@@ -18,14 +18,14 @@
                     <color key="textColor" red="0.46666666666666667" green="0.4823529411764706" blue="0.47843137254901963" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pk-Ox-jVm" userLabel="section">
-                    <rect key="frame" x="0.0" y="25" width="35" height="11"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pk-Ox-jVm" userLabel="section">
+                    <rect key="frame" x="0.0" y="25" width="35" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.31764705882352939" green="0.33725490196078434" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sP-06-pfA" userLabel="lineView">
-                    <rect key="frame" x="0.0" y="43" width="35" height="1"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sP-06-pfA" userLabel="lineView">
+                    <rect key="frame" x="0.0" y="44" width="35" height="1"/>
                     <color key="backgroundColor" red="0.50196078431372548" green="0.52156862745098043" blue="0.51764705882352935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="CNv-Ec-eBn"/>
@@ -40,8 +40,6 @@
                 <constraint firstItem="8Pk-Ox-jVm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4PV-Nz-db4"/>
                 <constraint firstItem="OuJ-86-Geh" firstAttribute="height" secondItem="8Pk-Ox-jVm" secondAttribute="height" multiplier="4:5" id="7g6-ei-xIJ"/>
                 <constraint firstAttribute="bottom" secondItem="3sP-06-pfA" secondAttribute="bottom" id="WxH-pL-ou2"/>
-                <constraint firstAttribute="bottom" secondItem="3sP-06-pfA" secondAttribute="bottom" id="ZeH-J2-0k8"/>
-                <constraint firstAttribute="centerX" secondItem="8Pk-Ox-jVm" secondAttribute="centerX" id="gxu-Wz-Kne"/>
                 <constraint firstAttribute="trailing" secondItem="OuJ-86-Geh" secondAttribute="trailing" id="hFH-9F-Pct"/>
                 <constraint firstAttribute="centerX" secondItem="OuJ-86-Geh" secondAttribute="centerX" id="hMW-8j-biR"/>
                 <constraint firstItem="8Pk-Ox-jVm" firstAttribute="top" secondItem="OuJ-86-Geh" secondAttribute="bottom" constant="8" id="iHW-gu-CAB"/>
@@ -54,7 +52,7 @@
                 <outlet property="sectionLabel" destination="8Pk-Ox-jVm" id="vz9-RK-ACl"/>
                 <outlet property="timeLabel" destination="OuJ-86-Geh" id="9pX-mh-HdX"/>
             </connections>
-            <point key="canvasLocation" x="526.5" y="208"/>
+            <point key="canvasLocation" x="250.5" y="124"/>
         </view>
     </objects>
 </document>

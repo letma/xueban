@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,23 +12,42 @@
             <rect key="frame" x="0.0" y="0.0" width="50" height="46"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="周一" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndo-Kn-hy3">
-                    <rect key="frame" x="0.0" y="8" width="50" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周一" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndo-Kn-hy3">
+                    <rect key="frame" x="0.0" y="8" width="50" height="12"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01-01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ5-OJ-8Lh">
-                    <rect key="frame" x="0.0" y="25" width="50" height="10"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01-01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ5-OJ-8Lh">
+                    <rect key="frame" x="0.0" y="28" width="50" height="10"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3W-LN-TEd" userLabel="lineView">
-                    <rect key="frame" x="0.0" y="44" width="50" height="2"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3W-LN-TEd" userLabel="lineView">
+                    <rect key="frame" x="0.0" y="43" width="50" height="2"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="AVS-T5-w0T"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xJ5-OJ-8Lh" secondAttribute="trailing" id="1EL-UF-0ZP"/>
+                <constraint firstItem="ndo-Kn-hy3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="8Fo-KC-aKg"/>
+                <constraint firstItem="xJ5-OJ-8Lh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JSN-Dt-nkD"/>
+                <constraint firstAttribute="bottom" secondItem="xJ5-OJ-8Lh" secondAttribute="bottom" constant="8" id="OJL-1w-9lk"/>
+                <constraint firstAttribute="centerX" secondItem="xJ5-OJ-8Lh" secondAttribute="centerX" id="Sq5-ms-ba7"/>
+                <constraint firstAttribute="trailing" secondItem="ndo-Kn-hy3" secondAttribute="trailing" id="Ww3-OU-6MJ"/>
+                <constraint firstItem="ndo-Kn-hy3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Xmt-BF-Or7"/>
+                <constraint firstItem="R3W-LN-TEd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="n5J-aE-7Ql"/>
+                <constraint firstAttribute="bottom" secondItem="R3W-LN-TEd" secondAttribute="bottom" constant="1" id="ood-DK-Sd3"/>
+                <constraint firstAttribute="trailing" secondItem="R3W-LN-TEd" secondAttribute="trailing" id="qoS-vT-bhC"/>
+                <constraint firstItem="xJ5-OJ-8Lh" firstAttribute="top" secondItem="ndo-Kn-hy3" secondAttribute="bottom" constant="8" id="rhl-Lr-FK5"/>
+                <constraint firstAttribute="centerX" secondItem="ndo-Kn-hy3" secondAttribute="centerX" id="tRk-mG-bH4"/>
+                <constraint firstItem="ndo-Kn-hy3" firstAttribute="height" secondItem="xJ5-OJ-8Lh" secondAttribute="height" multiplier="5:4" id="xn4-36-pKl"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dayLabel" destination="xJ5-OJ-8Lh" id="iH2-m4-cDi"/>
