@@ -15,12 +15,29 @@
 
 @implementation WeekDayButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(void)setWeekDayLabel:(NSString *)weekDay DayLabel:(NSString *)day
+{
+    self.weekDayLabel.text = weekDay;
+    self.dayLabel.text = day;
 }
-*/
 
+-(void)onItDay
+{
+    [self clickedOn];
+    self.dayLabel.textColor = UIColorFromRGB(0x00bad1);
+    self.weekDayLabel.textColor = UIColorFromRGB(0x00bad1);
+    self.lineView.backgroundColor = UIColorFromRGB(0x00bad1);
+}
+
+-(void)clickedOn
+{
+    [self.weekDayLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17]];
+    self.lineView.backgroundColor = UIColorFromRGB(0x808584);
+}
+
+-(void)clickedOut
+{
+    [self.weekDayLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:17]];
+    self.lineView.backgroundColor = UIColorFromRGB(0xffffff);
+}
 @end

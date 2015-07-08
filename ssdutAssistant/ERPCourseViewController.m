@@ -42,8 +42,22 @@
     NSLog(@"= =date:%@",timeStr);
     
     NSCalendar * cal = [NSCalendar currentCalendar];
-    NSUInteger flag = NSDayCalendarUnit|NSWeekdayCalendarUnit|NSWeekCalendarUnit|NSWeekOfMonthCalendarUnit;
-    //NSDateComponents * com = [cal component:flag fromDate:now];
+    //NSUInteger flag = NSDayCalendarUnit|NSWeekdayCalendarUnit|NSWeekCalendarUnit|NSWeekOfMonthCalendarUnit;
+NSDateComponents * comp = [cal components:NSCalendarUnitWeekday|NSCalendarUnitHour|NSCalendarUnitDay|NSCalendarUnitWeekOfMonth|NSCalendarUnitWeekdayOrdinal|NSCalendarUnitWeekOfYear fromDate:now];
+
+    NSInteger  day = [comp day];
+    NSInteger  weekDay = [comp weekday];
+    NSInteger hour = [comp hour];
+    NSInteger weekOfMonth = [comp weekOfMonth];
+    NSInteger weekDayOrdinal = [comp weekdayOrdinal];
+    NSInteger weekOfYear = [comp weekOfYear];
+    
+    
+    NSLog(@"day:%ld  hour: :%ld weekDay: :%ldweekOfMonth: :%ld weekDayOrdinal : :%ld weekOfYear::%ld ",(long)day,hour,weekDay,weekOfMonth,weekDayOrdinal,weekOfYear);
+    
+    //将美国星期转为中国星期的算法 O.o
+    NSInteger item = ( weekDay + 6)%7 + (weekDay % 1) * 7;
+        NSLog(@"hahahha %ld",item);
     //NSInteger
 
     
