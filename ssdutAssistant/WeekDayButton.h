@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface WeekDayButton : UIButton
-@property (nonatomic) NSInteger weekDayID;
+
 
 /*
  *设置星期几和日期
  */
 -(void)setWeekDayLabel:(NSString *)weekDay DayLabel:(NSString *)day;
 
+/*
+ *动态设置日期星期的字体大小
+ */
+-(void)setWeekDayFont:(CGFloat)weekDaySize DayFont:(CGFloat)daySize;
 /*
  *如果是这个button所在的日期调用    17 12
  *weekDay day line 都变绿  HelveticaNeue-Bold  #00bad1

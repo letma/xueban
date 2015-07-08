@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -17,31 +17,31 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxq-VK-cwb">
                         <rect key="frame" x="0.0" y="8" width="35" height="8"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.46666666666666667" green="0.4823529411764706" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.59215686274509804" green="0.61568627450980395" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IV5-el-k97">
                         <rect key="frame" x="0.0" y="24" width="35" height="11"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" red="0.31764705882352939" green="0.33725490196078434" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.46274509803921571" green="0.49019607843137253" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPK-KC-6g3" userLabel="lineView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CW-js-2Ml" userLabel="lineView">
                         <rect key="frame" x="0.0" y="42" width="35" height="1"/>
-                        <color key="backgroundColor" red="0.50196078431372548" green="0.52156862745098043" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.81960784313725488" green="0.85098039215686272" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="zYO-Ch-NAm"/>
+                            <constraint firstAttribute="height" constant="1" id="sy7-dd-PCN"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="4CW-js-2Ml" secondAttribute="bottom" id="3bN-4A-sJE"/>
                     <constraint firstAttribute="trailing" secondItem="yxq-VK-cwb" secondAttribute="trailing" id="7iC-8Z-kdR"/>
-                    <constraint firstAttribute="bottom" secondItem="SPK-KC-6g3" secondAttribute="bottom" id="ADH-ar-6Ec"/>
                     <constraint firstAttribute="trailing" secondItem="IV5-el-k97" secondAttribute="trailing" id="CVy-qI-gqK"/>
-                    <constraint firstAttribute="trailing" secondItem="SPK-KC-6g3" secondAttribute="trailing" id="TFi-9k-6tn"/>
+                    <constraint firstItem="4CW-js-2Ml" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DRb-5d-HzE"/>
+                    <constraint firstAttribute="trailing" secondItem="4CW-js-2Ml" secondAttribute="trailing" id="KiU-L2-KHd"/>
                     <constraint firstItem="yxq-VK-cwb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="UTN-m4-WZD"/>
-                    <constraint firstItem="SPK-KC-6g3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="g7R-hj-9N6"/>
                     <constraint firstItem="IV5-el-k97" firstAttribute="top" secondItem="yxq-VK-cwb" secondAttribute="bottom" constant="8" id="gwb-Yw-93u"/>
                     <constraint firstAttribute="centerX" secondItem="yxq-VK-cwb" secondAttribute="centerX" id="hFe-Ul-zsq"/>
                     <constraint firstAttribute="bottom" secondItem="IV5-el-k97" secondAttribute="bottom" constant="8" id="nHG-z4-tvK"/>

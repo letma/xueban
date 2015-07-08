@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -12,27 +12,44 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRS-9N-3u9" userLabel="horizonView">
+                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq5-PZ-z8P" userLabel="horizonScrollView">
+                    <rect key="frame" x="35" y="46" width="285" height="458"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDz-OI-gvQ" userLabel="backView">
+                            <rect key="frame" x="0.0" y="0.0" width="385" height="552"/>
+                            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.20738853139999999" green="0.92150187490000002" blue="0.160968151" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="JDz-OI-gvQ" firstAttribute="leading" secondItem="Sq5-PZ-z8P" secondAttribute="leading" id="1T6-li-t6z"/>
+                        <constraint firstAttribute="trailing" secondItem="JDz-OI-gvQ" secondAttribute="trailing" id="Bsz-1b-1jx"/>
+                        <constraint firstAttribute="bottom" secondItem="JDz-OI-gvQ" secondAttribute="bottom" id="Ii5-fL-eeL"/>
+                        <constraint firstItem="JDz-OI-gvQ" firstAttribute="top" secondItem="Sq5-PZ-z8P" secondAttribute="top" id="r0d-bH-gPV"/>
+                    </constraints>
+                </scrollView>
+                <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QFp-3f-5aF" userLabel="verticalTableView">
+                    <rect key="frame" x="0.0" y="46" width="35" height="458"/>
+                    <color key="backgroundColor" red="0.20738853139999999" green="0.92150187490000002" blue="0.160968151" alpha="1" colorSpace="calibratedRGB"/>
+                </tableView>
+                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVj-EI-hOF" userLabel="horizonView">
                     <rect key="frame" x="35" y="0.0" width="385" height="46"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2W-ti-O2U" userLabel="lineView_h">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seI-Rq-Aho" userLabel="lineView_h">
                             <rect key="frame" x="0.0" y="45" width="385" height="1"/>
-                            <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="1" id="VXV-Lr-oJL"/>
+                                <constraint firstAttribute="height" constant="1" id="0kv-Uy-sg2"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="V2W-ti-O2U" secondAttribute="bottom" id="MaP-jv-I0f"/>
-                        <constraint firstAttribute="trailing" secondItem="V2W-ti-O2U" secondAttribute="trailing" id="Tdy-48-gLj"/>
-                        <constraint firstItem="V2W-ti-O2U" firstAttribute="leading" secondItem="dRS-9N-3u9" secondAttribute="leading" id="W7f-Vx-Jqa"/>
+                        <constraint firstItem="seI-Rq-Aho" firstAttribute="leading" secondItem="rVj-EI-hOF" secondAttribute="leading" id="HQT-WK-3xz"/>
+                        <constraint firstAttribute="trailing" secondItem="seI-Rq-Aho" secondAttribute="trailing" id="LGz-eg-YWc"/>
+                        <constraint firstAttribute="bottom" secondItem="seI-Rq-Aho" secondAttribute="bottom" id="o69-3i-JiR"/>
                     </constraints>
                 </view>
-                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq5-PZ-z8P">
-                    <rect key="frame" x="35" y="46" width="285" height="458"/>
-                </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-cJ-ueg" userLabel="whiteView">
                     <rect key="frame" x="0.0" y="0.0" width="35" height="46"/>
                     <subviews>
@@ -51,36 +68,35 @@
                         <constraint firstItem="Cua-CE-cbg" firstAttribute="leading" secondItem="tsC-cJ-ueg" secondAttribute="leading" id="MuY-kY-Yy2"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QFp-3f-5aF" userLabel="verticalTableView">
-                    <rect key="frame" x="0.0" y="46" width="35" height="458"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
             </subviews>
             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="tsC-cJ-ueg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="35k-Jx-c22"/>
+                <constraint firstItem="Sq5-PZ-z8P" firstAttribute="top" secondItem="rVj-EI-hOF" secondAttribute="bottom" id="AVm-AI-jUO"/>
                 <constraint firstItem="QFp-3f-5aF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DmU-Mc-Cmz"/>
-                <constraint firstItem="tsC-cJ-ueg" firstAttribute="width" secondItem="dRS-9N-3u9" secondAttribute="width" multiplier="7:77" id="ID8-Je-cnG"/>
+                <constraint firstItem="rVj-EI-hOF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GPI-vq-MxW"/>
                 <constraint firstItem="tsC-cJ-ueg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Idg-yI-BMM"/>
                 <constraint firstAttribute="trailing" secondItem="Sq5-PZ-z8P" secondAttribute="trailing" id="JtO-kH-cZY"/>
                 <constraint firstAttribute="bottom" secondItem="Sq5-PZ-z8P" secondAttribute="bottom" id="PlR-OP-7Te"/>
-                <constraint firstItem="Sq5-PZ-z8P" firstAttribute="top" secondItem="dRS-9N-3u9" secondAttribute="bottom" id="TGu-ur-lcj"/>
+                <constraint firstItem="rVj-EI-hOF" firstAttribute="height" secondItem="tsC-cJ-ueg" secondAttribute="height" id="QIc-5Z-VGG"/>
                 <constraint firstItem="Sq5-PZ-z8P" firstAttribute="leading" secondItem="QFp-3f-5aF" secondAttribute="trailing" id="ZPd-uy-LDg"/>
                 <constraint firstAttribute="bottom" secondItem="QFp-3f-5aF" secondAttribute="bottom" id="b3t-LI-xvv"/>
-                <constraint firstItem="dRS-9N-3u9" firstAttribute="leading" secondItem="tsC-cJ-ueg" secondAttribute="trailing" id="cqI-ue-Ze4"/>
+                <constraint firstItem="rVj-EI-hOF" firstAttribute="leading" secondItem="tsC-cJ-ueg" secondAttribute="trailing" id="faV-gE-OC3"/>
+                <constraint firstItem="JDz-OI-gvQ" firstAttribute="width" secondItem="rVj-EI-hOF" secondAttribute="width" id="hdg-o9-VtS"/>
                 <constraint firstItem="tsC-cJ-ueg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hwj-3J-735"/>
-                <constraint firstItem="dRS-9N-3u9" firstAttribute="height" secondItem="Sq5-PZ-z8P" secondAttribute="height" multiplier="1:10" id="kgz-2M-1GK"/>
+                <constraint firstItem="JDz-OI-gvQ" firstAttribute="height" secondItem="rVj-EI-hOF" secondAttribute="height" multiplier="12:1" id="i0r-6Z-qp1"/>
+                <constraint firstItem="rVj-EI-hOF" firstAttribute="width" secondItem="tsC-cJ-ueg" secondAttribute="width" multiplier="77:7" id="iHD-RG-9Uw"/>
                 <constraint firstItem="Sq5-PZ-z8P" firstAttribute="leading" secondItem="tsC-cJ-ueg" secondAttribute="trailing" id="onX-hP-Uh8"/>
                 <constraint firstItem="QFp-3f-5aF" firstAttribute="top" secondItem="tsC-cJ-ueg" secondAttribute="bottom" id="rJn-WF-Pdy"/>
-                <constraint firstItem="dRS-9N-3u9" firstAttribute="width" secondItem="Sq5-PZ-z8P" secondAttribute="width" multiplier="77:57" id="tAP-mf-gSL"/>
-                <constraint firstItem="dRS-9N-3u9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zPh-ac-ZDq"/>
-                <constraint firstItem="tsC-cJ-ueg" firstAttribute="height" secondItem="dRS-9N-3u9" secondAttribute="height" id="zaI-R8-axR"/>
+                <constraint firstItem="rVj-EI-hOF" firstAttribute="height" secondItem="Sq5-PZ-z8P" secondAttribute="height" multiplier="1:10" id="uzF-IY-bBS"/>
+                <constraint firstItem="rVj-EI-hOF" firstAttribute="width" secondItem="Sq5-PZ-z8P" secondAttribute="width" multiplier="77:57" id="yHL-oi-3Aw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="horizonView" destination="dRS-9N-3u9" id="omQ-33-DpS"/>
+                <outlet property="backView" destination="JDz-OI-gvQ" id="D7H-b1-L17"/>
+                <outlet property="horizonScrollView" destination="Sq5-PZ-z8P" id="j5P-05-70G"/>
+                <outlet property="horizonView" destination="rVj-EI-hOF" id="m22-hq-K4z"/>
                 <outlet property="verticalTableView" destination="QFp-3f-5aF" id="9XB-vq-iOW"/>
-                <outlet property="verticalView" destination="QFp-3f-5aF" id="FGe-wc-8j0"/>
             </connections>
             <point key="canvasLocation" x="335" y="324"/>
         </view>
