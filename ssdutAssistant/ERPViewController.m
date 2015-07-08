@@ -59,7 +59,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        BigTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"BigTableViewCell"];
+        BigTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"BigTableViewCell" forIndexPath:indexPath];
         
         [cell.courseListBtn addTarget:self action:@selector(pushToCourse) forControlEvents:UIControlEventTouchUpInside];
         [cell.libraryBtn addTarget:self action:@selector(pushToLibrary) forControlEvents:UIControlEventTouchUpInside];
@@ -68,7 +68,7 @@
         
     }else if (indexPath.row == 1 || indexPath.row == 4 || indexPath.row == 8)
     {
-        EmptyTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyTableViewCell"];
+        EmptyTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyTableViewCell" forIndexPath:indexPath];
         
         return cell;
     }else{
@@ -84,7 +84,7 @@
         }
         
         //根据所在的row进行设置
-        SmallTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SmallTableViewCell"];
+        SmallTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SmallTableViewCell" forIndexPath:indexPath];
         [cell setCellType:indexPath.row Height:height];
         return cell;
         

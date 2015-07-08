@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseViewCell" id="KGk-i7-Jjw" customClass="CourseViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzg-i4-ggU" userLabel="lineView">
+                        <rect key="frame" x="0.0" y="42" width="50" height="1"/>
+                        <color key="backgroundColor" red="0.81960784313725488" green="0.85098039215686272" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="k3K-yA-4ad"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" text="小马哥ios大讲堂" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clj-jS-KAj" userLabel="courseLabel">
+                        <rect key="frame" x="0.0" y="3" width="50" height="22"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@OurEDA实验室" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZA-sB-NPs" userLabel="localLabel">
+                        <rect key="frame" x="4" y="25" width="42" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="2ft-is-Zrf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GZA-sB-NPs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="BKq-e5-IYd"/>
+                    <constraint firstItem="clj-jS-KAj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="DJf-iG-bDu"/>
+                    <constraint firstItem="GZA-sB-NPs" firstAttribute="top" secondItem="clj-jS-KAj" secondAttribute="bottom" id="GMX-cn-WTt"/>
+                    <constraint firstAttribute="trailing" secondItem="GZA-sB-NPs" secondAttribute="trailing" constant="8" id="HlZ-ZA-0bR"/>
+                    <constraint firstItem="yzg-i4-ggU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PcG-h2-851"/>
+                    <constraint firstAttribute="trailing" secondItem="clj-jS-KAj" secondAttribute="trailing" constant="8" id="XKX-VM-7KB"/>
+                    <constraint firstAttribute="bottom" secondItem="yzg-i4-ggU" secondAttribute="bottom" id="bnu-fM-hii"/>
+                    <constraint firstItem="clj-jS-KAj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="dq6-fd-bOs"/>
+                    <constraint firstAttribute="trailing" secondItem="yzg-i4-ggU" secondAttribute="trailing" id="iyb-Zn-3DH"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="GZA-sB-NPs" secondAttribute="bottom" constant="8" id="nzw-yk-Zve"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="courseLabel" destination="clj-jS-KAj" id="jOK-Hg-6iV"/>
+                <outlet property="localLabel" destination="GZA-sB-NPs" id="Itr-bx-5nI"/>
+            </connections>
+            <point key="canvasLocation" x="184" y="187"/>
+        </tableViewCell>
+    </objects>
+</document>

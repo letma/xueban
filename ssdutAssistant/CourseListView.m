@@ -9,9 +9,10 @@
 
 
 #import "CourseListView.h"
-//#import "SectionView.h"
 #import "WeekDayButton.h"
 #import "VerticalViewCell.h"
+#import "EmptyCourseCell.h"
+#import "CourseViewCell.h"
 #import "UITableView+Register.h"
 
 @interface CourseListView()<UITableViewDataSource,UITableViewDelegate>
@@ -54,6 +55,7 @@
     
     [self insertWeekDayViews];
     
+    [self initTableViews];
     [self registerNibCell];
     self.verticalTableView.userInteractionEnabled = NO;
     self.verticalTableView.delegate = self;
@@ -62,10 +64,21 @@
     self.horizonScrollView.delegate = self;
     self.horizonScrollView.decelerationRate = 0.1;
 
+    
+    [self insertTableViews];
+    
+}
+
+-(void)initTableViews
+{
+    
     //初始化七个tableView的array
     tableViewArray = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i < 7; i ++) {
         UITableView * item = [[UITableView alloc]init];
+        item.tag = i;
+        item.delegate = self;
+        item.dataSource = self;
         item.separatorStyle = UITableViewCellSeparatorStyleNone;
         item.userInteractionEnabled = NO;
         [tableViewArray addObject:item];
@@ -77,11 +90,7 @@
     ((UITableView *)[tableViewArray objectAtIndex:4]).backgroundColor = [UIColor purpleColor];
     ((UITableView *)[tableViewArray objectAtIndex:5]).backgroundColor = [UIColor greenColor];
     ((UITableView *)[tableViewArray objectAtIndex:6]).backgroundColor = [UIColor blackColor];
-    
-    [self insertTableViews];
-    
 }
-
 
 
 //添加上边的weekDayViews
@@ -242,6 +251,11 @@
 -(void)registerNibCell
 {
     [self.verticalTableView registerNibWithClass:[VerticalViewCell class]];
+    for (NSInteger i = 0; i < 7; i ++) {
+        [(UITableView *)[tableViewArray objectAtIndex:i] registerNibWithClass:[EmptyCourseCell class]];
+        [(UITableView *)[tableViewArray objectAtIndex:i] registerNibWithClass:[CourseViewCell class]];
+    }
+
 
 }
 #pragma mark - UITableViewDelegate
@@ -254,7 +268,33 @@
     if ([tableView isEqual:self.verticalTableView]) {
         return 12;
     }else{
-        return  0;
+        switch (tableView.tag) {
+            case 0:
+                return 9;
+                break;
+            case 1:
+                return 12;
+                break;
+            case 2:
+                return 12;
+                break;
+            case 3:
+                return 12;
+                break;
+            case 4:
+                return 12;
+                break;
+            case 5:
+                return 12;
+                break;
+            case 6:
+                return 12;
+                break;
+                
+            default:
+                return 0;
+                break;
+        }
     }
 }
 
@@ -266,8 +306,68 @@
         [cell initSectionViewWithIndex:indexPath.row];
         return  cell;
     }else{
-        UITableViewCell * cell;
-        return  cell;
+
+        switch (tableView.tag) {
+            case 0:
+            {
+                if (indexPath.row == 0) {
+                    CourseViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CourseViewCell" forIndexPath:indexPath];
+                    [cell setCourse:@"小马哥ios大讲堂小马哥ios大讲堂小马哥ios大讲堂" Local:@"@OurEDA实验室" BackgroundColor:0x36A1FA];
+                    return cell;
+                }else{
+                    EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
+                    return cell;
+                }
+
+                break;
+            }
+            case 1:
+            {
+                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
+                return cell;
+                break;
+            }
+            case 2:
+            {
+                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
+                return cell;
+                break;
+            }
+            case 3:
+            {
+                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
+                return cell;
+                break;
+            }
+            case 4:
+            {
+                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
+                return cell;
+                break;
+            }
+            case 5:
+            {
+                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
+                return cell;
+                break;
+            }
+            case 6:
+            {
+                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
+                return cell;
+                break;
+            }
+                
+            default:
+            {
+                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
+                return cell;
+                break;
+            }
+        }
+
+
+        
     }
 
 }
@@ -277,7 +377,40 @@
     if ([tableView isEqual:self.verticalTableView]) {
         return weekDayHeight+1;
     }else{
-        return  10;
+        switch (tableView.tag) {
+            case 0:
+            {
+                if (indexPath.row == 0) {
+                    return (weekDayHeight+1)*4.0;
+                } else {
+                    return weekDayHeight+1;
+                }
+                
+                break;
+            }
+            case 1:
+                return weekDayHeight+1;
+                break;
+            case 2:
+                return weekDayHeight+1;
+                break;
+            case 3:
+                return weekDayHeight+1;
+                break;
+            case 4:
+                return weekDayHeight+1;
+                break;
+            case 5:
+                return weekDayHeight+1;
+                break;
+            case 6:
+                return weekDayHeight+1;
+                break;
+                
+            default:
+                return weekDayHeight+1;
+                break;
+        }
     }
 
 }
@@ -286,7 +419,7 @@
 {
     if ([scrollView isEqual:self.horizonScrollView]) {
         self.verticalTableView.contentOffset = CGPointMake(0, 0+scrollView.contentOffset.y);
-        self.horizonView.frame = RECT(0 - scrollView.contentOffset.x + WINWIDTH/64.0*7.0, 0, horzonViewWidth, weekDayHeight + 1);
+        self.horizonView.frame = RECT(0 - scrollView.contentOffset.x + WINWIDTH/64.0*7.0, 0, WINWIDTH/64.0*77.0, weekDayHeight + 1);
     }
 }
 @end
