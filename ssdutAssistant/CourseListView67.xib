@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,8 +11,93 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CourseListView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQk-rw-kyL" userLabel="horizonView">
+                    <rect key="frame" x="35" y="0.0" width="385" height="46"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVV-Vz-3Ud" userLabel="lineVIew_h">
+                            <rect key="frame" x="0.0" y="45" width="385" height="1"/>
+                            <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="gYC-qO-jL5"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.21176470589999999" green="0.63137254899999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="nVV-Vz-3Ud" secondAttribute="bottom" id="3tf-4S-A3m"/>
+                        <constraint firstAttribute="trailing" secondItem="nVV-Vz-3Ud" secondAttribute="trailing" id="dpW-r9-43I"/>
+                        <constraint firstItem="nVV-Vz-3Ud" firstAttribute="leading" secondItem="YQk-rw-kyL" secondAttribute="leading" id="sAM-mb-AAV"/>
+                    </constraints>
+                </view>
+                <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0fc-hb-5TW" userLabel="verticalTableView">
+                    <rect key="frame" x="0.0" y="46" width="35" height="370"/>
+                    <color key="backgroundColor" red="0.36943259610094159" green="1" blue="0.34548433438276671" alpha="1" colorSpace="calibratedRGB"/>
+                </tableView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myv-B8-sIf">
+                    <rect key="frame" x="35" y="46" width="285" height="370"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jj9-al-0XD" userLabel="backView">
+                            <rect key="frame" x="0.0" y="0.0" width="385" height="555"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="jj9-al-0XD" firstAttribute="top" secondItem="myv-B8-sIf" secondAttribute="top" id="iPW-Bl-MzS"/>
+                        <constraint firstAttribute="bottom" secondItem="jj9-al-0XD" secondAttribute="bottom" id="ing-ib-yHa"/>
+                        <constraint firstAttribute="trailing" secondItem="jj9-al-0XD" secondAttribute="trailing" id="xZW-AA-LOg"/>
+                        <constraint firstItem="jj9-al-0XD" firstAttribute="leading" secondItem="myv-B8-sIf" secondAttribute="leading" id="zfj-ub-wpi"/>
+                    </constraints>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exp-vJ-bSH" userLabel="whiteView">
+                    <rect key="frame" x="0.0" y="0.0" width="35" height="46"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzi-vg-nry" userLabel="lineView_w">
+                            <rect key="frame" x="0.0" y="45" width="35" height="1"/>
+                            <color key="backgroundColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="2fz-Qk-BGZ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="pzi-vg-nry" secondAttribute="trailing" id="aGG-7e-qDl"/>
+                        <constraint firstItem="pzi-vg-nry" firstAttribute="leading" secondItem="exp-vJ-bSH" secondAttribute="leading" id="etv-8d-c4v"/>
+                        <constraint firstAttribute="bottom" secondItem="pzi-vg-nry" secondAttribute="bottom" id="qlb-XC-f3E"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="0fc-hb-5TW" secondAttribute="bottom" id="2sX-H5-OyI"/>
+                <constraint firstItem="0fc-hb-5TW" firstAttribute="width" secondItem="exp-vJ-bSH" secondAttribute="width" id="4jY-hb-2he"/>
+                <constraint firstItem="0fc-hb-5TW" firstAttribute="width" secondItem="myv-B8-sIf" secondAttribute="width" multiplier="7:57" id="7AE-JY-FOJ"/>
+                <constraint firstItem="YQk-rw-kyL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EC5-Ca-Dc3"/>
+                <constraint firstItem="YQk-rw-kyL" firstAttribute="height" secondItem="exp-vJ-bSH" secondAttribute="height" id="F66-wX-NHz"/>
+                <constraint firstItem="0fc-hb-5TW" firstAttribute="height" secondItem="myv-B8-sIf" secondAttribute="height" id="IMP-EJ-1Y9"/>
+                <constraint firstItem="exp-vJ-bSH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Iwq-bu-cMt"/>
+                <constraint firstItem="jj9-al-0XD" firstAttribute="height" secondItem="exp-vJ-bSH" secondAttribute="height" multiplier="12:1" id="OGl-oV-Go6"/>
+                <constraint firstItem="exp-vJ-bSH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Sij-9e-qsQ"/>
+                <constraint firstItem="myv-B8-sIf" firstAttribute="leading" secondItem="0fc-hb-5TW" secondAttribute="trailing" id="U1h-Sd-dZL"/>
+                <constraint firstItem="0fc-hb-5TW" firstAttribute="top" secondItem="exp-vJ-bSH" secondAttribute="bottom" id="VmA-H6-QfP"/>
+                <constraint firstItem="jj9-al-0XD" firstAttribute="width" secondItem="exp-vJ-bSH" secondAttribute="width" multiplier="77:7" id="XSD-hF-2bC"/>
+                <constraint firstItem="0fc-hb-5TW" firstAttribute="height" secondItem="exp-vJ-bSH" secondAttribute="height" multiplier="8:1" id="a1R-Hh-ZHy"/>
+                <constraint firstItem="YQk-rw-kyL" firstAttribute="width" secondItem="exp-vJ-bSH" secondAttribute="width" multiplier="77:7" id="dhj-MO-r70"/>
+                <constraint firstItem="myv-B8-sIf" firstAttribute="top" secondItem="YQk-rw-kyL" secondAttribute="bottom" id="eaU-g3-vYc"/>
+                <constraint firstAttribute="bottom" secondItem="myv-B8-sIf" secondAttribute="bottom" id="iZ2-pf-qOj"/>
+                <constraint firstItem="0fc-hb-5TW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rVq-Yd-uLa"/>
+                <constraint firstItem="YQk-rw-kyL" firstAttribute="leading" secondItem="exp-vJ-bSH" secondAttribute="trailing" id="v0f-34-b3Z"/>
+                <constraint firstAttribute="trailing" secondItem="myv-B8-sIf" secondAttribute="trailing" id="we2-bb-bg1"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backView" destination="jj9-al-0XD" id="7aG-Qh-9df"/>
+                <outlet property="horizonScrollView" destination="myv-B8-sIf" id="qpl-ht-ou1"/>
+                <outlet property="horizonView" destination="YQk-rw-kyL" id="4G6-27-Gla"/>
+                <outlet property="verticalTableView" destination="0fc-hb-5TW" id="YAo-Ud-fE5"/>
+            </connections>
+            <point key="canvasLocation" x="249" y="241"/>
         </view>
     </objects>
 </document>
