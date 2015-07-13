@@ -24,14 +24,16 @@
     [self registerNibCell];
     _mainTableView.dataSource = self;
     _mainTableView.delegate = self;
-    
+   
 
-    
-    
-    // Do any additional setup after loading the view from its nib.
 }
 
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    NSLog(@"--------------------------");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

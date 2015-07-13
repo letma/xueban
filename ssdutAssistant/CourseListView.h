@@ -11,6 +11,18 @@
 
 @interface CourseListView : UIView
 
+/*
+ *加载课表
+ */
 -(void)initCourseListView;
 
+/*
+ *调整weekDayBay的位置
+ */
+-(void)adjustWeekDayBar;
+
+/*
+ *加载许多tableViews；
+ */
+-(void)initTableViews;
 @end

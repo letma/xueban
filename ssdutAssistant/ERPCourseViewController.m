@@ -10,7 +10,7 @@
 #import "CourseListView.h"
 
 @interface ERPCourseViewController ()
-
+@property (nonatomic) CourseListView * courseView ;
 @end
 
 @implementation ERPCourseViewController
@@ -30,15 +30,31 @@
         nibArray = [[NSBundle mainBundle]loadNibNamed:@"CourseListView56" owner:self options:nil];
     }
     
-    CourseListView * courseView = [nibArray objectAtIndex:0];
+    self.courseView = [nibArray objectAtIndex:0];
 
-    [courseView initCourseListView];
-    courseView.frame = RECT(0, 0, WINWIDTH, WINHEIGHT);
+    [self.courseView initCourseListView];
+    self.courseView.frame = RECT(0, 0, WINWIDTH, WINHEIGHT);
     
-    [self.view addSubview:courseView];
+    [self.view addSubview:self.courseView];
     
+    [self.courseView initTableViews];
 
+}
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.courseView adjustWeekDayBar];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    
+    NSLog(@"---------------------");
+    
 }
 
 - (void)didReceiveMemoryWarning {

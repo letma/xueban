@@ -43,6 +43,10 @@
 // 7 : 17 : 10*4
 -(void)initCourseListView
 {
+    
+//    //开辟线程
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    
     //初始化星期button的高度与原始宽度 hieght -1 防止挡住line
     weekDayWidth = WINWIDTH/64.0*10;
     if (WINHEIGHT == 480) {
@@ -55,24 +59,37 @@
     
     [self insertWeekDayViews];
     
-    [self initTableViews];
-    [self registerNibCell];
+    //[self initTableViews];
+    
+    [self registerWeekDayNibCell];
+    
     self.verticalTableView.userInteractionEnabled = NO;
     self.verticalTableView.delegate = self;
     self.verticalTableView.dataSource =self;
     
     self.horizonScrollView.delegate = self;
     self.horizonScrollView.decelerationRate = 0.1;
+    
+//    dispatch_async(queue, ^{
+//        [self initTableViews];
+//    });
+//  
 
-    
-    [self insertTableViews];
-    
 }
+
+-(void)adjustWeekDayBar
+{
+    self.horizonScrollView.contentOffset = CGPointMake(0, 0);
+}
+
+
 
 -(void)initTableViews
 {
     
     //初始化七个tableView的array
+    
+    CGFloat addWidth = 0;
     tableViewArray = [[NSMutableArray alloc]init];
     for (NSInteger i = 0; i < 7; i ++) {
         UITableView * item = [[UITableView alloc]init];
@@ -82,14 +99,30 @@
         item.separatorStyle = UITableViewCellSeparatorStyleNone;
         item.userInteractionEnabled = NO;
         [tableViewArray addObject:item];
+        
+        item.frame = RECT(0 + i *weekDayWidth + addWidth, 0, weekDayWidth, (weekDayHeight +1)*12);
+        if (i + 1 == indexOfWeekDay) {
+            addWidth = WINWIDTH/64.0*7;
+            item.frame = CGRectMake(0 + i * weekDayWidth, 0 , weekDayWidth + addWidth, (weekDayHeight +1)*12);
+            
+        }
+        [self.horizonScrollView addSubview:item];
     }
-    ((UITableView *)[tableViewArray objectAtIndex:0]).backgroundColor = [UIColor whiteColor];
-    ((UITableView *)[tableViewArray objectAtIndex:1]).backgroundColor = [UIColor redColor];
-    ((UITableView *)[tableViewArray objectAtIndex:2]).backgroundColor = [UIColor blueColor];
-    ((UITableView *)[tableViewArray objectAtIndex:3]).backgroundColor = [UIColor yellowColor];
-    ((UITableView *)[tableViewArray objectAtIndex:4]).backgroundColor = [UIColor purpleColor];
-    ((UITableView *)[tableViewArray objectAtIndex:5]).backgroundColor = [UIColor greenColor];
-    ((UITableView *)[tableViewArray objectAtIndex:6]).backgroundColor = [UIColor blackColor];
+    
+    [self registerCourseNibCell];
+    
+//    CGFloat addWidth = 0;
+//    for (NSInteger i = 0; i < 7; i ++) {
+//        ((UITableView *)[tableViewArray objectAtIndex:i]).frame = RECT(0 + i *weekDayWidth + addWidth, 0, weekDayWidth, (weekDayHeight +1)*12);
+//        if (i + 1 == indexOfWeekDay) {
+//            addWidth = WINWIDTH/64.0*7;
+//            ((UITableView *)[tableViewArray objectAtIndex:i]).frame = CGRectMake(0 + i * weekDayWidth, 0 , weekDayWidth + addWidth, (weekDayHeight +1)*12);
+//            
+//        }
+//        [self.horizonScrollView addSubview:((UITableView *)[tableViewArray objectAtIndex:i])];
+//    }
+
+
 }
 
 
@@ -101,8 +134,10 @@
     NSCalendar * cal = [NSCalendar currentCalendar];
     NSDateComponents * comp = [cal components:NSCalendarUnitWeekday|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:now];
     NSInteger  item = [comp weekday];
+    
     //将美国星期几转为中国星期几的算法 O.o
-    NSInteger weekDay = ( item + 6)%7 + (item % 1) * 7;
+    NSInteger weekDay = ( item + 6)%7 + ((item - 8) * (-1) / 7 )*7;
+
     indexOfWeekDay = weekDay;
     
     NSArray * weekDayArr = @[@"周一",@"周二",@"周三",@"周四",@"周五",@"周六",@"周日"];
@@ -165,20 +200,6 @@
     }
 }
 
-//添加7个tableView
--(void)insertTableViews
-{
-    CGFloat addWidth = 0;
-    for (NSInteger i = 0; i < 7; i ++) {
-        ((UITableView *)[tableViewArray objectAtIndex:i]).frame = RECT(0 + i *weekDayWidth + addWidth, 0, weekDayWidth, (weekDayHeight +1)*12);
-        if (i + 1 == indexOfWeekDay) {
-            addWidth = WINWIDTH/64.0*7;
-            ((UITableView *)[tableViewArray objectAtIndex:i]).frame = CGRectMake(0 + i * weekDayWidth, 0 , weekDayWidth + addWidth, (weekDayHeight +1)*12);
-            
-        }
-        [self.horizonScrollView addSubview:((UITableView *)[tableViewArray objectAtIndex:i])];
-    }
-}
 
 #pragma mark - weekDayBtn的点击事件
 -(void)clickedWeekDayBtn:(WeekDayButton *)currentBtn
@@ -248,15 +269,17 @@
 }
 
 #pragma mark - registerNibCell
--(void)registerNibCell
+-(void)registerWeekDayNibCell
 {
     [self.verticalTableView registerNibWithClass:[VerticalViewCell class]];
+}
+
+-(void)registerCourseNibCell
+{
     for (NSInteger i = 0; i < 7; i ++) {
         [(UITableView *)[tableViewArray objectAtIndex:i] registerNibWithClass:[EmptyCourseCell class]];
         [(UITableView *)[tableViewArray objectAtIndex:i] registerNibWithClass:[CourseViewCell class]];
     }
-
-
 }
 #pragma mark - UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -266,29 +289,29 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([tableView isEqual:self.verticalTableView]) {
-        return 12;
+        return 0;
     }else{
         switch (tableView.tag) {
             case 0:
-                return 9;
+                return 1;
                 break;
             case 1:
-                return 12;
+                return 0;
                 break;
             case 2:
-                return 12;
+                return 0;
                 break;
             case 3:
-                return 12;
+                return 0;
                 break;
             case 4:
-                return 12;
+                return 0;
                 break;
             case 5:
-                return 12;
+                return 0;
                 break;
             case 6:
-                return 12;
+                return 0;
                 break;
                 
             default:
