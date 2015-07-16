@@ -1,13 +1,13 @@
 //
-//  EmptyCourseCell.h
+//  LessonCardView.h
 //  ssdutAssistant
 //
-//  Created by OurEDA on 15/7/8.
+//  Created by OurEDA on 15/7/16.
 //  Copyright (c) 2015年 OurEDA. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface EmptyCourseCell : UITableViewCell
+@interface LessonCardView : UIView
 
 @end

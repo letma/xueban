@@ -19,10 +19,22 @@
 /*
  *调整weekDayBay的位置
  */
--(void)adjustWeekDayBar;
+-(void)adjustWeekDayBarAndSectionView;
 
 /*
- *加载许多tableViews；
+ *加载7个scrollView；
  */
--(void)initTableViews;
+-(void)initViews;
+
+/*
+ *加载节次的view
+ */
+-(void)initVerticalViews;
+
+/*
+ *添加课程
+ */
+-(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num;
+
+
 @end

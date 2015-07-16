@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="SectionPartView">
+            <rect key="frame" x="0.0" y="0.0" width="35" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soB-4s-bzM" userLabel="timeLabel">
+                    <rect key="frame" x="0.0" y="8" width="35" height="9"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.59215686274509804" green="0.61568627450980395" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f26-ex-8GN" userLabel="sectionLabel">
+                    <rect key="frame" x="0.0" y="25" width="35" height="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.46274509803921571" green="0.49019607843137253" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czV-aM-H6f" userLabel="lineView">
+                    <rect key="frame" x="0.0" y="43" width="35" height="1"/>
+                    <color key="backgroundColor" red="0.81960784313725488" green="0.85098039215686272" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ZCI-qd-4rW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="soB-4s-bzM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4td-Cv-pGg"/>
+                <constraint firstAttribute="trailing" secondItem="f26-ex-8GN" secondAttribute="trailing" id="Dng-8H-SbQ"/>
+                <constraint firstItem="f26-ex-8GN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mz8-Iv-OJg"/>
+                <constraint firstItem="f26-ex-8GN" firstAttribute="top" secondItem="soB-4s-bzM" secondAttribute="bottom" constant="8" id="NiZ-a4-rHW"/>
+                <constraint firstItem="soB-4s-bzM" firstAttribute="height" secondItem="f26-ex-8GN" secondAttribute="height" multiplier="4:5" id="YDX-6t-oDa"/>
+                <constraint firstAttribute="trailing" secondItem="czV-aM-H6f" secondAttribute="trailing" id="bT4-5b-sZr"/>
+                <constraint firstAttribute="bottom" secondItem="f26-ex-8GN" secondAttribute="bottom" constant="8" id="d4K-Bp-qqy"/>
+                <constraint firstItem="soB-4s-bzM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="gaL-yS-S4U"/>
+                <constraint firstAttribute="bottom" secondItem="czV-aM-H6f" secondAttribute="bottom" id="gib-QR-0z7"/>
+                <constraint firstAttribute="trailing" secondItem="soB-4s-bzM" secondAttribute="trailing" id="j9T-W0-08M"/>
+                <constraint firstItem="czV-aM-H6f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nHO-4g-0Wi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="sectionLabel" destination="f26-ex-8GN" id="hPP-TT-Bnp"/>
+                <outlet property="timeLabel" destination="soB-4s-bzM" id="9s3-aL-Hgt"/>
+            </connections>
+            <point key="canvasLocation" x="181.5" y="135"/>
+        </view>
+    </objects>
+</document>

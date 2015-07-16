@@ -10,12 +10,12 @@
 
 #import "CourseListView.h"
 #import "WeekDayButton.h"
-#import "VerticalViewCell.h"
-#import "EmptyCourseCell.h"
-#import "CourseViewCell.h"
-#import "UITableView+Register.h"
+#import "SectionPartView.h"
+#import "LessonButton.h"
+#import "LessonMesViewController.h"
 
-@interface CourseListView()<UITableViewDataSource,UITableViewDelegate>
+
+@interface CourseListView()<UIScrollViewDelegate>
 {
     //今天是星期几
     NSInteger indexOfWeekDay;
@@ -26,11 +26,29 @@
     //上边栏的宽度
     CGFloat horzonViewWidth;
     
-    //七个tableView
-    NSMutableArray * tableViewArray;
+    //7个scrollView
+    NSMutableArray * viewsArray;
+    
+    //colorArray
+    NSArray * colorArray;
+    
+    /*******为下一界面存储信息*********/
+//    //课程名
+//    NSMutableArray * courseArray;
+//    //教师姓名
+//    NSMutableArray * teacherArray;
+//    //学分信息
+//    NSMutableArray * pointArray;
+//    //周数信息
+//    NSMutableArray * weekArray;
+//    //节次信息
+//    NSMutableArray * sectionArray;
+//    //地点信息
+//    NSMutableArray * localArray;
+    
 }
 @property (nonatomic) IBOutlet UIView * horizonView;
-@property (nonatomic) IBOutlet UITableView * verticalTableView;
+@property (nonatomic) IBOutlet UIView * verticalView;
 @property (nonatomic) IBOutlet UIScrollView * horizonScrollView;
 @property (nonatomic) IBOutlet UIView * backView;
 //上一个被点击的button
@@ -44,9 +62,6 @@
 -(void)initCourseListView
 {
     
-//    //开辟线程
-//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    
     //初始化星期button的高度与原始宽度 hieght -1 防止挡住line
     weekDayWidth = WINWIDTH/64.0*10;
     if (WINHEIGHT == 480) {
@@ -57,48 +72,80 @@
     
     horzonViewWidth = self.horizonView.frame.size.width;
     
+    [self setColorArray];
+    
     [self insertWeekDayViews];
     
-    //[self initTableViews];
+    [self initVerticalViews];
     
-    [self registerWeekDayNibCell];
-    
-    self.verticalTableView.userInteractionEnabled = NO;
-    self.verticalTableView.delegate = self;
-    self.verticalTableView.dataSource =self;
+    [self initViews];
     
     self.horizonScrollView.delegate = self;
     self.horizonScrollView.decelerationRate = 0.1;
     
-//    dispatch_async(queue, ^{
-//        [self initTableViews];
-//    });
-//  
 
 }
 
--(void)adjustWeekDayBar
+-(void)adjustWeekDayBarAndSectionView
 {
     self.horizonScrollView.contentOffset = CGPointMake(0, 0);
 }
 
-
-
--(void)initTableViews
+-(void)setColorArray
 {
+    colorArray = @[
+                   @0xe477c3,
+                   @0x01b3ee,
+                   @0xff8d41,
+                   @0x91c607,
+                   @0xf87d8a,
+                   @0xba8adf,
+                   @0xfbab4a,
+                   @0x00bff3,
+                   @0xb3ce1d,
+                   @0xf26d7e,
+                   @0xffba07,
+                   @0x36b1c0,
+                   @0x6ddab,
+                   @0xf36861,
+                   @0x53d37e,
+                   @0x13ca9a];
+}
+
+-(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num
+{
+    NSArray * nibArray = [[NSBundle mainBundle]loadNibNamed:@"LessonButton" owner:self options:nil];
+    LessonButton * btn = [nibArray objectAtIndex:0];
     
-    //初始化七个tableView的array
-    
+    if ((weekDay + 1) != indexOfWeekDay) {
+        btn.frame = CGRectMake(0 , (weekDayHeight+1) * lesson, weekDayWidth, (weekDayHeight + 1) * num);
+    }else{
+        btn.frame = CGRectMake(0 , (weekDayHeight+1) * lesson, weekDayWidth+WINWIDTH/64.0*7.0, (weekDayHeight + 1) * num);
+    }
+    NSString * localStr = [NSString stringWithFormat:@"@%@",local];
+    [btn setCourse:course Local:localStr BackgroundColor:[[colorArray objectAtIndex:index] integerValue]];
+    [btn addTarget:self action:@selector(toCourseMes:) forControlEvents:UIControlEventTouchUpInside];
+    [((UIView *)[viewsArray objectAtIndex:weekDay]) addSubview:btn];
+}
+
+#pragma mark - Btn
+-(void)toCourseMes:(LessonButton *)btn
+{
+    //NSLog(@"hahahahha");
+}
+
+-(void)initViews
+{
+    //出现当天后需增加一些宽度
     CGFloat addWidth = 0;
-    tableViewArray = [[NSMutableArray alloc]init];
-    for (NSInteger i = 0; i < 7; i ++) {
-        UITableView * item = [[UITableView alloc]init];
+    
+    viewsArray = [[NSMutableArray alloc]init];
+    
+    for (NSInteger i = 0 ; i < 7 ; i ++) {
+        UIView * item = [[UIView alloc]init];
         item.tag = i;
-        item.delegate = self;
-        item.dataSource = self;
-        item.separatorStyle = UITableViewCellSeparatorStyleNone;
-        item.userInteractionEnabled = NO;
-        [tableViewArray addObject:item];
+        item.backgroundColor = UIColorFromRGB(0xeaeaea);
+        [viewsArray addObject:item];
         
         item.frame = RECT(0 + i *weekDayWidth + addWidth, 0, weekDayWidth, (weekDayHeight +1)*12);
         if (i + 1 == indexOfWeekDay) {
@@ -107,22 +154,26 @@
             
         }
         [self.horizonScrollView addSubview:item];
-    }
-    
-    [self registerCourseNibCell];
-    
-//    CGFloat addWidth = 0;
-//    for (NSInteger i = 0; i < 7; i ++) {
-//        ((UITableView *)[tableViewArray objectAtIndex:i]).frame = RECT(0 + i *weekDayWidth + addWidth, 0, weekDayWidth, (weekDayHeight +1)*12);
-//        if (i + 1 == indexOfWeekDay) {
-//            addWidth = WINWIDTH/64.0*7;
-//            ((UITableView *)[tableViewArray objectAtIndex:i]).frame = CGRectMake(0 + i * weekDayWidth, 0 , weekDayWidth + addWidth, (weekDayHeight +1)*12);
-//            
+//        for (NSInteger j = 0; j < 12; j ++) {
+//            UIImageView * lineView = [[UIImageView alloc]init];
+//            l;
 //        }
-//        [self.horizonScrollView addSubview:((UITableView *)[tableViewArray objectAtIndex:i])];
-//    }
+    }
+
+}
 
 
+//添加左边的sectionViews
+-(void)initVerticalViews
+{
+
+    for (NSInteger i = 0; i < 12 ; i ++) {
+        NSArray * nibArray = [[NSBundle mainBundle]loadNibNamed:@"SectionPartView" owner:self options:nil];
+        SectionPartView * item = [nibArray objectAtIndex:0];
+        [item initSectionViewWithIndex:i];
+        item.frame = CGRectMake(0, 0 + i * (weekDayHeight + 1), WINWIDTH/64.0*7, weekDayHeight+1);
+        [self.verticalView addSubview:item];
+    }
 }
 
 
@@ -224,11 +275,11 @@
         
         self.lastWeekDayBtn.frame = RECT(lastBtn_x + WINWIDTH/64.0*7, lastBtn_y, weekDayWidth, weekDayHeight);
         
-        /******tableView*****/
+        /******Views*****/
+        [self changeViewsWithIndex:currentBtn.tag - 1 X:currentbtn_x Y:currentbtn_y W:weekDayWidth + WINWIDTH/64.0*7 H:(weekDayHeight+1)*12];
         
-        ((UITableView *)[tableViewArray objectAtIndex:currentBtn.tag - 1]).frame = RECT(currentbtn_x, currentbtn_y, weekDayWidth + WINWIDTH/64.0*7, (weekDayHeight+1)*12);
-        
-        ((UITableView *)[tableViewArray objectAtIndex:self.lastWeekDayBtn.tag - 1]).frame = RECT(lastBtn_x + WINWIDTH/64.0*7, lastBtn_y, weekDayWidth, (weekDayHeight+1)*12);
+        [self changeViewsWithIndex:self.lastWeekDayBtn.tag - 1 X:lastBtn_x + WINWIDTH/64.0*7 Y:lastBtn_y W:weekDayWidth  H:(weekDayHeight+1)*12];
+
         
         
         /*******夹在中间的控件********/
@@ -238,8 +289,10 @@
             CGFloat changeBtn_x = itemBtn.frame.origin.x;
             CGFloat changeBtn_y = itemBtn.frame.origin.y;
             itemBtn.frame = RECT(changeBtn_x +  WINWIDTH/64.0*7, changeBtn_y, weekDayWidth, weekDayHeight);
-            /******tableView*****/
-            ((UITableView *)[tableViewArray objectAtIndex:i - 1]).frame = RECT(changeBtn_x +  WINWIDTH/64.0*7, changeBtn_y, weekDayWidth, (weekDayHeight+1)*12);
+            
+            /******Views*****/
+            
+            [self changeViewsWithIndex:i - 1 X:changeBtn_x +  WINWIDTH/64.0*7 Y:changeBtn_y W:weekDayWidth  H:(weekDayHeight+1)*12];
             
         }
     }else{
@@ -248,11 +301,12 @@
         
         self.lastWeekDayBtn.frame = RECT(lastBtn_x , lastBtn_y, weekDayWidth, weekDayHeight);
         
-        /******tableView*****/
+        /******Views*****/
         
-        ((UITableView *)[tableViewArray objectAtIndex:currentBtn.tag - 1]).frame = RECT(currentbtn_x - WINWIDTH/64.0*7, currentbtn_y, weekDayWidth + WINWIDTH/64.0*7, (weekDayHeight+1)*12);
+        [self changeViewsWithIndex:currentBtn.tag - 1 X:currentbtn_x - WINWIDTH/64.0*7 Y:currentbtn_y W:weekDayWidth + WINWIDTH/64.0*7 H:(weekDayHeight+1)*12];
         
-        ((UITableView *)[tableViewArray objectAtIndex:self.lastWeekDayBtn.tag - 1]).frame = RECT(lastBtn_x , lastBtn_y, weekDayWidth, (weekDayHeight+1)*12);
+        [self changeViewsWithIndex:self.lastWeekDayBtn.tag - 1 X:lastBtn_x Y:lastBtn_y W:weekDayWidth  H:(weekDayHeight+1)*12];
+
         
          /*******夹在中间的控件********/
         for (NSInteger i = self.lastWeekDayBtn.tag + 1 ; i < currentBtn.tag; i ++) {
@@ -261,187 +315,33 @@
             CGFloat changeBtn_x = itemBtn.frame.origin.x;
             CGFloat changeBtn_y = itemBtn.frame.origin.y;
             itemBtn.frame = RECT(changeBtn_x -  WINWIDTH/64.0*7, changeBtn_y, weekDayWidth, weekDayHeight);
-            /******tableView*****/
-            ((UITableView *)[tableViewArray objectAtIndex:i - 1]).frame = RECT(changeBtn_x -  WINWIDTH/64.0*7, changeBtn_y, weekDayWidth, (weekDayHeight+1)*12);
+            /******Views*****/
+            [self changeViewsWithIndex:i - 1 X:changeBtn_x - WINWIDTH/64.0*7 Y:changeBtn_y W:weekDayWidth  H:(weekDayHeight+1)*12];
+//            ((UITableView *)[tableViewArray objectAtIndex:i - 1]).frame = RECT(changeBtn_x -  WINWIDTH/64.0*7, changeBtn_y, weekDayWidth, (weekDayHeight+1)*12);
         }
     }
     self.lastWeekDayBtn = currentBtn;
 }
 
-#pragma mark - registerNibCell
--(void)registerWeekDayNibCell
+#pragma mark - changeViewsFrame
+-(void)changeViewsWithIndex:(NSInteger)index X:(CGFloat)x Y:(CGFloat)y W:(CGFloat)w H:(CGFloat)h
 {
-    [self.verticalTableView registerNibWithClass:[VerticalViewCell class]];
-}
-
--(void)registerCourseNibCell
-{
-    for (NSInteger i = 0; i < 7; i ++) {
-        [(UITableView *)[tableViewArray objectAtIndex:i] registerNibWithClass:[EmptyCourseCell class]];
-        [(UITableView *)[tableViewArray objectAtIndex:i] registerNibWithClass:[CourseViewCell class]];
-    }
-}
-#pragma mark - UITableViewDelegate
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if ([tableView isEqual:self.verticalTableView]) {
-        return 0;
-    }else{
-        switch (tableView.tag) {
-            case 0:
-                return 1;
-                break;
-            case 1:
-                return 0;
-                break;
-            case 2:
-                return 0;
-                break;
-            case 3:
-                return 0;
-                break;
-            case 4:
-                return 0;
-                break;
-            case 5:
-                return 0;
-                break;
-            case 6:
-                return 0;
-                break;
-                
-            default:
-                return 0;
-                break;
-        }
+    ((UIView *)[viewsArray objectAtIndex:index]).frame = CGRectMake(x, y, w, h);
+    for (UIView * view in [((UIView *)[viewsArray objectAtIndex:index]) subviews]) {
+        CGFloat view_x = view.frame.origin.x;
+        CGFloat view_y = view.frame.origin.y;
+        CGFloat view_h = view.frame.size.height;
+        view.frame = CGRectMake(view_x, view_y, w, view_h);
     }
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([tableView isEqual:self.verticalTableView]) {
-        //添加左边栏的课节views
-        VerticalViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"VerticalViewCell"];
-        [cell initSectionViewWithIndex:indexPath.row];
-        return  cell;
-    }else{
-
-        switch (tableView.tag) {
-            case 0:
-            {
-                if (indexPath.row == 0) {
-                    CourseViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CourseViewCell" forIndexPath:indexPath];
-                    [cell setCourse:@"小马哥ios大讲堂小马哥ios大讲堂小马哥ios大讲堂" Local:@"@OurEDA实验室" BackgroundColor:0x36A1FA];
-                    return cell;
-                }else{
-                    EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
-                    return cell;
-                }
-
-                break;
-            }
-            case 1:
-            {
-                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
-                return cell;
-                break;
-            }
-            case 2:
-            {
-                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
-                return cell;
-                break;
-            }
-            case 3:
-            {
-                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
-                return cell;
-                break;
-            }
-            case 4:
-            {
-                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
-                return cell;
-                break;
-            }
-            case 5:
-            {
-                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
-                return cell;
-                break;
-            }
-            case 6:
-            {
-                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
-                return cell;
-                break;
-            }
-                
-            default:
-            {
-                EmptyCourseCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyCourseCell" forIndexPath:indexPath];
-                return cell;
-                break;
-            }
-        }
 
 
-        
-    }
-
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if ([tableView isEqual:self.verticalTableView]) {
-        return weekDayHeight+1;
-    }else{
-        switch (tableView.tag) {
-            case 0:
-            {
-                if (indexPath.row == 0) {
-                    return (weekDayHeight+1)*4.0;
-                } else {
-                    return weekDayHeight+1;
-                }
-                
-                break;
-            }
-            case 1:
-                return weekDayHeight+1;
-                break;
-            case 2:
-                return weekDayHeight+1;
-                break;
-            case 3:
-                return weekDayHeight+1;
-                break;
-            case 4:
-                return weekDayHeight+1;
-                break;
-            case 5:
-                return weekDayHeight+1;
-                break;
-            case 6:
-                return weekDayHeight+1;
-                break;
-                
-            default:
-                return weekDayHeight+1;
-                break;
-        }
-    }
-
-}
 #pragma mark - UIScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if ([scrollView isEqual:self.horizonScrollView]) {
-        self.verticalTableView.contentOffset = CGPointMake(0, 0+scrollView.contentOffset.y);
+        self.verticalView.frame = RECT(0, weekDayHeight + 1 - scrollView.contentOffset.y, WINWIDTH/64.0*7.0, (weekDayHeight + 1) * 12);
         self.horizonView.frame = RECT(0 - scrollView.contentOffset.x + WINWIDTH/64.0*7.0, 0, WINWIDTH/64.0*77.0, weekDayHeight + 1);
     }
 }

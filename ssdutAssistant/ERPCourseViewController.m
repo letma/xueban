@@ -35,16 +35,22 @@
     [self.courseView initCourseListView];
     self.courseView.frame = RECT(0, 0, WINWIDTH, WINHEIGHT);
     
+    [self.courseView insertLessonsWithCourse:@"小马哥ios大讲堂小马哥ios大讲堂小马哥ios大讲堂" Local:@"OurEDA实验室" ColorIndex:0 weekDay:0 lesson:0 number:4];
+    
+    [self.courseView insertLessonsWithCourse:@"工科数学离散数学" Local:@"教学楼C102" ColorIndex:1 weekDay:3 lesson:5 number:2];
+    
+    [self.courseView insertLessonsWithCourse:@"优衣库" Local:@"2舍519" ColorIndex:2 weekDay:4 lesson:3 number:2];
+    
     [self.view addSubview:self.courseView];
     
-    [self.courseView initTableViews];
+    
 
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.courseView adjustWeekDayBar];
+    [self.courseView adjustWeekDayBarAndSectionView];
     
 }
 
@@ -53,7 +59,10 @@
     [super viewDidAppear:animated];
     
     
+
     NSLog(@"---------------------");
+    
+    
     
 }
 

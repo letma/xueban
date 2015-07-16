@@ -1,28 +1,18 @@
 //
-//  VerticalViewCell.m
+//  SectionPartView.m
 //  ssdutAssistant
 //
-//  Created by OurEDA on 8/7/15.
-//  Copyright (c) 2015 OurEDA. All rights reserved.
+//  Created by OurEDA on 15/7/16.
+//  Copyright (c) 2015年 OurEDA. All rights reserved.
 //
 
-#import "VerticalViewCell.h"
-@interface VerticalViewCell()
+#import "SectionPartView.h"
+@interface SectionPartView()
 @property(nonatomic,strong ) IBOutlet UILabel * timeLabel;
 @property(nonatomic) IBOutlet UILabel * sectionLabel;
 @end
 
-@implementation VerticalViewCell
-
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
+@implementation SectionPartView
 
 - (void)setSectionLabelFont:(CGFloat)sectionSize TimeLabelFont:(CGFloat)timeSize
 {

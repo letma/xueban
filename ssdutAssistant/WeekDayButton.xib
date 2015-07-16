@@ -54,6 +54,7 @@
                 <outlet property="lineView" destination="R3W-LN-TEd" id="FHx-Lv-k9D"/>
                 <outlet property="weekDayLabel" destination="ndo-Kn-hy3" id="f2H-YN-w3P"/>
             </connections>
+            <point key="canvasLocation" x="511" y="394"/>
         </view>
     </objects>
 </document>

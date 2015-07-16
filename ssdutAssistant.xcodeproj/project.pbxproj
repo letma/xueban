@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		185A592D1B4D84CC00576533 /* CourseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A592B1B4D84CC00576533 /* CourseViewCell.m */; };
-		185A592E1B4D84CC00576533 /* CourseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185A592C1B4D84CC00576533 /* CourseViewCell.xib */; };
-		1873B6E21B4CDFD900B5E1AE /* VerticalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873B6E01B4CDFD900B5E1AE /* VerticalViewCell.m */; };
-		1873B6E31B4CDFD900B5E1AE /* VerticalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1873B6E11B4CDFD900B5E1AE /* VerticalViewCell.xib */; };
 		18C744751B46F25000FAAC12 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C744741B46F25000FAAC12 /* TabBarViewController.m */; };
 		18C744791B46F2A900FAAC12 /* ERPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C744771B46F2A900FAAC12 /* ERPViewController.m */; };
 		18C7447A1B46F2A900FAAC12 /* ERPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C744781B46F2A900FAAC12 /* ERPViewController.xib */; };
@@ -24,14 +20,19 @@
 		FA2992751B4AA5EA0088DC7E /* CourseListView67.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2992741B4AA5EA0088DC7E /* CourseListView67.xib */; };
 		FA2B314E1B4C02E900C040BD /* WeekDayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2B314D1B4C02E900C040BD /* WeekDayButton.m */; };
 		FA2B31501B4C030500C040BD /* WeekDayButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2B314F1B4C030500C040BD /* WeekDayButton.xib */; };
-		FA3950F71B4D5AC60040023C /* EmptyCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3950F51B4D5AC60040023C /* EmptyCourseCell.m */; };
-		FA3950F81B4D5AC60040023C /* EmptyCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3950F61B4D5AC60040023C /* EmptyCourseCell.xib */; };
 		FA41B0111B4667BC0043A439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA41B0101B4667BC0043A439 /* main.m */; };
 		FA41B0141B4667BC0043A439 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA41B0131B4667BC0043A439 /* AppDelegate.m */; };
 		FA41B01A1B4667BC0043A439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA41B0181B4667BC0043A439 /* Main.storyboard */; };
 		FA41B01C1B4667BC0043A439 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA41B01B1B4667BC0043A439 /* Images.xcassets */; };
 		FA41B01F1B4667BC0043A439 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA41B01D1B4667BC0043A439 /* LaunchScreen.xib */; };
 		FA41B02B1B4667BC0043A439 /* ssdutAssistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA41B02A1B4667BC0043A439 /* ssdutAssistantTests.m */; };
+		FA5800E51B57A95800478AAF /* LessonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5800E41B57A95800478AAF /* LessonButton.m */; };
+		FA5800E71B57A96C00478AAF /* LessonButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5800E61B57A96C00478AAF /* LessonButton.xib */; };
+		FA5800EA1B57BEED00478AAF /* SectionPartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5800E91B57BEED00478AAF /* SectionPartView.m */; };
+		FA5800EC1B57BF1300478AAF /* SectionPartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5800EB1B57BF1300478AAF /* SectionPartView.xib */; };
+		FA5800F01B57D77B00478AAF /* LessonMesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5800EF1B57D77B00478AAF /* LessonMesViewController.m */; };
+		FA5800F41B57DE1100478AAF /* LessonCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5800F31B57DE1100478AAF /* LessonCardView.m */; };
+		FA5800F61B57DE3D00478AAF /* LessonCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5800F51B57DE3D00478AAF /* LessonCardView.xib */; };
 		FA5B71D41B4781DE00F6870C /* BigTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B71D21B4781DE00F6870C /* BigTableViewCell.m */; };
 		FA5B71D51B4781DE00F6870C /* BigTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B71D31B4781DE00F6870C /* BigTableViewCell.xib */; };
 		FA5B71D91B4781F400F6870C /* SmallTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B71D71B4781F400F6870C /* SmallTableViewCell.m */; };
@@ -65,12 +66,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		185A592A1B4D84CC00576533 /* CourseViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewCell.h; sourceTree = "<group>"; };
-		185A592B1B4D84CC00576533 /* CourseViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewCell.m; sourceTree = "<group>"; };
-		185A592C1B4D84CC00576533 /* CourseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseViewCell.xib; sourceTree = "<group>"; };
-		1873B6DF1B4CDFD900B5E1AE /* VerticalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalViewCell.h; sourceTree = "<group>"; };
-		1873B6E01B4CDFD900B5E1AE /* VerticalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalViewCell.m; sourceTree = "<group>"; };
-		1873B6E11B4CDFD900B5E1AE /* VerticalViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerticalViewCell.xib; sourceTree = "<group>"; };
 		18C7446B1B46E7B400FAAC12 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18C744721B46F04800FAAC12 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		18C744731B46F25000FAAC12 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -94,9 +89,6 @@
 		FA2B314C1B4C02E900C040BD /* WeekDayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekDayButton.h; sourceTree = "<group>"; };
 		FA2B314D1B4C02E900C040BD /* WeekDayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekDayButton.m; sourceTree = "<group>"; };
 		FA2B314F1B4C030500C040BD /* WeekDayButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekDayButton.xib; sourceTree = "<group>"; };
-		FA3950F41B4D5AC60040023C /* EmptyCourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyCourseCell.h; sourceTree = "<group>"; };
-		FA3950F51B4D5AC60040023C /* EmptyCourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyCourseCell.m; sourceTree = "<group>"; };
-		FA3950F61B4D5AC60040023C /* EmptyCourseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyCourseCell.xib; sourceTree = "<group>"; };
 		FA41B00B1B4667BC0043A439 /* ssdutAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ssdutAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA41B00F1B4667BC0043A439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA41B0101B4667BC0043A439 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,6 +100,17 @@
 		FA41B0241B4667BC0043A439 /* ssdutAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ssdutAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA41B0291B4667BC0043A439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA41B02A1B4667BC0043A439 /* ssdutAssistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ssdutAssistantTests.m; sourceTree = "<group>"; };
+		FA5800E31B57A95800478AAF /* LessonButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonButton.h; sourceTree = "<group>"; };
+		FA5800E41B57A95800478AAF /* LessonButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonButton.m; sourceTree = "<group>"; };
+		FA5800E61B57A96C00478AAF /* LessonButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LessonButton.xib; sourceTree = "<group>"; };
+		FA5800E81B57BEED00478AAF /* SectionPartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionPartView.h; sourceTree = "<group>"; };
+		FA5800E91B57BEED00478AAF /* SectionPartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionPartView.m; sourceTree = "<group>"; };
+		FA5800EB1B57BF1300478AAF /* SectionPartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionPartView.xib; sourceTree = "<group>"; };
+		FA5800EE1B57D77B00478AAF /* LessonMesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonMesViewController.h; sourceTree = "<group>"; };
+		FA5800EF1B57D77B00478AAF /* LessonMesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonMesViewController.m; sourceTree = "<group>"; };
+		FA5800F21B57DE1100478AAF /* LessonCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonCardView.h; sourceTree = "<group>"; };
+		FA5800F31B57DE1100478AAF /* LessonCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonCardView.m; sourceTree = "<group>"; };
+		FA5800F51B57DE3D00478AAF /* LessonCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LessonCardView.xib; sourceTree = "<group>"; };
 		FA5B71D11B4781DE00F6870C /* BigTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigTableViewCell.h; sourceTree = "<group>"; };
 		FA5B71D21B4781DE00F6870C /* BigTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigTableViewCell.m; sourceTree = "<group>"; };
 		FA5B71D31B4781DE00F6870C /* BigTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigTableViewCell.xib; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				FA41B01B1B4667BC0043A439 /* Images.xcassets */,
+				FA5800D81B5794E800478AAF /* Json */,
 				18C744801B46F3CA00FAAC12 /* InterfaceBuilder */,
 			);
 			name = Resource;
@@ -272,6 +276,7 @@
 				FA29926E1B4A85A40088DC7E /* CourseListView.m */,
 				FA2992741B4AA5EA0088DC7E /* CourseListView67.xib */,
 				FA2992721B4AA5510088DC7E /* CourseListView56.xib */,
+				FA5800ED1B57D72C00478AAF /* LessonMes */,
 				FA2B31461B4BC5A700C040BD /* CourseListItems */,
 			);
 			name = CourseListVIew;
@@ -283,25 +288,14 @@
 				FA2B314C1B4C02E900C040BD /* WeekDayButton.h */,
 				FA2B314D1B4C02E900C040BD /* WeekDayButton.m */,
 				FA2B314F1B4C030500C040BD /* WeekDayButton.xib */,
-				1873B6DF1B4CDFD900B5E1AE /* VerticalViewCell.h */,
-				1873B6E01B4CDFD900B5E1AE /* VerticalViewCell.m */,
-				1873B6E11B4CDFD900B5E1AE /* VerticalViewCell.xib */,
-				FA3950F31B4D594C0040023C /* CourseCells */,
+				FA5800E31B57A95800478AAF /* LessonButton.h */,
+				FA5800E41B57A95800478AAF /* LessonButton.m */,
+				FA5800E61B57A96C00478AAF /* LessonButton.xib */,
+				FA5800E81B57BEED00478AAF /* SectionPartView.h */,
+				FA5800E91B57BEED00478AAF /* SectionPartView.m */,
+				FA5800EB1B57BF1300478AAF /* SectionPartView.xib */,
 			);
 			name = CourseListItems;
-			sourceTree = "<group>";
-		};
-		FA3950F31B4D594C0040023C /* CourseCells */ = {
-			isa = PBXGroup;
-			children = (
-				FA3950F41B4D5AC60040023C /* EmptyCourseCell.h */,
-				FA3950F51B4D5AC60040023C /* EmptyCourseCell.m */,
-				FA3950F61B4D5AC60040023C /* EmptyCourseCell.xib */,
-				185A592A1B4D84CC00576533 /* CourseViewCell.h */,
-				185A592B1B4D84CC00576533 /* CourseViewCell.m */,
-				185A592C1B4D84CC00576533 /* CourseViewCell.xib */,
-			);
-			name = CourseCells;
 			sourceTree = "<group>";
 		};
 		FA41B0021B4667BC0043A439 = {
@@ -361,6 +355,33 @@
 				FA41B0291B4667BC0043A439 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA5800D81B5794E800478AAF /* Json */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Json;
+			sourceTree = "<group>";
+		};
+		FA5800ED1B57D72C00478AAF /* LessonMes */ = {
+			isa = PBXGroup;
+			children = (
+				FA5800EE1B57D77B00478AAF /* LessonMesViewController.h */,
+				FA5800EF1B57D77B00478AAF /* LessonMesViewController.m */,
+				FA5800F11B57DDD700478AAF /* CardView */,
+			);
+			name = LessonMes;
+			sourceTree = "<group>";
+		};
+		FA5800F11B57DDD700478AAF /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				FA5800F21B57DE1100478AAF /* LessonCardView.h */,
+				FA5800F31B57DE1100478AAF /* LessonCardView.m */,
+				FA5800F51B57DE3D00478AAF /* LessonCardView.xib */,
+			);
+			name = CardView;
 			sourceTree = "<group>";
 		};
 		FA5B71D01B477EB600F6870C /* ERPcells */ = {
@@ -543,23 +564,23 @@
 				FA5B72051B480A8900F6870C /* ERPDUTViewController.xib in Resources */,
 				FA5B71DF1B47841500F6870C /* EmptyTableViewCell.xib in Resources */,
 				FA2992731B4AA5510088DC7E /* CourseListView56.xib in Resources */,
-				185A592E1B4D84CC00576533 /* CourseViewCell.xib in Resources */,
 				FA5B720A1B480A9B00F6870C /* ERPSSDUTViewController.xib in Resources */,
-				FA3950F81B4D5AC60040023C /* EmptyCourseCell.xib in Resources */,
 				FA5B720F1B480AB300F6870C /* ERPNoticeViewController.xib in Resources */,
 				18C7447A1B46F2A900FAAC12 /* ERPViewController.xib in Resources */,
+				FA5800EC1B57BF1300478AAF /* SectionPartView.xib in Resources */,
 				FA41B01A1B4667BC0043A439 /* Main.storyboard in Resources */,
+				FA5800E71B57A96C00478AAF /* LessonButton.xib in Resources */,
 				FA41B01F1B4667BC0043A439 /* LaunchScreen.xib in Resources */,
 				FA5B71DA1B4781F400F6870C /* SmallTableViewCell.xib in Resources */,
 				FA2B31501B4C030500C040BD /* WeekDayButton.xib in Resources */,
 				FA41B01C1B4667BC0043A439 /* Images.xcassets in Resources */,
 				18C744851B46F3FF00FAAC12 /* DiscoveryViewController.xib in Resources */,
+				FA5800F61B57DE3D00478AAF /* LessonCardView.xib in Resources */,
 				FA5B71D51B4781DE00F6870C /* BigTableViewCell.xib in Resources */,
 				FA5B71FB1B480A5900F6870C /* ERPScoreViewController.xib in Resources */,
 				18C7448D1B46F42400FAAC12 /* MineViewController.xib in Resources */,
 				FA5B71F11B4809A600F6870C /* ERPLibraryViewController.xib in Resources */,
 				FA2992751B4AA5EA0088DC7E /* CourseListView67.xib in Resources */,
-				1873B6E31B4CDFD900B5E1AE /* VerticalViewCell.xib in Resources */,
 				FA5B72001B480A7700F6870C /* ERPExamViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,19 +632,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3950F71B4D5AC60040023C /* EmptyCourseCell.m in Sources */,
 				FA2B314E1B4C02E900C040BD /* WeekDayButton.m in Sources */,
 				FA5B720E1B480AB300F6870C /* ERPNoticeViewController.m in Sources */,
 				FA29926F1B4A85A40088DC7E /* CourseListView.m in Sources */,
-				1873B6E21B4CDFD900B5E1AE /* VerticalViewCell.m in Sources */,
 				18C744791B46F2A900FAAC12 /* ERPViewController.m in Sources */,
 				18C744751B46F25000FAAC12 /* TabBarViewController.m in Sources */,
-				185A592D1B4D84CC00576533 /* CourseViewCell.m in Sources */,
 				FA5B71D41B4781DE00F6870C /* BigTableViewCell.m in Sources */,
 				FA5B71FA1B480A5900F6870C /* ERPScoreViewController.m in Sources */,
 				FA5B71D91B4781F400F6870C /* SmallTableViewCell.m in Sources */,
+				FA5800EA1B57BEED00478AAF /* SectionPartView.m in Sources */,
 				FA5B71DE1B47841500F6870C /* EmptyTableViewCell.m in Sources */,
 				FA5B72041B480A8900F6870C /* ERPDUTViewController.m in Sources */,
+				FA5800F41B57DE1100478AAF /* LessonCardView.m in Sources */,
 				FA41B0141B4667BC0043A439 /* AppDelegate.m in Sources */,
 				FA5B71E31B47AB4700F6870C /* UITableView+Register.m in Sources */,
 				18C7448C1B46F42400FAAC12 /* MineViewController.m in Sources */,
@@ -631,8 +651,10 @@
 				FA41B0111B4667BC0043A439 /* main.m in Sources */,
 				FA5B72091B480A9B00F6870C /* ERPSSDUTViewController.m in Sources */,
 				FA5B71EA1B47DFC500F6870C /* ERPCourseViewController.m in Sources */,
+				FA5800F01B57D77B00478AAF /* LessonMesViewController.m in Sources */,
 				18C744841B46F3FF00FAAC12 /* DiscoveryViewController.m in Sources */,
 				FA5B71FF1B480A7700F6870C /* ERPExamViewController.m in Sources */,
+				FA5800E51B57A95800478AAF /* LessonButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
