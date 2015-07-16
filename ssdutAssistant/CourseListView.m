@@ -333,6 +333,7 @@
         CGFloat view_h = view.frame.size.height;
         view.frame = CGRectMake(view_x, view_y, w, view_h);
     }
+    
 }
 
 
