@@ -21,8 +21,11 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     TabBarViewController * mainViewController = [[TabBarViewController alloc]init];
+    
     UINavigationController * rootViewController = [[UINavigationController alloc]initWithRootViewController:mainViewController];
+    
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Optima-Bold" size:20.0]}];
+    
     [[UINavigationBar appearance] setBarTintColor:RGB(37, 37, 37)];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     

@@ -30,7 +30,7 @@
             [self setLineType:0 Height:height];
             break;
         case 3:
-            _iconImgView.image = UIIMGName(@"erp_icon_classArrange");
+            _iconImgView.image = UIIMGName(@"erp_icon_exam");
             _titleLabel.text = @"考试安排";
             [self setLineType:1 Height:height];
             break;

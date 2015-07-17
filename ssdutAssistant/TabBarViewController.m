@@ -39,12 +39,12 @@
                                   mineViewController];
     
     NSArray * selectImg = @[
-                            @"tab_icon_erp_selected",
+                            @"tab_icon_edu_selected",
                             @"tab_icon_discovery_selected",
                             @"tab_icon_mine_selected"];
     
     NSArray * normalImg = @[
-                            @"tab_icon_erp_normal",
+                            @"tab_icon_edu_normal",
                             @"tab_icon_discovery_normal",
                             @"tab_icon_mine_normal"];
     
