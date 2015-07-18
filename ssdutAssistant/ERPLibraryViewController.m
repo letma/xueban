@@ -11,6 +11,7 @@
 @interface ERPLibraryViewController ()<UISearchBarDelegate,UISearchDisplayDelegate,UITableViewDataSource,UITableViewDelegate>
 @property(weak,nonatomic) IBOutlet UISearchBar * searchBar;
 @property(weak,nonatomic) IBOutlet UITableView * borrowTableView;
+@property(nonatomic) UITableView * historyRecordTableView;
 //@property(nonatomic) UISearchDisplayController * searchDisplayCon;
 @end
 
@@ -18,9 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     //self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBar.translucent = NO;
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
 
     //self.view.backgroundColor = [UIColor whiteColor];
@@ -28,18 +30,16 @@
     self.searchBar.delegate = self;
     self.borrowTableView.delegate = self;
     self.borrowTableView.dataSource = self;
-    [self.searchBar sizeToFit];
-   // self.searchBar.frame = CGRectMake(0, 20, 0, 0);
-//    self.searchDisplayController.searchResultsDelegate = self;
-//    self.searchDisplayController.searchResultsDataSource = self;
-    self.searchDisplayController.searchResultsTableView.frame = self.view.frame;
-//    [self.searchDisplayController setActive:NO animated:YES];
+
+
+
+    self.searchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+
     
-    // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning { 
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -64,24 +64,84 @@
     UITableViewCell * cell = [[UITableViewCell alloc]init];
     return cell;
 }
-//-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-//{
-//    searchBar.frame = CGRectMake(0, 20, 0, 0);
-//}
-//
+
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    //self.searchBar.frame = CGRectMake(0, 20, 0, 0);
+
 }
 
 -(void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
 {
-   // self.searchBar.frame = CGRectMake(0, 20, 0, 0);
+       [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(doFireTimer) userInfo:nil repeats:YES];
+
 }
 
+-(void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
+{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+         
+    
+}
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
+    
     return YES;
 }
+
+-(void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
+{
+}
+
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+
+    return YES;
+}
+
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.historyRecordTableView.hidden = YES;
+   //self.historyRecordTableView == NULL;
+}
+
+-(void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+{
+        [NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(hiddenNo) userInfo:nil repeats:NO];
+}
+-(void)hiddenNo
+{
+    self.historyRecordTableView.hidden = NO;
+}
+
+-(void)doFireTimer
+{
+
+    self.historyRecordTableView.hidden = NO;
+
+    if (self.historyRecordTableView == NULL) {
+        for(UIView * dimmigView in self.searchDisplayController.searchResultsTableView.superview.subviews)
+        {
+            NSLog(@"%@",[dimmigView class]);
+            
+            if ([dimmigView isKindOfClass:NSClassFromString(@"_UISearchDisplayControllerDimmingView")]) {
+                
+                self.historyRecordTableView = [[UITableView alloc]init];
+                self.historyRecordTableView.frame = self.searchDisplayController.searchResultsTableView.frame;
+                self.historyRecordTableView.backgroundColor = [UIColor greenColor];
+                self.historyRecordTableView.delegate = self;
+                self.historyRecordTableView.dataSource = self;
+                [dimmigView addSubview:self.historyRecordTableView];
+                
+            }
+        }
+
+    }
+  
+}
+
+
+
 
 @end
