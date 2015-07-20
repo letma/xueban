@@ -53,6 +53,7 @@
 		FA5B720A1B480A9B00F6870C /* ERPSSDUTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B72081B480A9B00F6870C /* ERPSSDUTViewController.xib */; };
 		FA5B720E1B480AB300F6870C /* ERPNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B720C1B480AB300F6870C /* ERPNoticeViewController.m */; };
 		FA5B720F1B480AB300F6870C /* ERPNoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B720D1B480AB300F6870C /* ERPNoticeViewController.xib */; };
+		FA8139311B5CD74600848D96 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8139301B5CD74600848D96 /* NSTimer+Addition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,8 @@
 		FA5B720C1B480AB300F6870C /* ERPNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPNoticeViewController.m; sourceTree = "<group>"; };
 		FA5B720D1B480AB300F6870C /* ERPNoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERPNoticeViewController.xib; sourceTree = "<group>"; };
 		FA5B72101B480C2700F6870C /* ERPHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPHeader.h; sourceTree = "<group>"; };
+		FA81392F1B5CD74600848D96 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
+		FA8139301B5CD74600848D96 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +408,8 @@
 			children = (
 				FA5B71E11B47AB4700F6870C /* UITableView+Register.h */,
 				FA5B71E21B47AB4700F6870C /* UITableView+Register.m */,
+				FA81392F1B5CD74600848D96 /* NSTimer+Addition.h */,
+				FA8139301B5CD74600848D96 /* NSTimer+Addition.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -638,6 +643,7 @@
 				18C744791B46F2A900FAAC12 /* ERPViewController.m in Sources */,
 				18C744751B46F25000FAAC12 /* TabBarViewController.m in Sources */,
 				FA5B71D41B4781DE00F6870C /* BigTableViewCell.m in Sources */,
+				FA8139311B5CD74600848D96 /* NSTimer+Addition.m in Sources */,
 				FA5B71FA1B480A5900F6870C /* ERPScoreViewController.m in Sources */,
 				FA5B71D91B4781F400F6870C /* SmallTableViewCell.m in Sources */,
 				FA5800EA1B57BEED00478AAF /* SectionPartView.m in Sources */,

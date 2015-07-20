@@ -24,7 +24,7 @@
                 </tableView>
                 <searchBar contentMode="redraw" placeholder="小马哥好帅啊" translatesAutoresizingMaskIntoConstraints="NO" id="UxK-CG-zXM">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="barTintColor" red="0.87973928450000005" green="0.87975996729999995" blue="0.87974882129999998" alpha="1" colorSpace="deviceRGB"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -32,7 +32,7 @@
                     </connections>
                 </searchBar>
             </subviews>
-            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="UxK-CG-zXM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3rz-ca-r7f"/>
                 <constraint firstItem="UxK-CG-zXM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3to-rr-8Df"/>
@@ -42,7 +42,7 @@
                 <constraint firstAttribute="trailing" secondItem="UxK-CG-zXM" secondAttribute="trailing" id="O7C-Zn-6UK"/>
                 <constraint firstItem="wzG-JH-mKO" firstAttribute="top" secondItem="UxK-CG-zXM" secondAttribute="bottom" id="Yjq-9o-z8F"/>
             </constraints>
-            <point key="canvasLocation" x="297" y="350"/>
+            <point key="canvasLocation" x="331" y="349"/>
         </view>
         <searchDisplayController id="x2U-a2-83l">
             <connections>

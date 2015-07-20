@@ -7,11 +7,13 @@
 //
 
 #import "ERPLibraryViewController.h"
+#import "NSTimer+Addition.h"
 
 @interface ERPLibraryViewController ()<UISearchBarDelegate,UISearchDisplayDelegate,UITableViewDataSource,UITableViewDelegate>
 @property(weak,nonatomic) IBOutlet UISearchBar * searchBar;
 @property(weak,nonatomic) IBOutlet UITableView * borrowTableView;
 @property(nonatomic) UITableView * historyRecordTableView;
+@property(nonatomic,strong) NSTimer * historyInitTimer;
 //@property(nonatomic) UISearchDisplayController * searchDisplayCon;
 @end
 
@@ -35,6 +37,14 @@
 
     self.searchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    //调整searchbar边框
+    for (UIView * v in ((UIView *)self.searchBar.subviews[0]).subviews) {
+        if ([v isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+             [v layer].borderColor = [UIColor whiteColor].CGColor;
+            [v layer].borderWidth = 0.5;
+        }
+        
+    }
 
     
 }
@@ -73,7 +83,7 @@
 -(void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
 {
        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
-    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(doFireTimer) userInfo:nil repeats:YES];
+    self.historyInitTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(doFireTimer) userInfo:nil repeats:YES];
 
 }
 
@@ -108,7 +118,8 @@
 
 -(void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
 {
-        [NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(hiddenNo) userInfo:nil repeats:NO];
+        //[NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(hiddenNo) userInfo:nil repeats:NO];
+    [self performSelector:@selector(hiddenNo) withObject:self afterDelay:0.1];
 }
 -(void)hiddenNo
 {
@@ -118,7 +129,7 @@
 -(void)doFireTimer
 {
 
-    self.historyRecordTableView.hidden = NO;
+    //self.historyRecordTableView.hidden = NO;
 
     if (self.historyRecordTableView == NULL) {
         for(UIView * dimmigView in self.searchDisplayController.searchResultsTableView.superview.subviews)
@@ -137,10 +148,17 @@
             }
         }
 
+    }else{
+      // [self performSelector:@selector(pauseHistoryTimer) withObject:self afterDelay:0.1];
+
     }
   
 }
 
+-(void)pauseHistoryTimer
+{
+    [self.historyInitTimer pauseTimer];
+}
 
 
 
