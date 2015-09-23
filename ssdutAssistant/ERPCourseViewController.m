@@ -42,11 +42,9 @@
     if([self.userDefualts boolForKey:IF_CourseHave]){
         [self addCourseListWith:[self.userDefualts objectForKey:MyCourse_Key]];
     }else{
-        [self ConnectDlut];
+        
     }
-    //[self addCourseList];
-    
-    
+    [self ConnectDlut];
     
     [self.courseView insertLessonsWithCourse:@"小马哥ios大讲堂小马哥ios大讲堂小马哥ios大讲堂" Local:@"OurEDA实验室" ColorIndex:0 weekDay:0 lesson:0 number:4 ifCover:YES];
     
@@ -61,9 +59,15 @@
 }
 
 #pragma mark - AddCourseList
--(void)addCourseListWith:(NSArray *)courseDic
+-(void)addCourseListWith:(NSArray *)courseArr
 {
-    //NSDictionary * courseDic = [self.userDefualts objectForKey:MyCourse_Key];
+    //去除掉尔雅的数组
+    NSArray * realCourseList = [[NSArray alloc]init];;
+    for(NSInteger i = 0 ; i < [courseArr count] ; i ++)
+    {
+        
+    }
+    
 }
 
 #pragma mark - NSUrlConnection
