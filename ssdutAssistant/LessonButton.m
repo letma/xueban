@@ -11,14 +11,22 @@
 
 @property (nonatomic) IBOutlet UILabel * courseLabel;
 @property (nonatomic) IBOutlet UILabel * localLabel;
+@property (nonatomic) IBOutlet UIImageView * cornerView;
 @end
 @implementation LessonButton
 
--(void)setCourse:(NSString *)courseStr Local:(NSString *)localStr BackgroundColor:(NSInteger)colorValue
+-(void)setCourse:(NSString *)courseStr Local:(NSString *)localStr BackgroundColor:(NSInteger)colorValue IfCover:(BOOL)ifCover CornerIndex:(NSInteger)cornerIndex
 {
+    NSString * cornerImgName = [NSString stringWithFormat:@"corner_icon_%ld",cornerIndex];
+  
     self.backgroundColor = UIColorFromRGB(colorValue);
     self.courseLabel.text = courseStr;
     self.localLabel.text = localStr;
+    
+    if (ifCover) {
+        self.cornerView.image = UIIMGName(cornerImgName);
+    }
+
     
 }
 

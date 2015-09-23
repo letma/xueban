@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="DiscoveryTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discovery_icon_schoolmate" translatesAutoresizingMaskIntoConstraints="NO" id="zwD-Y2-qjo">
+                        <rect key="frame" x="40" y="15" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="JEC-4J-49W"/>
+                            <constraint firstAttribute="width" constant="20" id="SAC-JE-bZx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="校园广场" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8r-fC-YyY">
+                        <rect key="frame" x="80" y="9" width="60" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="g8F-gk-451"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j86-cO-uWc" userLabel="lineView">
+                        <rect key="frame" x="20" y="48" width="280" height="1"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="xat-eQ-gPV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zwD-Y2-qjo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="0il-x5-UjQ"/>
+                    <constraint firstAttribute="centerY" secondItem="zwD-Y2-qjo" secondAttribute="centerY" id="5MD-KG-aZH"/>
+                    <constraint firstItem="y8r-fC-YyY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="6OM-2A-TSP"/>
+                    <constraint firstItem="j86-cO-uWc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="6r7-Hv-iOp"/>
+                    <constraint firstItem="y8r-fC-YyY" firstAttribute="leading" secondItem="zwD-Y2-qjo" secondAttribute="trailing" constant="20" id="ABh-Hu-ofv"/>
+                    <constraint firstAttribute="bottom" secondItem="j86-cO-uWc" secondAttribute="bottom" id="AP6-Tb-SY4"/>
+                    <constraint firstAttribute="trailing" secondItem="j86-cO-uWc" secondAttribute="trailing" constant="20" id="QRj-Qi-QWf"/>
+                    <constraint firstAttribute="bottom" secondItem="y8r-fC-YyY" secondAttribute="bottom" constant="10" id="uxR-9A-3xz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="headView" destination="zwD-Y2-qjo" id="Uce-Aa-31r"/>
+                <outlet property="lineView" destination="j86-cO-uWc" id="cbN-xF-MvI"/>
+                <outlet property="titleLabel" destination="y8r-fC-YyY" id="oTR-ye-9La"/>
+            </connections>
+            <point key="canvasLocation" x="104" y="216"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="discovery_icon_schoolmate" width="32" height="32"/>
+    </resources>
+</document>

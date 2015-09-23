@@ -28,7 +28,7 @@
 /*
  *设置cell的课程名 上课地点 背景颜色
  */
--(void)setCourse:(NSString *)courseStr Local:(NSString *)localStr BackgroundColor:(NSInteger)colorValue;
+-(void)setCourse:(NSString *)courseStr Local:(NSString *)localStr BackgroundColor:(NSInteger)colorValue IfCover:(BOOL)ifCover CornerIndex:(NSInteger)cornerIndex;
 
 -(void)setCourseFont:(CGFloat)courseSize LocalFont:(CGFloat)localSize;
 @end

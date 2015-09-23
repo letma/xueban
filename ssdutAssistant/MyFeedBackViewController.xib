@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyFeedBackViewController">
+            <connections>
+                <outlet property="contentTV" destination="zJc-g0-U01" id="qzw-dI-ra5"/>
+                <outlet property="feedBackBtn" destination="d8h-dp-m12" id="F2f-vf-vbK"/>
+                <outlet property="feedBackView" destination="nfc-Dn-zc2" id="PPw-dT-MIn"/>
+                <outlet property="holderLabel" destination="NiM-qo-FTU" id="fML-uW-GzI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfc-Dn-zc2" userLabel="FeedBackView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mine_feedback" translatesAutoresizingMaskIntoConstraints="NO" id="r9J-md-Bhd">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xz9-bj-BON" userLabel="ContentBackground">
+                            <rect key="frame" x="0.0" y="220" width="320" height="95"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJc-g0-U01" userLabel="ContentTV">
+                                    <rect key="frame" x="10" y="10" width="300" height="75"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击输入您的宝贵意见" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiM-qo-FTU">
+                                    <rect key="frame" x="15" y="18" width="290" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="NiM-qo-FTU" secondAttribute="trailing" constant="15" id="8LH-Ng-fNQ"/>
+                                <constraint firstItem="NiM-qo-FTU" firstAttribute="top" secondItem="Xz9-bj-BON" secondAttribute="top" constant="18" id="HDY-hk-N15"/>
+                                <constraint firstItem="NiM-qo-FTU" firstAttribute="leading" secondItem="Xz9-bj-BON" secondAttribute="leading" constant="15" id="Lus-5w-jwr"/>
+                                <constraint firstAttribute="bottom" secondItem="zJc-g0-U01" secondAttribute="bottom" constant="10" id="SD7-A9-lqZ"/>
+                                <constraint firstItem="zJc-g0-U01" firstAttribute="top" secondItem="Xz9-bj-BON" secondAttribute="top" constant="10" id="dvr-IQ-oer"/>
+                                <constraint firstAttribute="trailing" secondItem="zJc-g0-U01" secondAttribute="trailing" constant="10" id="hha-NB-eLv"/>
+                                <constraint firstItem="zJc-g0-U01" firstAttribute="leading" secondItem="Xz9-bj-BON" secondAttribute="leading" constant="10" id="pOY-ed-qoe"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8h-dp-m12">
+                            <rect key="frame" x="20" y="335" width="280" height="48"/>
+                            <color key="backgroundColor" red="0.086274509803921567" green="0.6705882352941176" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <state key="normal" title="反 馈">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="r9J-md-Bhd" firstAttribute="leading" secondItem="nfc-Dn-zc2" secondAttribute="leading" id="8Ph-sH-191"/>
+                        <constraint firstItem="Xz9-bj-BON" firstAttribute="top" secondItem="r9J-md-Bhd" secondAttribute="bottom" constant="30" id="GPk-SN-f5I"/>
+                        <constraint firstItem="d8h-dp-m12" firstAttribute="leading" secondItem="nfc-Dn-zc2" secondAttribute="leading" constant="20" id="IOj-b8-hCe"/>
+                        <constraint firstAttribute="width" secondItem="r9J-md-Bhd" secondAttribute="height" multiplier="1083:644" id="JIy-Nr-EUy"/>
+                        <constraint firstItem="r9J-md-Bhd" firstAttribute="top" secondItem="nfc-Dn-zc2" secondAttribute="top" id="LLY-O6-Jua"/>
+                        <constraint firstItem="d8h-dp-m12" firstAttribute="height" secondItem="Xz9-bj-BON" secondAttribute="height" multiplier="1:2" id="Ohw-Ju-chM"/>
+                        <constraint firstItem="d8h-dp-m12" firstAttribute="top" secondItem="Xz9-bj-BON" secondAttribute="bottom" constant="20" id="Q0h-VP-jNN"/>
+                        <constraint firstItem="Xz9-bj-BON" firstAttribute="height" secondItem="r9J-md-Bhd" secondAttribute="height" multiplier="1:2" id="QZC-u0-9aj"/>
+                        <constraint firstItem="Xz9-bj-BON" firstAttribute="leading" secondItem="nfc-Dn-zc2" secondAttribute="leading" id="S0L-BI-UMB"/>
+                        <constraint firstAttribute="trailing" secondItem="d8h-dp-m12" secondAttribute="trailing" constant="20" id="q5U-kU-nnJ"/>
+                        <constraint firstAttribute="trailing" secondItem="r9J-md-Bhd" secondAttribute="trailing" id="tOy-wM-B5G"/>
+                        <constraint firstAttribute="trailing" secondItem="Xz9-bj-BON" secondAttribute="trailing" id="yHr-PK-QAj"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Mxx-gz-NYs" appends="YES" id="OE8-ew-Kkb"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nfc-Dn-zc2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="B92-5Q-Nv2"/>
+                <constraint firstAttribute="bottom" secondItem="nfc-Dn-zc2" secondAttribute="bottom" id="GTO-iW-Mnd"/>
+                <constraint firstItem="nfc-Dn-zc2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jXs-tx-njj"/>
+                <constraint firstAttribute="trailing" secondItem="nfc-Dn-zc2" secondAttribute="trailing" id="nfo-Tq-0Q0"/>
+            </constraints>
+            <point key="canvasLocation" x="706" y="240"/>
+        </view>
+        <tapGestureRecognizer id="Mxx-gz-NYs">
+            <connections>
+                <action selector="tapDo:" destination="-1" id="T4n-y4-fh0"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="icon_mine_feedback" width="541" height="322"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

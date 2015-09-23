@@ -13,6 +13,8 @@
 @interface ERPViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong) IBOutlet UITableView * mainTableView;
 
+@property(nonatomic,strong) NSUserDefaults * userDefaults;
+
 @end
 
 @implementation ERPViewController
@@ -20,10 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.title = @"学伴";
+    
+    self.userDefaults = [NSUserDefaults standardUserDefaults];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self registerNibCell];
     _mainTableView.dataSource = self;
     _mainTableView.delegate = self;
+    
+    
    
 
 }
@@ -36,6 +43,7 @@
 }
 
 - (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -45,6 +53,7 @@
     [self.mainTableView registerNibWithClass:[BigTableViewCell class]];
     [self.mainTableView registerNibWithClass:[SmallTableViewCell class]];
     [self.mainTableView registerNibWithClass:[EmptyTableViewCell class]];
+    [self.mainTableView registerNibWithClass:[ERPCommonTableViewCell class]];
 }
 
 #pragma mark - TableViewDataSource
@@ -55,42 +64,26 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 9 ;
+    return 3 ;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        BigTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"BigTableViewCell" forIndexPath:indexPath];
-        
-        [cell.courseListBtn addTarget:self action:@selector(pushToCourse) forControlEvents:UIControlEventTouchUpInside];
-        [cell.libraryBtn addTarget:self action:@selector(pushToLibrary) forControlEvents:UIControlEventTouchUpInside];
+
+        ERPCommonTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ERPCommonTableViewCell" forIndexPath:indexPath];
+    [cell setCellType:indexPath.row];
+    
+    [cell.leftBtn addTarget:self action:@selector(leftBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.rightBtn addTarget:self action:@selector(rightBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
+//        [cell.courseListBtn addTarget:self action:@selector(pushToCourse) forControlEvents:UIControlEventTouchUpInside];
+    
+//
+//        [cell.libraryBtn addTarget:self action:@selector(pushToLibrary) forControlEvents:UIControlEventTouchUpInside];
         
         return cell;
         
-    }else if (indexPath.row == 1 || indexPath.row == 4 || indexPath.row == 8)
-    {
-        EmptyTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"EmptyTableViewCell" forIndexPath:indexPath];
-        
-        return cell;
-    }else{
-        
-        CGFloat height ;
-        
-        if (WINWIDTH > 375) {
-            height = 75;
-        }else if(WINWIDTH == 375){
-            height = 60;
-        }else{
-            height = 50;
-        }
-        
-        //根据所在的row进行设置
-        SmallTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SmallTableViewCell" forIndexPath:indexPath];
-        [cell setCellType:indexPath.row Height:height];
-        return cell;
-        
-    }
+   
     
 
     
@@ -98,76 +91,103 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.row) {
-        case 0:
-        {
-            return 70+WINWIDTH/2.0-110;
-            break;
+    
+    if (WINHEIGHT == 480) {
+        return (WINHEIGHT - 49 - 64)/3.0 ;
+    }else{
+        return (WINHEIGHT - 49 - 64)/4.0 ;
+    }
+
+}
+
+#pragma mark - UIButton
+- (void)leftBtnSelected:(UIButton *)button
+{
+    
+    if ([self.userDefaults boolForKey:IF_Login]) {
+        NSString * viewControllerStr;
+        
+        switch (button.tag) {
+            case 0:
+                viewControllerStr = @"ERPSSDUTViewController";
+                break;
+            case 2:
+                viewControllerStr = @"ERPExamViewController";
+                break;
+            case 4:
+                viewControllerStr = @"ERPDUTViewController";
+                break;
+                
+            default:
+                break;
         }
-        case 1:case 4:case 8:
-        {
-            return 20;
-            break;
-        }
-        default:
-        {
-            if (WINWIDTH > 375) {
-                return 75;
-            }else if(WINWIDTH ==375){
-                return 60;
-            } else {
-                return 50;
-            }
-            
-            break;
-        }
+        
+        UIViewController * viewController = [[NSClassFromString(viewControllerStr) alloc]init];
+        [self.navigationController pushViewController:viewController animated:YES];
+        
+    }else{
+        SignInViewController * signInController  = [[SignInViewController alloc]init];
+        [self presentViewController:signInController animated:YES completion:nil];
     }
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)rightBtnSelected:(UIButton *)button
 {
-    
-    NSString * controllerName ;
-    switch (indexPath.row) {
-        case 2:
-            controllerName = @"ERPScoreViewController";
-            break;
-        case 3:
-            controllerName = @"ERPExamViewController";
-            break;
-        case 5:
-            controllerName = @"ERPDUTViewController";
-            break;
-        case 6:
-            controllerName = @"ERPSSDUTViewController";
-            break;
-        case 7:
-            controllerName = @"ERPNoticeViewController";
-            break;
-            
-        default:
-            break;
+    if ([self.userDefaults boolForKey:IF_Login]) {
+        
+        NSString * viewControllerStr;
+        
+        switch (button.tag) {
+            case 1:
+                viewControllerStr = @"ERPNoticeViewController";
+                break;
+            case 3:
+                viewControllerStr = @"ERPScoreViewController";
+                break;
+            case 5:
+                viewControllerStr = @"";
+                break;
+                
+            default:
+                break;
+        }
+        UIViewController * viewController = [[NSClassFromString(viewControllerStr) alloc]init];
+        [self.navigationController pushViewController:viewController animated:YES];
+        
+    }else{
+        SignInViewController * signInController  = [[SignInViewController alloc]init];
+        [self presentViewController:signInController animated:YES completion:nil];
     }
-    
-    
-    UIViewController * viewController = [[NSClassFromString(controllerName) alloc]init];
-    [self.navigationController pushViewController:viewController animated:YES];
-    
-    [self.mainTableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 
 #pragma mark - 课程表 ＋ 图书馆
--(void)pushToCourse
+-(IBAction)pushToCourse:(id)sender
 {
-    ERPCourseViewController * viewController = [[ERPCourseViewController alloc]init];
-    [self.navigationController pushViewController:viewController animated:YES];
+
+    if ([self.userDefaults boolForKey:IF_Login]) {
+        ERPCourseViewController * viewController = [[ERPCourseViewController alloc]init];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }else{
+        SignInViewController * signInController  = [[SignInViewController alloc]init];
+        [self presentViewController:signInController animated:YES completion:nil];
+    }
+
 }
--(void)pushToLibrary
+-(IBAction)pushToLibrary:(id)sender
 {
-    ERPLibraryViewController * viewController = [[ERPLibraryViewController alloc]init];
-    [self.navigationController pushViewController:viewController animated:YES];
+    if ([self.userDefaults boolForKey:IF_Login]) {
+        ERPLibraryViewController * viewController = [[ERPLibraryViewController alloc]init];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }else{
+        SignInViewController * signInController  = [[SignInViewController alloc]init];
+        [self presentViewController:signInController animated:YES completion:nil];
+    }
+
+
 }
+
+
 /*
 #pragma mark - Navigation
 

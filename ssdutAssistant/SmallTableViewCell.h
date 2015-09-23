@@ -22,5 +22,4 @@
  */
 -(void)setCellType:(NSInteger)cellIndex Height:(CGFloat)height;
 
-//+(void)setCellHeight:(CGFloat);
 @end

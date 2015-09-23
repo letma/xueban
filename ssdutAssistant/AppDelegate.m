@@ -18,21 +18,39 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+//    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+//    [userDefaults setObject:@"OurEDA" forKey:Token_Str];
+//    [userDefaults setBool:NO forKey:IF_Login];
+//    [userDefaults synchronize];
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     TabBarViewController * mainViewController = [[TabBarViewController alloc]init];
     
     UINavigationController * rootViewController = [[UINavigationController alloc]initWithRootViewController:mainViewController];
+    rootViewController.delegate = self;
+    
+
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Optima-Bold" size:20.0]}];
     
-    [[UINavigationBar appearance] setBarTintColor:RGB(37, 37, 37)];
+    [[UINavigationBar appearance] setBarTintColor:RGB(45, 45, 45)];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
+
+//    [UINavigationBar appearance].layer.shadowColor = [UIColor redColor].CGColor;
+//    [UINavigationBar appearance].layer.shadowOffset = CGSizeMake(5.0f , 5.0f); //shadowOffset阴影偏移x，y向(上/下)偏移(-/+)2
+//    [UINavigationBar appearance].layer.shadowOpacity = 0.8f;//阴影透明度，默认0
+//    [UINavigationBar appearance].layer.shadowRadius = 4.0f;//阴影半径
+  
     //NSLog(@"++%f",WINWIDTH);
     
     self.window.rootViewController = rootViewController;
     return YES;
+}
+
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    navigationController.navigationBar.translucent = NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

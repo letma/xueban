@@ -11,6 +11,14 @@
             <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKH-BO-PEz" userLabel="cornerImageView">
+                    <rect key="frame" x="40" y="0.0" width="10" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="Xlg-Ul-jDW"/>
+                        <constraint firstAttribute="height" constant="20" id="d57-O5-1oX"/>
+                    </constraints>
+                </imageView>
                 <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="小马哥ios大讲堂" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Z-jb-8hh" userLabel="courseLabel">
                     <rect key="frame" x="7" y="5" width="36" height="17"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -32,13 +40,16 @@
                 <constraint firstItem="8pk-3D-Xum" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7" id="QkI-PQ-b0G"/>
                 <constraint firstItem="Y3Z-jb-8hh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7" id="TbD-2e-Joe"/>
                 <constraint firstItem="8pk-3D-Xum" firstAttribute="top" secondItem="Y3Z-jb-8hh" secondAttribute="bottom" constant="2" id="WZo-by-DqO"/>
+                <constraint firstAttribute="trailing" secondItem="KKH-BO-PEz" secondAttribute="trailing" id="X6e-DH-wfu"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8pk-3D-Xum" secondAttribute="bottom" priority="900" constant="5" id="XfR-xH-IaW"/>
                 <constraint firstItem="Y3Z-jb-8hh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Yhx-Nq-5K8"/>
+                <constraint firstItem="KKH-BO-PEz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fDm-ph-iqt"/>
                 <constraint firstAttribute="trailing" secondItem="Y3Z-jb-8hh" secondAttribute="trailing" constant="7" id="lRW-W8-kHP"/>
                 <constraint firstAttribute="trailing" secondItem="8pk-3D-Xum" secondAttribute="trailing" constant="7" id="rZQ-LP-4iI"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cornerView" destination="KKH-BO-PEz" id="xhN-tG-XrS"/>
                 <outlet property="courseLabel" destination="Y3Z-jb-8hh" id="80y-Zk-a5m"/>
                 <outlet property="localLabel" destination="8pk-3D-Xum" id="GE6-yg-j0z"/>
             </connections>

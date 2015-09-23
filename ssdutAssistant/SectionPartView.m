@@ -18,6 +18,7 @@
 {
     self.timeLabel.font = [UIFont systemFontOfSize:timeSize];
     self.sectionLabel.font = [UIFont systemFontOfSize:sectionSize];
+    
 }
 
 - (void)initSectionViewWithIndex:(NSInteger)index
@@ -52,6 +53,7 @@
     
     self.timeLabel.text = [timeArr objectAtIndex:index];
     self.sectionLabel.text = [sectionArr objectAtIndex:index];
+    //self.sectionLabel.textColor = [UIColor whiteColor];
     
 }
 

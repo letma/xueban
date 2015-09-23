@@ -34,7 +34,11 @@
 /*
  *添加课程
  */
--(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num;
+-(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num ifCover:(BOOL)ifCover;
 
+/*
+ *根据内容 及周次添加课程
+ */
+-(void)loadCourseWithContent:(NSDictionary *)contentDic WithWeekIndex:(NSInteger)weekIndex;
 
 @end

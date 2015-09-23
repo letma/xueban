@@ -8,6 +8,7 @@
 
 #import "TabBarViewController.h"
 #import "ERPViewController.h"
+#import "ERPViewController4s.h"
 #import "DiscoveryViewController.h"
 #import "MineViewController.h"
 
@@ -25,18 +26,29 @@
    // [[UITabBar appearance] setBarTintColor:[UIColor redColor]];
     self.tabBar.barTintColor = [UIColor whiteColor];
     
+     
+    
     self.tabBar.tintColor = UIColorFromRGB(0x00bad1);
     
     ERPViewController * erpViewController = [[ERPViewController alloc]init];
+    
+    ERPViewController4s * erpViewController4s = [[ERPViewController4s alloc]init];
     
     DiscoveryViewController * discoveryViewController = [[DiscoveryViewController alloc]init];
     
     MineViewController * mineViewController = [[MineViewController alloc]init];
     
-    NSArray * viewControllers = @[
-                                  erpViewController,
-                                  discoveryViewController,
-                                  mineViewController];
+    NSArray * viewControllers;
+    if (WINHEIGHT == 480) {
+        viewControllers = @[erpViewController4s,
+                                      discoveryViewController,
+                                      mineViewController];
+    }else{
+        viewControllers = @[erpViewController,
+                            discoveryViewController,
+                            mineViewController];
+    }
+
     
     NSArray * selectImg = @[
                             @"tab_icon_edu_selected",

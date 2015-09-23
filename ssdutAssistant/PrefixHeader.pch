@@ -13,4 +13,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import "Global.h"
 
+#import "UITableView+Register.h"
+#import "ImageProcess.h"
+
+#import "SignInViewController.h"
 #endif

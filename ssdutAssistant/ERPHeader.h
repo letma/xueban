@@ -12,6 +12,8 @@
 #import "BigTableViewCell.h"
 #import "SmallTableViewCell.h"
 #import "EmptyTableViewCell.h"
+#import "ERPCommonTableViewCell.h"
+
 #import "UITableView+Register.h"
 #import "ERPCourseViewController.h"
 #import "ERPLibraryViewController.h"

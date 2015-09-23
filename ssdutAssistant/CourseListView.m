@@ -93,26 +93,27 @@
 
 -(void)setColorArray
 {
+    //12个
     colorArray = @[
-                   @0xe477c3,
-                   @0x01b3ee,
-                   @0xff8d41,
-                   @0x91c607,
-                   @0xf87d8a,
-                   @0xba8adf,
-                   @0xfbab4a,
-                   @0x00bff3,
-                   @0xb3ce1d,
-                   @0xf26d7e,
-                   @0xffba07,
-                   @0x36b1c0,
+                   @0xE675C4,
+                   @0x03B2EE,
+                   @0xFF8D41,
+                   @0x91C605,
+                   @0xF87D8A,
+                   @0xBA8ADF,
+                   @0xFAAB4B,
+                   @0x03BFF3,
+                   @0xB3CE1C,
+                   @0xF16D7F,
+                   @0xFFBB07,
+                   @0x68DDAB,
                    @0x6ddab,
                    @0xf36861,
                    @0x53d37e,
                    @0x13ca9a];
 }
 
--(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num
+-(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num ifCover:(BOOL)ifCover
 {
     NSArray * nibArray = [[NSBundle mainBundle]loadNibNamed:@"LessonButton" owner:self options:nil];
     LessonButton * btn = [nibArray objectAtIndex:0];
@@ -123,7 +124,7 @@
         btn.frame = CGRectMake(0 , (weekDayHeight+1) * lesson, weekDayWidth+WINWIDTH/64.0*7.0, (weekDayHeight + 1) * num);
     }
     NSString * localStr = [NSString stringWithFormat:@"@%@",local];
-    [btn setCourse:course Local:localStr BackgroundColor:[[colorArray objectAtIndex:index] integerValue]];
+    [btn setCourse:course Local:localStr BackgroundColor:[[colorArray objectAtIndex:index] integerValue] IfCover:ifCover  CornerIndex:index];
     [btn addTarget:self action:@selector(toCourseMes:) forControlEvents:UIControlEventTouchUpInside];
     [((UIView *)[viewsArray objectAtIndex:weekDay]) addSubview:btn];
 }
