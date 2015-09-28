@@ -39,6 +39,6 @@
 /*
  *根据内容 及周次添加课程
  */
--(void)loadCourseWithContent:(NSDictionary *)contentDic WithWeekIndex:(NSInteger)weekIndex;
+-(void)loadCourseWithContent:(NSArray *)contentArr WithWeekIndex:(NSInteger)weekIndex;
 
 @end

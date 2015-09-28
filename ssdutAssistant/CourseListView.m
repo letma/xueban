@@ -86,6 +86,14 @@
 
 }
 
+//通过数组添加课程
+-(void)loadCourseWithContent:(NSArray *)contentArr WithWeekIndex:(NSInteger)weekIndex
+{
+    for (NSInteger i = 0 ; i < [contentArr count] ; i ++) {
+        ;
+    }
+}
+
 -(void)adjustWeekDayBarAndSectionView
 {
     self.horizonScrollView.contentOffset = CGPointMake(0, 0);

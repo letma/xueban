@@ -40,11 +40,13 @@
     self.courseView.frame = RECT(0, 0, WINWIDTH, WINHEIGHT);
     
     if([self.userDefualts boolForKey:IF_CourseHave]){
+        
         [self addCourseListWith:[self.userDefualts objectForKey:MyCourse_Key]];
+        
     }else{
         
     }
-    [self ConnectDlut];
+    //[self ConnectDlut];
     
     [self.courseView insertLessonsWithCourse:@"小马哥ios大讲堂小马哥ios大讲堂小马哥ios大讲堂" Local:@"OurEDA实验室" ColorIndex:0 weekDay:0 lesson:0 number:4 ifCover:YES];
     
@@ -61,13 +63,64 @@
 #pragma mark - AddCourseList
 -(void)addCourseListWith:(NSArray *)courseArr
 {
-    //去除掉尔雅的数组
-    NSArray * realCourseList = [[NSArray alloc]init];;
+    NSLog(@"+++++%@",courseArr);
+   
+    NSMutableArray * realCourseList = [[NSMutableArray alloc]init];;
     for(NSInteger i = 0 ; i < [courseArr count] ; i ++)
     {
-        
+         //去除掉尔雅的数组
+        if ([[[courseArr objectAtIndex:i] objectForKey:@"Lesson"] count] > 0 ) {
+            //开始将一周多节课的课程按照每一节课分开
+            if ([[[courseArr objectAtIndex:i] objectForKey:@"Lesson"] count] > 1) {
+                
+                for (NSInteger j = 0; j < [[[courseArr objectAtIndex:i] objectForKey:@"Lesson"] count]; j ++) {
+                    //NSMutableDictionary * mutDic =(NSMutableDictionary *)[courseArr objectAtIndex:i];
+                    NSMutableDictionary * mutDic = [[NSMutableDictionary alloc] initWithDictionary:[courseArr objectAtIndex:i]];
+                    [mutDic removeObjectForKey:@"Lesson"];
+                    [mutDic setObject:[[[courseArr objectAtIndex:i] objectForKey:@"Lesson"] objectAtIndex:j] forKey:@"Lesson"];
+                    [realCourseList addObject:mutDic];
+                }
+                
+            }else{
+                [realCourseList addObject:[courseArr objectAtIndex:i]];
+            }
+        }
     }
     
+    //冒泡排序
+    for (NSInteger i = 0 ;  i < ([realCourseList count] - 2) ; i ++) {
+        for (NSInteger j = 0 ; j < ([realCourseList count] - 2 - i) ; j ++) {
+            if ([[[realCourseList objectAtIndex:j] objectForKey:@"Lesson"] objectForKey:@"WeekDay"] > [[[realCourseList objectAtIndex:j + 1] objectForKey:@"Lesson"] objectForKey:@"WeekDay"]) {
+                
+                NSDictionary * tempDic = [[NSDictionary alloc]initWithDictionary:[realCourseList objectAtIndex:j]];
+                [realCourseList replaceObjectAtIndex:j withObject:[realCourseList objectAtIndex:j + 1]];
+                [realCourseList replaceObjectAtIndex:j + 1 withObject:tempDic];
+                
+            }else if ([[[realCourseList objectAtIndex:j] objectForKey:@"Lesson"] objectForKey:@"WeekDay"] ==[[[realCourseList objectAtIndex:j + 1] objectForKey:@"Lesson"] objectForKey:@"WeekDay"]) {
+                
+                if ([[[realCourseList objectAtIndex:j] objectForKey:@"Lesson"] objectForKey:@"Section"] > [[[realCourseList objectAtIndex:j + 1] objectForKey:@"Lesson"] objectForKey:@"Section"]) {
+                    
+                    NSDictionary * tempDic = [[NSDictionary alloc]initWithDictionary:[realCourseList objectAtIndex:j]];
+                    [realCourseList replaceObjectAtIndex:j withObject:[realCourseList objectAtIndex:j + 1]];
+                    [realCourseList replaceObjectAtIndex:j + 1 withObject:tempDic];
+                }
+            }
+        }
+    }
+    
+    //打印
+    NSArray * keyArray = @[@"Name",@"Teacher",@"Type",@"Classroom",@"Credit",@"Location",@"Lesson"];
+    
+    for (NSInteger i = 0 ; i < [realCourseList count] ; i ++) {
+        NSLog(@"///////////////////////////////");
+        NSDictionary * dic = [realCourseList objectAtIndex:i];
+        
+        for (NSInteger j = 0; j < [keyArray count]; j ++) {
+            NSLog(@"%@",[dic objectForKey:[keyArray objectAtIndex:j]]);
+        }
+        
+    }
+
 }
 
 #pragma mark - NSUrlConnection
@@ -97,7 +150,7 @@
 {
     [super viewDidAppear:animated];
 
-    NSLog(@"---------------------");
+    //NSLog(@"---------------------");
 }
 
 - (void)didReceiveMemoryWarning {

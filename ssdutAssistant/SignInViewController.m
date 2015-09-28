@@ -283,6 +283,8 @@
                 //NSLog(@"%@",contentDic);
                 if ([[contentDic objectForKey:@"status"] boolValue]) {
                     NSArray * courseArr = [contentDic objectForKey:@"msg"];
+                    [self.userDefaults setObject:courseArr forKey:MyCourse_Key];
+                    
                     
 //                    NSArray * keyArray = @[@"Name",@"Teacher",@"Type",@"Classroom",@"Credit",@"Location",@"Lesson"];
 //                    
