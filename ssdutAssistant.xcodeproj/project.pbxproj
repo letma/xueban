@@ -101,10 +101,14 @@
 		FACB038F1BA810FD00C8BE63 /* NetworkingNoticeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACB038E1BA810FD00C8BE63 /* NetworkingNoticeView.xib */; };
 		FACB03921BA857FC00C8BE63 /* FreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB03911BA857FC00C8BE63 /* FreshView.m */; };
 		FACB03941BA8582700C8BE63 /* FreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACB03931BA8582700C8BE63 /* FreshView.xib */; };
+		FACD9AEA1BBAC1E300DD5E85 /* ChangeWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD9AE91BBAC1E300DD5E85 /* ChangeWeekView.m */; };
+		FACD9AEC1BBAC20E00DD5E85 /* ChangeWeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD9AEB1BBAC20E00DD5E85 /* ChangeWeekView.xib */; };
 		FAD275181B9F1125000839BD /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD275161B9F1125000839BD /* MineTableViewCell.m */; };
 		FAD275191B9F1125000839BD /* MineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD275171B9F1125000839BD /* MineTableViewCell.xib */; };
 		FAD275201B9F1160000839BD /* MyHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD2751E1B9F1160000839BD /* MyHeadTableViewCell.m */; };
 		FAD275211B9F1160000839BD /* MyHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD2751F1B9F1160000839BD /* MyHeadTableViewCell.xib */; };
+		FAD827D81BBBF98D008D4E07 /* ChangeWeekTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD827D61BBBF98D008D4E07 /* ChangeWeekTableViewCell.m */; };
+		FAD827D91BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD827D71BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib */; };
 		FAF3BAC71B9DBEB400DFDE0D /* DiscoveryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF3BAC51B9DBEB400DFDE0D /* DiscoveryTableViewCell.m */; };
 		FAF3BAC81B9DBEB400DFDE0D /* DiscoveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3BAC61B9DBEB400DFDE0D /* DiscoveryTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -273,12 +277,18 @@
 		FACB03901BA857FC00C8BE63 /* FreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshView.h; sourceTree = "<group>"; };
 		FACB03911BA857FC00C8BE63 /* FreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreshView.m; sourceTree = "<group>"; };
 		FACB03931BA8582700C8BE63 /* FreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FreshView.xib; sourceTree = "<group>"; };
+		FACD9AE81BBAC1E300DD5E85 /* ChangeWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWeekView.h; sourceTree = "<group>"; };
+		FACD9AE91BBAC1E300DD5E85 /* ChangeWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWeekView.m; sourceTree = "<group>"; };
+		FACD9AEB1BBAC20E00DD5E85 /* ChangeWeekView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeWeekView.xib; sourceTree = "<group>"; };
 		FAD275151B9F1125000839BD /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
 		FAD275161B9F1125000839BD /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		FAD275171B9F1125000839BD /* MineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineTableViewCell.xib; sourceTree = "<group>"; };
 		FAD2751D1B9F1160000839BD /* MyHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHeadTableViewCell.h; sourceTree = "<group>"; };
 		FAD2751E1B9F1160000839BD /* MyHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHeadTableViewCell.m; sourceTree = "<group>"; };
 		FAD2751F1B9F1160000839BD /* MyHeadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyHeadTableViewCell.xib; sourceTree = "<group>"; };
+		FAD827D51BBBF98D008D4E07 /* ChangeWeekTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWeekTableViewCell.h; sourceTree = "<group>"; };
+		FAD827D61BBBF98D008D4E07 /* ChangeWeekTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWeekTableViewCell.m; sourceTree = "<group>"; };
+		FAD827D71BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeWeekTableViewCell.xib; sourceTree = "<group>"; };
 		FAF3BABD1B9D8E1300DFDE0D /* DiscoveryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryHeader.h; sourceTree = "<group>"; };
 		FAF3BAC41B9DBEB400DFDE0D /* DiscoveryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryTableViewCell.h; sourceTree = "<group>"; };
 		FAF3BAC51B9DBEB400DFDE0D /* DiscoveryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryTableViewCell.m; sourceTree = "<group>"; };
@@ -621,6 +631,7 @@
 			children = (
 				FA5B71E71B47DFC500F6870C /* ERPCourseViewController.h */,
 				FA5B71E81B47DFC500F6870C /* ERPCourseViewController.m */,
+				FACD9AE71BBAC19B00DD5E85 /* WeekTableView */,
 				FA29926C1B4A802F0088DC7E /* CourseListVIew */,
 			);
 			name = Course;
@@ -769,6 +780,19 @@
 				FACB03931BA8582700C8BE63 /* FreshView.xib */,
 			);
 			name = NetWorkingView;
+			sourceTree = "<group>";
+		};
+		FACD9AE71BBAC19B00DD5E85 /* WeekTableView */ = {
+			isa = PBXGroup;
+			children = (
+				FACD9AE81BBAC1E300DD5E85 /* ChangeWeekView.h */,
+				FACD9AE91BBAC1E300DD5E85 /* ChangeWeekView.m */,
+				FACD9AEB1BBAC20E00DD5E85 /* ChangeWeekView.xib */,
+				FAD827D51BBBF98D008D4E07 /* ChangeWeekTableViewCell.h */,
+				FAD827D61BBBF98D008D4E07 /* ChangeWeekTableViewCell.m */,
+				FAD827D71BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib */,
+			);
+			name = WeekTableView;
 			sourceTree = "<group>";
 		};
 		FAD2750E1B9F0F46000839BD /* Settings */ = {
@@ -977,6 +1001,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACD9AEC1BBAC20E00DD5E85 /* ChangeWeekView.xib in Resources */,
 				FA59915C1BA04B530097D3E5 /* MyDetaliHeadTableViewCell.xib in Resources */,
 				FA5B72051B480A8900F6870C /* ERPDUTViewController.xib in Resources */,
 				FA88B4631BA12D0100B8AAD6 /* MySettingSwitchTableViewCell.xib in Resources */,
@@ -988,6 +1013,7 @@
 				FA5B720A1B480A9B00F6870C /* ERPSSDUTViewController.xib in Resources */,
 				FA5B720F1B480AB300F6870C /* ERPNoticeViewController.xib in Resources */,
 				FA5991611BA04B7A0097D3E5 /* MyDetailCustomTableViewCell.xib in Resources */,
+				FAD827D91BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib in Resources */,
 				FA93036C1BA2803B00406094 /* AboutXueFooterTableViewCell.xib in Resources */,
 				18C7447A1B46F2A900FAAC12 /* ERPViewController.xib in Resources */,
 				FA5800EC1B57BF1300478AAF /* SectionPartView.xib in Resources */,
@@ -1085,6 +1111,7 @@
 				18C744751B46F25000FAAC12 /* TabBarViewController.m in Sources */,
 				FACB03921BA857FC00C8BE63 /* FreshView.m in Sources */,
 				FA5B71D41B4781DE00F6870C /* BigTableViewCell.m in Sources */,
+				FAD827D81BBBF98D008D4E07 /* ChangeWeekTableViewCell.m in Sources */,
 				FA8139311B5CD74600848D96 /* NSTimer+Addition.m in Sources */,
 				FA5B71FA1B480A5900F6870C /* ERPScoreViewController.m in Sources */,
 				FA5B71D91B4781F400F6870C /* SmallTableViewCell.m in Sources */,
@@ -1110,6 +1137,7 @@
 				18C7448C1B46F42400FAAC12 /* MineViewController.m in Sources */,
 				FAD275201B9F1160000839BD /* MyHeadTableViewCell.m in Sources */,
 				FA5B71F01B4809A600F6870C /* ERPLibraryViewController.m in Sources */,
+				FACD9AEA1BBAC1E300DD5E85 /* ChangeWeekView.m in Sources */,
 				FA41B0111B4667BC0043A439 /* main.m in Sources */,
 				FA5B72091B480A9B00F6870C /* ERPSSDUTViewController.m in Sources */,
 				FA78A22E1BABF4C70015F606 /* ERPCommonTableViewCell.m in Sources */,

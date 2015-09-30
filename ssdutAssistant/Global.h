@@ -52,8 +52,12 @@ alpha:1.0]
 #define MyStudentId_Key @"MyStudentId_Key"
 //用户的全部课程信息
 #define MyCourse_Key @"MyCourse_Key"
+//已经排序的课程信息
+#define MyCourseSorted_Key @"MyCourseSorted_Key"
 //纪录课程表信息是否存在
 #define IF_CourseHave @"IF_CourseHave"
+//纪录课表色块的颜色使用情况
+#define MyCourseColor_Key @"MyCourseColor_Key"
 
 
 

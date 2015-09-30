@@ -32,6 +32,11 @@
     //colorArray
     NSArray * colorArray;
     
+    //颜色index
+    NSInteger colorIndex;
+    
+
+    
     /*******为下一界面存储信息*********/
 //    //课程名
 //    NSMutableArray * courseArray;
@@ -49,10 +54,15 @@
 }
 @property (nonatomic) IBOutlet UIView * horizonView;
 @property (nonatomic) IBOutlet UIView * verticalView;
-@property (nonatomic) IBOutlet UIScrollView * horizonScrollView;
-@property (nonatomic) IBOutlet UIView * backView;
+
+
 //上一个被点击的button
 @property (nonatomic) WeekDayButton * lastWeekDayBtn;
+//存放已经使用过的颜色 用来实现相同课程 相同颜色的功能
+@property (nonatomic,strong) NSMutableDictionary * colorDictionary;
+@property (nonatomic) NSMutableDictionary * ifCoverDictionary;
+
+@property (nonatomic) NSUserDefaults * userDefaults ;
 
 @end
 
@@ -61,6 +71,13 @@
 // 7 : 17 : 10*4
 -(void)initCourseListView
 {
+    self.userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    colorIndex = [[self.userDefaults objectForKey:MyCourseColor_Key] count];
+    
+    self.colorDictionary = [[NSMutableDictionary alloc] init];
+    self.ifCoverDictionary = [[NSMutableDictionary alloc] init];
+    
     
     //初始化星期button的高度与原始宽度 hieght -1 防止挡住line
     weekDayWidth = WINWIDTH/64.0*10;
@@ -89,9 +106,75 @@
 //通过数组添加课程
 -(void)loadCourseWithContent:(NSArray *)contentArr WithWeekIndex:(NSInteger)weekIndex
 {
-    for (NSInteger i = 0 ; i < [contentArr count] ; i ++) {
-        ;
+    
+    //判断是否cover
+    for (NSInteger i = 0 ; i < ([contentArr count] - 2); i ++) {
+        
+        NSDictionary * courseDic = [contentArr objectAtIndex:i];
+        NSDictionary * courseTimeDic = [courseDic objectForKey:@"Lesson"];
+        NSInteger section = [[courseTimeDic objectForKey:@"Section"] integerValue];
+        
+        NSDictionary * nextCourseDic = [contentArr objectAtIndex:i + 1];
+        NSDictionary * nextCourseTimeDic = [nextCourseDic objectForKey:@"Lesson"];
+        NSInteger nextSection = [[nextCourseTimeDic objectForKey:@"Section"] integerValue];
+        
+        if (section == nextSection) {
+            [self.ifCoverDictionary setObject:@"1" forKey:[NSString stringWithFormat:@"%ld",i]];
+            [self.ifCoverDictionary setObject:@"1" forKey:[NSString stringWithFormat:@"%ld",i + 1]];
+        }
     }
+    
+    
+    //添加课程
+    for (NSInteger i = 0 ; i < [contentArr count] ; i ++) {
+    
+    
+        NSDictionary * courseDic = [contentArr objectAtIndex:i];
+        NSString * courseName = [courseDic objectForKey:@"Name"];
+        NSString * buildingName = [courseDic objectForKey:@"Location"];
+        NSString * classroomName = [courseDic objectForKey:@"Classroom"];
+        NSString * localName = [NSString stringWithFormat:@"%@%@",buildingName,classroomName];
+        
+        NSDictionary * courseTimeDic = [courseDic objectForKey:@"Lesson"];
+        NSInteger weekDay = [[courseTimeDic objectForKey:@"WeekDay"] integerValue];
+        NSInteger section = [[courseTimeDic objectForKey:@"Section"] integerValue];
+        NSInteger duration = [[courseTimeDic objectForKey:@"Duration"] integerValue];
+        
+        NSInteger startWeek = [[courseTimeDic objectForKey:@"StartWeek"] integerValue];
+        NSInteger endWeek = [[courseTimeDic objectForKey:@"EndWeek"] integerValue];
+        
+        if (weekIndex >= startWeek && weekIndex <= endWeek) {
+            NSInteger colorNum;
+            
+            if ([self.colorDictionary objectForKey:courseName]) {
+                colorNum = [[self.colorDictionary objectForKey:courseName] integerValue];
+            } else {
+                colorNum = colorIndex;
+                [self.colorDictionary setObject:[NSString stringWithFormat:@"%ld",colorNum] forKey:courseName];
+                
+                if (colorIndex == 11) {
+                    colorIndex = 0;
+                }else{
+                    colorIndex ++;
+                }
+            }
+            
+            BOOL coverBool;
+            if ([[self.ifCoverDictionary objectForKey:[NSString stringWithFormat:@"%ld",i]] isEqual:@"1"]) {
+                coverBool = YES;
+            }else{
+                coverBool = NO;
+            }
+            
+            
+            [self insertLessonsWithCourse:courseName Local:localName ColorIndex:colorNum weekDay:weekDay lesson:section number:duration ifCover:coverBool];
+        }
+        
+    }
+    
+    [self.userDefaults setObject:self.colorDictionary forKey:MyCourseColor_Key];
+
+    [self.userDefaults synchronize];
 }
 
 -(void)adjustWeekDayBarAndSectionView
@@ -126,15 +209,15 @@
     NSArray * nibArray = [[NSBundle mainBundle]loadNibNamed:@"LessonButton" owner:self options:nil];
     LessonButton * btn = [nibArray objectAtIndex:0];
     
-    if ((weekDay + 1) != indexOfWeekDay) {
-        btn.frame = CGRectMake(0 , (weekDayHeight+1) * lesson, weekDayWidth, (weekDayHeight + 1) * num);
+    if (weekDay  != indexOfWeekDay) {
+        btn.frame = CGRectMake(0 , (weekDayHeight+1) * (lesson - 1), weekDayWidth, (weekDayHeight + 1) * num);
     }else{
-        btn.frame = CGRectMake(0 , (weekDayHeight+1) * lesson, weekDayWidth+WINWIDTH/64.0*7.0, (weekDayHeight + 1) * num);
+        btn.frame = CGRectMake(0 , (weekDayHeight+1) * (lesson - 1), weekDayWidth+WINWIDTH/64.0*7.0, (weekDayHeight + 1) * num);
     }
     NSString * localStr = [NSString stringWithFormat:@"@%@",local];
     [btn setCourse:course Local:localStr BackgroundColor:[[colorArray objectAtIndex:index] integerValue] IfCover:ifCover  CornerIndex:index];
     [btn addTarget:self action:@selector(toCourseMes:) forControlEvents:UIControlEventTouchUpInside];
-    [((UIView *)[viewsArray objectAtIndex:weekDay]) addSubview:btn];
+    [((UIView *)[viewsArray objectAtIndex:weekDay - 1]) addSubview:btn];
 }
 
 #pragma mark - Btn
@@ -162,7 +245,7 @@
             item.frame = CGRectMake(0 + i * weekDayWidth, 0 , weekDayWidth + addWidth, (weekDayHeight +1)*12);
             
         }
-        [self.horizonScrollView addSubview:item];
+        [self.backView addSubview:item];
 //        for (NSInteger j = 0; j < 12; j ++) {
 //            UIImageView * lineView = [[UIImageView alloc]init];
 //            l;

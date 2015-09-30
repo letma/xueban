@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ChangeWeekTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第1周" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqz-Hk-Fqb">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="43"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.59215686274509804" green="0.61568627450980395" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mqz-Hk-Fqb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ced-sG-AIo"/>
+                    <constraint firstItem="mqz-Hk-Fqb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DTa-5d-jGn"/>
+                    <constraint firstAttribute="trailing" secondItem="mqz-Hk-Fqb" secondAttribute="trailing" id="J2d-fp-00U"/>
+                    <constraint firstAttribute="bottom" secondItem="mqz-Hk-Fqb" secondAttribute="bottom" id="zfG-7c-Iom"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="weekLabel" destination="mqz-Hk-Fqb" id="Ta1-CJ-vFO"/>
+            </connections>
+            <point key="canvasLocation" x="364" y="225"/>
+        </tableViewCell>
+    </objects>
+</document>

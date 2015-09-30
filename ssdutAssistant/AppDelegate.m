@@ -36,13 +36,6 @@
     
     [[UINavigationBar appearance] setBarTintColor:RGB(45, 45, 45)];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-
-//    [UINavigationBar appearance].layer.shadowColor = [UIColor redColor].CGColor;
-//    [UINavigationBar appearance].layer.shadowOffset = CGSizeMake(5.0f , 5.0f); //shadowOffset阴影偏移x，y向(上/下)偏移(-/+)2
-//    [UINavigationBar appearance].layer.shadowOpacity = 0.8f;//阴影透明度，默认0
-//    [UINavigationBar appearance].layer.shadowRadius = 4.0f;//阴影半径
-  
-    //NSLog(@"++%f",WINWIDTH);
     
     self.window.rootViewController = rootViewController;
     return YES;

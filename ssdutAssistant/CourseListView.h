@@ -10,7 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CourseListView : UIView
-
+@property (nonatomic) IBOutlet UIScrollView * horizonScrollView;
+@property (nonatomic) IBOutlet UIView * backView;
 /*
  *加载课表
  */
