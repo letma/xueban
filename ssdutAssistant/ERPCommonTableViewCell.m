@@ -51,7 +51,7 @@
             self.rightBtn.tag = 5;
             self.leftImgView.image = UIIMGName(@"erp_icon_DUTNews");
             self.rightImgView.image = UIIMGName(@"erp_icon_more");
-            self.leftLabel.text = @"大工新闻";
+            self.leftLabel.text = @"校园新闻";
             self.rightLabel.text = @"更多内容";
             break;
         default:

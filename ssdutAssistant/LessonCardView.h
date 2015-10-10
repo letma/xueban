@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LessonCardView : UIView
-
+- (void)setCardWithLesson :(NSString *)lesson Teacher:(NSString *)teacher Credit:(NSString *)credit Week:(NSString *)week Day:(NSString *)day Classroom:(NSString *)classroom Color:(NSInteger)colorValue;
 @end

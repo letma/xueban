@@ -10,11 +10,17 @@
 #import "CourseListView.h"
 #import "ChangeWeekView.h"
 #import "ChangeWeekTableViewCell.h"
+#import "LessonMesViewController.h"
 
 @interface ERPCourseViewController ()<NSURLConnectionDelegate,
                                                                 NSURLConnectionDataDelegate,UINavigationControllerDelegate,UINavigationBarDelegate,
                                                                     UITableViewDataSource,
-                                                                    UITableViewDelegate>
+                                                                    UITableViewDelegate,
+                                                                    ToCourseContentDelegate>
+{
+    NSInteger weekNum ;
+}
+
 @property (nonatomic) CourseListView * courseView ;
 @property (nonatomic) NSMutableData * courseData;
 @property (nonatomic) NSUserDefaults * userDefualts ;
@@ -33,8 +39,18 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
-    self.title = @"第18周";
+    /*************************计算时间与日期********************************/
+    NSDate * now = [NSDate date];
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate * startDate = [dateFormatter dateFromString:@"2015-09-07 00:00:00"];
+    NSTimeInterval  timeInterval = [now timeIntervalSinceDate:startDate]/(24*60*60*7);
+    weekNum = timeInterval + 1;
+    
+    self.title = [NSString stringWithFormat:@"第%ld周",weekNum];
     self.userDefualts = [NSUserDefaults standardUserDefaults];
+    [self.userDefualts setBool:NO forKey:IFPresentToCourseContent];
+    [self.userDefualts synchronize];
 
     
     NSArray * nibArray ;
@@ -46,6 +62,7 @@
     }
     
     self.courseView = [nibArray objectAtIndex:0];
+    self.courseView.delegate = self;
 
     [self.courseView initCourseListView];
     self.courseView.frame = RECT(0, 0, WINWIDTH, WINHEIGHT);
@@ -60,17 +77,16 @@
     //[self ConnectDlut];
 
     [self.view addSubview:self.courseView];
-    
 
-
-
- 
 
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self.userDefualts setBool:NO forKey:IFPresentToCourseContent];
+    
     self.arrowView.alpha = 1;
     if (!self.titleBtn) {
         self.titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -82,32 +98,41 @@
         // top 加箭头
         self.arrowView = [[UIImageView alloc] initWithFrame:CGRectMake(WINWIDTH, 16, 12, 12)];
         self.arrowView.image = [UIImage imageNamed:@"erp_icon_arrowDown"];
+        self.arrowView.alpha = 0;
         [self.navigationController.navigationBar addSubview:self.arrowView];
         
         [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:0.2];
+        [UIView setAnimationDuration:0.30];
+        self.arrowView.alpha = 1;
         self.arrowView.frame = CGRectMake(WINWIDTH/2.0 +40, 16, 12, 12);
         [UIView commitAnimations];
         
     }
-
-
+    
+  
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.arrowView.alpha = 0;
-    [self.courseView adjustWeekDayBarAndSectionView];
+    //判断是否进入课程详情
+    if (![self.userDefualts boolForKey:IFPresentToCourseContent]) {
+        self.arrowView.alpha = 0;
+        [self.courseView adjustWeekDayBarAndSectionView];
+    }
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    if (self.titleBtn) {
-        [self.titleBtn removeFromSuperview];
-        [self.arrowView removeFromSuperview];
+    if (![self.userDefualts boolForKey:IFPresentToCourseContent]) {
+        if (self.titleBtn) {
+            [self.titleBtn removeFromSuperview];
+            [self.arrowView removeFromSuperview];
+        }
     }
+
     
 }
 
@@ -127,6 +152,10 @@
     self.backGroundView.alpha = 0.0;
     [self.clearView addSubview:self.backGroundView];
     
+    //加点击事件
+    UITapGestureRecognizer * singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDo)];
+    [self.backGroundView addGestureRecognizer:singleTap];
+    
     
     //weekView
     self.changeWeekView = [[[NSBundle mainBundle] loadNibNamed:@"ChangeWeekView" owner:self options:nil] objectAtIndex:0];
@@ -134,9 +163,12 @@
     self.changeWeekView.frame =CGRectMake(WINWIDTH/4.0, 84, WINWIDTH/2.0, WINWIDTH/4.0*3.5);
     self.changeWeekView.alpha = 0;
     [self.changeWeekView.weekTableView registerNibWithClass:[ChangeWeekTableViewCell class]];
+
     self.changeWeekView.weekTableView.delegate = self;
     self.changeWeekView.weekTableView.dataSource = self;
+
     [self.clearView addSubview:self.changeWeekView];
+
         
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.3];
@@ -144,12 +176,19 @@
     self.changeWeekView.alpha = 1;
     [UIView commitAnimations];
 
-
-    
-    
-    
-
+    if (weekNum > 3) {
+        self.changeWeekView.weekTableView.contentOffset = CGPointMake(0 ,  44 * (weekNum - 3));
+    }
 }
+
+
+#pragma mark - SingleTap
+- (void)tapDo
+{
+    self.arrowView.image = [UIImage imageNamed:@"erp_icon_arrowDown"];
+    [self.clearView removeFromSuperview];
+}
+
 #pragma mark - AddCourseList
 -(void)addCourseListWith:(NSArray *)courseArr
 {
@@ -230,6 +269,7 @@
 {
     ChangeWeekTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ChangeWeekTableViewCell" forIndexPath:indexPath];
     [cell setWeekWithIndex:indexPath.row + 1];
+    
     return cell;
 }
 
@@ -318,7 +358,14 @@
     }
 }
 
-
+#pragma mark - ToCourseContentDelegate
+- (void)PresentToCourseContent
+{
+    [self.userDefualts setBool:YES forKey:IFPresentToCourseContent];
+    [self.userDefualts synchronize];
+    LessonMesViewController * lessonMesViewCon = [[LessonMesViewController alloc] init];
+    [self presentViewController:lessonMesViewCon animated:YES completion:nil];
+}
 
 
 @end

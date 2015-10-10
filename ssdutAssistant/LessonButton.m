@@ -15,10 +15,12 @@
 @end
 @implementation LessonButton
 
+
 -(void)setCourse:(NSString *)courseStr Local:(NSString *)localStr BackgroundColor:(NSInteger)colorValue IfCover:(BOOL)ifCover CornerIndex:(NSInteger)cornerIndex
 {
     NSString * cornerImgName = [NSString stringWithFormat:@"corner_icon_%ld",cornerIndex];
-  
+    self.ColorValue = colorValue;
+    self.IFCover = ifCover;
     self.backgroundColor = UIColorFromRGB(colorValue);
     self.courseLabel.text = courseStr;
     self.localLabel.text = localStr;

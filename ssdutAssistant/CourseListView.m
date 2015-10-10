@@ -67,7 +67,8 @@
 @end
 
 @implementation CourseListView
-
+@synthesize delegate;
+@synthesize nowWeek;
 // 7 : 17 : 10*4
 -(void)initCourseListView
 {
@@ -107,6 +108,7 @@
 -(void)loadCourseWithContent:(NSArray *)contentArr WithWeekIndex:(NSInteger)weekIndex
 {
     
+    nowWeek = weekIndex;
     //判断是否cover
     for (NSInteger i = 0 ; i < ([contentArr count] - 2); i ++) {
         
@@ -146,6 +148,7 @@
         if (weekIndex >= startWeek && weekIndex <= endWeek) {
             NSInteger colorNum;
             
+            //颜色处理
             if ([self.colorDictionary objectForKey:courseName]) {
                 colorNum = [[self.colorDictionary objectForKey:courseName] integerValue];
             } else {
@@ -166,8 +169,7 @@
                 coverBool = NO;
             }
             
-            
-            [self insertLessonsWithCourse:courseName Local:localName ColorIndex:colorNum weekDay:weekDay lesson:section number:duration ifCover:coverBool];
+            [self insertLessonsWithCourse:courseName Local:localName ColorIndex:colorNum weekDay:weekDay lesson:section number:duration ifCover:coverBool courseID:i];
         }
         
     }
@@ -204,10 +206,11 @@
                    @0x13ca9a];
 }
 
--(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num ifCover:(BOOL)ifCover
+-(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num ifCover:(BOOL)ifCover courseID:(NSInteger)courseID
 {
     NSArray * nibArray = [[NSBundle mainBundle]loadNibNamed:@"LessonButton" owner:self options:nil];
     LessonButton * btn = [nibArray objectAtIndex:0];
+    btn.tag = courseID;
     
     if (weekDay  != indexOfWeekDay) {
         btn.frame = CGRectMake(0 , (weekDayHeight+1) * (lesson - 1), weekDayWidth, (weekDayHeight + 1) * num);
@@ -224,6 +227,16 @@
 -(void)toCourseMes:(LessonButton *)btn
 {
     //NSLog(@"hahahahha");
+    NSLog(@"%ld  %ld",btn.tag ,btn.ColorValue);
+    [self.userDefaults setObject:[NSString stringWithFormat:@"%ld",btn.tag] forKey:TempCourseID];
+    [self.userDefaults setObject:[NSString stringWithFormat:@"%ld",btn.ColorValue] forKey:TempCourseColor];
+    [self.userDefaults setObject:[NSString stringWithFormat:@"%ld",nowWeek] forKey:TempNowWeek];
+    [self.userDefaults setBool:btn.IFCover forKey:TempIFCover];
+
+    [self.userDefaults synchronize];
+    [self.delegate PresentToCourseContent];
+    
+    
 }
 
 -(void)initViews

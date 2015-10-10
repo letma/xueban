@@ -38,6 +38,9 @@ alpha:1.0]
 
 #define DLUT_IP @"http://210.30.100.93:8089/api/dlut/"
 #define TEST_IP @"http://210.30.100.93:8089/"
+#define DLUT_SSDUTNEWS_IP @"http://210.30.100.93:8087/"
+
+
 //是否登陆
 #define IF_Login @"IF_Login"
 //Token
@@ -59,6 +62,18 @@ alpha:1.0]
 //纪录课表色块的颜色使用情况
 #define MyCourseColor_Key @"MyCourseColor_Key"
 
+//课程临时颜色
+#define TempCourseColor @"TempCourseColor"
+//课程的序号
+#define TempCourseID @"TempCourseID"
+//课程是否覆盖
+#define TempIFCover @"TempIFCover"
+//当前的周次
+#define TempNowWeek @"TempNowWeek"
+
+
+//判断视图是进入课程详情
+#define IFPresentToCourseContent @"IFPresentToCourseContent"
 
 
 

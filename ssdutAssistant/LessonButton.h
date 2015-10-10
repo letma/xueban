@@ -9,21 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface LessonButton : UIButton
-
-    //课程名
-@property(nonatomic) NSMutableArray * courseArray;
-    //教师姓名
-@property(nonatomic)    NSMutableArray * teacherArray;
-    //学分信息
-@property(nonatomic)    NSMutableArray * pointArray;
-    //周数信息
-@property(nonatomic)    NSMutableArray * weekArray;
-    //节次信息
-@property(nonatomic)    NSMutableArray * sectionArray;
-    //地点信息
-@property(nonatomic)    NSMutableArray * localArray;
-    //颜色数值
-@property(nonatomic)    NSInteger colorValue;
+@property(nonatomic) NSInteger ColorValue;
+@property(nonatomic) BOOL IFCover;
 
 /*
  *设置cell的课程名 上课地点 背景颜色

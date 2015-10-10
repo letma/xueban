@@ -9,9 +9,18 @@
 // 7 : 17 : 10*4
 #import <UIKit/UIKit.h>
 
+@protocol ToCourseContentDelegate <NSObject>
+
+- (void)PresentToCourseContent;
+
+@end
+
 @interface CourseListView : UIView
+
 @property (nonatomic) IBOutlet UIScrollView * horizonScrollView;
 @property (nonatomic) IBOutlet UIView * backView;
+@property (nonatomic) NSInteger nowWeek;
+@property (nonatomic) id <ToCourseContentDelegate> delegate;
 /*
  *加载课表
  */
@@ -35,7 +44,7 @@
 /*
  *添加课程
  */
--(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num ifCover:(BOOL)ifCover;
+-(void)insertLessonsWithCourse:(NSString *)course Local:(NSString *)local ColorIndex:(NSInteger)index weekDay:(NSInteger)weekDay lesson:(NSInteger)lesson number:(NSInteger)num ifCover:(BOOL)ifCover courseID:(NSInteger)courseID;
 
 /*
  *根据内容 及周次添加课程

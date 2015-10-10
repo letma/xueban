@@ -7,9 +7,18 @@
 //
 
 #import "ERPSSDUTViewController.h"
+#import "SSDUTNewsCell.h"
+#import "SSDUTNewsWebViewController.h"
 
-@interface ERPSSDUTViewController ()
+@interface ERPSSDUTViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    NSInteger page;
+}
+@property (nonatomic) NSMutableArray * newsArr;
+@property (nonatomic) NSMutableArray * IDArr;
 
+@property (nonatomic) NetWorking * newsNetWorking;
+@property (nonatomic) IBOutlet UITableView * NewsTableView;
 @end
 
 @implementation ERPSSDUTViewController
@@ -18,7 +27,37 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"学生周知";
-    // Do any additional setup after loading the view from its nib.
+    
+    page = 1;
+    
+    self.newsArr = [[NSMutableArray alloc] init];
+    self.IDArr = [[NSMutableArray alloc] init];
+    
+    self.newsNetWorking = [[NetWorking alloc] init];
+    
+    NSString * urlStr = [NSString stringWithFormat:@"%@list/0/%ld",DLUT_SSDUTNEWS_IP,page];
+    
+    self.newsArr = [self.newsNetWorking synchronousGetContentWithUrl:urlStr];
+    
+    for (NSInteger i = 0 ; i < 25; i ++) {
+        NSDictionary * dic = [self.newsArr objectAtIndex:i];
+        NSString * title = [dic objectForKey:@"title"];
+        NSString * time = [dic objectForKey:@"time"];
+        NSString * clickCount = [dic objectForKey:@"clickCount"];
+        
+        NSDate * contentTime = [[NSDate alloc] initWithTimeIntervalSince1970:[time integerValue]/1000.0];
+        NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy/MM/dd HH:MM"];
+        NSString * aaa = [dateFormatter stringFromDate:contentTime];
+        
+    }
+    
+    NSLog(@"%@",self.newsArr);
+    [self.NewsTableView registerNibWithClass:[SSDUTNewsCell class]];
+    
+    self.NewsTableView.delegate = self;
+    self.NewsTableView.dataSource = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +65,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - TableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.newsArr count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SSDUTNewsCell * cell = [tableView  dequeueReusableCellWithIdentifier:@"SSDUTNewsCell" forIndexPath:indexPath];
+    JsonAnalysisTool * tools = [[JsonAnalysisTool alloc] init];
+    [tools getSSDutNewsContentWith:self.newsArr Index:indexPath.row];
+    [cell setCellWithTitle:tools.titleStr Time:tools.timeStr ClickCount:tools.clickCountStr];
+
+    [self.IDArr addObject:tools.articalIDStr];
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 85;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SSDUTNewsWebViewController * webView = [[SSDUTNewsWebViewController alloc] init];
+    webView.articalID = [NSString stringWithFormat:@"%@",[self.IDArr objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:webView animated:YES];
+    
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 /*
 #pragma mark - Navigation
 

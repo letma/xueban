@@ -25,7 +25,8 @@
 
 - (void)setWeekWithIndex:(NSInteger)index
 {
-    self.layer.cornerRadius = 5;    self.weekLabel.text = [NSString stringWithFormat:@"第%ld周",index];
+    self.layer.cornerRadius = 5;
+    self.weekLabel.text = [NSString stringWithFormat:@"第%ld周",index];
 }
 
 @end
