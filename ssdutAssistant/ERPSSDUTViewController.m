@@ -9,6 +9,7 @@
 #import "ERPSSDUTViewController.h"
 #import "SSDUTNewsCell.h"
 #import "SSDUTNewsWebViewController.h"
+#import "TestViewController.h"
 
 @interface ERPSSDUTViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -39,20 +40,7 @@
     
     self.newsArr = [self.newsNetWorking synchronousGetContentWithUrl:urlStr];
     
-    for (NSInteger i = 0 ; i < 25; i ++) {
-        NSDictionary * dic = [self.newsArr objectAtIndex:i];
-        NSString * title = [dic objectForKey:@"title"];
-        NSString * time = [dic objectForKey:@"time"];
-        NSString * clickCount = [dic objectForKey:@"clickCount"];
-        
-        NSDate * contentTime = [[NSDate alloc] initWithTimeIntervalSince1970:[time integerValue]/1000.0];
-        NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy/MM/dd HH:MM"];
-        NSString * aaa = [dateFormatter stringFromDate:contentTime];
-        
-    }
-    
-    NSLog(@"%@",self.newsArr);
+
     [self.NewsTableView registerNibWithClass:[SSDUTNewsCell class]];
     
     self.NewsTableView.delegate = self;
@@ -95,10 +83,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     SSDUTNewsWebViewController * webView = [[SSDUTNewsWebViewController alloc] init];
     webView.articalID = [NSString stringWithFormat:@"%@",[self.IDArr objectAtIndex:indexPath.row]];
-    [self.navigationController pushViewController:webView animated:YES];
-    
+    //[self.navigationController pushViewController:webView animated:YES];
+
+    [webView setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:webView animated:YES completion:nil];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -114,6 +114,7 @@
 		FAD275211B9F1160000839BD /* MyHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD2751F1B9F1160000839BD /* MyHeadTableViewCell.xib */; };
 		FAD827D81BBBF98D008D4E07 /* ChangeWeekTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD827D61BBBF98D008D4E07 /* ChangeWeekTableViewCell.m */; };
 		FAD827D91BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD827D71BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib */; };
+		FAE5FD1A1BCA6AFB0070B3CD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5FD191BCA6AFB0070B3CD /* TestViewController.m */; };
 		FAF3BAC71B9DBEB400DFDE0D /* DiscoveryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF3BAC51B9DBEB400DFDE0D /* DiscoveryTableViewCell.m */; };
 		FAF3BAC81B9DBEB400DFDE0D /* DiscoveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF3BAC61B9DBEB400DFDE0D /* DiscoveryTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -303,6 +304,8 @@
 		FAD827D51BBBF98D008D4E07 /* ChangeWeekTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWeekTableViewCell.h; sourceTree = "<group>"; };
 		FAD827D61BBBF98D008D4E07 /* ChangeWeekTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWeekTableViewCell.m; sourceTree = "<group>"; };
 		FAD827D71BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeWeekTableViewCell.xib; sourceTree = "<group>"; };
+		FAE5FD181BCA6AFB0070B3CD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = SOURCE_ROOT; };
+		FAE5FD191BCA6AFB0070B3CD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = SOURCE_ROOT; };
 		FAF3BABD1B9D8E1300DFDE0D /* DiscoveryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryHeader.h; sourceTree = "<group>"; };
 		FAF3BAC41B9DBEB400DFDE0D /* DiscoveryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryTableViewCell.h; sourceTree = "<group>"; };
 		FAF3BAC51B9DBEB400DFDE0D /* DiscoveryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryTableViewCell.m; sourceTree = "<group>"; };
@@ -733,6 +736,8 @@
 			children = (
 				FA6734A41BC93E9900E950B9 /* SSDUTNewsWebViewController.h */,
 				FA6734A51BC93E9900E950B9 /* SSDUTNewsWebViewController.m */,
+				FAE5FD181BCA6AFB0070B3CD /* TestViewController.h */,
+				FAE5FD191BCA6AFB0070B3CD /* TestViewController.m */,
 			);
 			name = SSDUTNewsDetail;
 			sourceTree = "<group>";
@@ -1162,6 +1167,7 @@
 				FA43A46E1BAFA252002E2E32 /* ImageProcess.m in Sources */,
 				FA9303551BA2610E00406094 /* ERPScoreTableViewCell.m in Sources */,
 				FA5B71DE1B47841500F6870C /* EmptyTableViewCell.m in Sources */,
+				FAE5FD1A1BCA6AFB0070B3CD /* TestViewController.m in Sources */,
 				FA5991601BA04B7A0097D3E5 /* MyDetailCustomTableViewCell.m in Sources */,
 				FA5B72041B480A8900F6870C /* ERPDUTViewController.m in Sources */,
 				FA5800F41B57DE1100478AAF /* LessonCardView.m in Sources */,
