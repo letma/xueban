@@ -10,6 +10,7 @@
 #import "AboutXueHeaderTableViewCell.h"
 #import "AboutXueCustomTableViewCell.h"
 #import "AboutXueFooterTableViewCell.h"
+#import "UserAgreeementViewController.h"
 
 @interface AboutXueBanViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) IBOutlet UITableView * aboutXueTableView;
@@ -104,7 +105,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    if (indexPath.row == 1) {
+        UserAgreeementViewController * userAgreement = [[UserAgreeementViewController alloc] init];
+        [self.navigationController pushViewController:userAgreement animated:YES];
+    }
     [self.aboutXueTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end

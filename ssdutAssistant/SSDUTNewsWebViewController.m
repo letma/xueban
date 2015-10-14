@@ -9,7 +9,14 @@
 #import "SSDUTNewsWebViewController.h"
 
 @interface SSDUTNewsWebViewController ()<UIWebViewDelegate>
+{
+    BOOL bottomViewFlag;
+}
 
+@property (nonatomic) UIProgressView * progressView;
+
+@property (nonatomic) UIView * bottomView;
+@property (nonatomic) UIWebView * webView;
 @end
 
 @implementation SSDUTNewsWebViewController
@@ -17,8 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-    self.view.backgroundColor = [UIColor whiteColor];
+    bottomViewFlag = NO;
+    
+    self.view.backgroundColor = UIColorFromRGB(0xf7f7f7);
     
     UIView * topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WINWIDTH, 64)];
     topView.backgroundColor = [UIColor whiteColor];
@@ -34,14 +42,44 @@
     linView.backgroundColor = UIColorFromRGB(0xcccccc);
     [topView addSubview:linView];
     
-    UIWebView * webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, WINWIDTH, WINHEIGHT-64)];
-    webView.delegate = self;
-    NSString * urlStr = [NSString stringWithFormat:@"%@article/%@",DLUT_SSDUTNEWS_IP,articalID];
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, WINWIDTH, WINHEIGHT-64)];
+    self.webView.delegate = self;
+    self.webView.scalesPageToFit = YES;
+    
+    NSString * urlStr = [NSString stringWithFormat:@"%@article/%@",DLUT_NEWS_IP,articalID];
     NSURL * url = [NSURL URLWithString:urlStr];
     NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
-    [webView loadRequest:request];
-    [self.view addSubview:webView];
+    [self.webView loadRequest:request];
+    [self.view addSubview:self.webView];
     
+    //底下的栏
+    self.bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, WINHEIGHT - 49, WINWIDTH, 49)];
+    self.bottomView.backgroundColor = UIColorFromRGB(0xefefef);
+    [self.view addSubview:self.bottomView];
+    
+    UIView * lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WINWIDTH, 1)];
+    lineView.backgroundColor = UIColorFromRGB(0xcccccc);
+    [self.bottomView addSubview:lineView];
+    
+    UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(40, 14, 20, 20);
+    [backBtn setBackgroundImage:UIIMGName(@"erp_icon_leftArrow") forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(goToBack) forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomView addSubview:backBtn];
+    
+    UIButton * forwardBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    forwardBtn.frame = CGRectMake(100, 14, 20, 20);
+    [forwardBtn setBackgroundImage:UIIMGName(@"erp_icon_rightArrow") forState:UIControlStateNormal];
+    [forwardBtn addTarget:self action:@selector(goToForward) forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomView addSubview:forwardBtn];
+    
+    UIButton * reloadBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    reloadBtn.frame = CGRectMake(WINWIDTH - 60, 14, 20, 20);
+    [reloadBtn setBackgroundImage:UIIMGName(@"erp_icon_reload") forState:UIControlStateNormal];
+    [reloadBtn addTarget:self action:@selector(goToReload) forControlEvents:UIControlEventTouchUpInside];
+    [self.bottomView addSubview:reloadBtn];
+
+    self.bottomView.hidden = YES;
     
 }
 
@@ -92,7 +130,76 @@
         return NO;
 
     }
+    
+    NSString * urlStr = DLUT_NEWS_IP;
+    
+    if ([[request.URL absoluteString] rangeOfString:urlStr].location != NSNotFound) {
+        
+        bottomViewFlag = NO;
+        
+    }else{
+            
+        bottomViewFlag = YES;
+
+    }
+    
     return YES;
+}
+
+
+-(void)webViewDidStartLoad:(UIWebView *)webView
+{
+    self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64, WINWIDTH, 0)];
+    self.progressView.progressTintColor = UIColorFromRGB(0xFF2730);
+    
+    [self.view addSubview:self.progressView];
+    [self.progressView setProgress:0.7 animated:YES];
+    
+    if (!bottomViewFlag) {
+        self.bottomView.hidden = YES;
+        self.webView.scrollView.bounces = YES;
+    }
+
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self.progressView setProgress:1.0 animated:YES];
+    
+    NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(progressRemove) userInfo:nil repeats:YES];
+    if (bottomViewFlag) {
+        self.webView.scrollView.bounces = NO;
+        self.bottomView.hidden = NO;
+    }
+
+    //[self.progressView removeFromSuperview];
+}
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    
+}
+
+-(void)progressRemove
+{
+    [self.progressView removeFromSuperview];
+}
+
+#pragma mark - WebDo
+- (void)goToBack
+{
+    [self.webView goBack];
+
+}
+
+- (void)goToForward
+{
+    [self.webView goForward];
+}
+
+-(void)goToReload
+{
+    [self.webView reload];
 }
 /*
 #pragma mark - Navigation

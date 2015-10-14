@@ -69,7 +69,7 @@
         
         NSLog(@"%@",courseDic);
         
-        NSString * classroom = [courseDic objectForKey:@"Classroom"];
+        
         NSString * credit = [courseDic objectForKey:@"Credit"];
         NSString * location = [courseDic objectForKey:@"Location"];
         NSString * name = [courseDic objectForKey:@"Name"];
@@ -83,8 +83,12 @@
         NSString * section = [lessonDic objectForKey:@"Section"];
         NSString * weekDay = [lessonDic objectForKey:@"WeekDay"];
         
+        NSString * classroom = [lessonDic objectForKey:@"Classroom"];
+        
         NSString * creditStr = [NSString stringWithFormat:@"%@ %@学分",type,credit];
         NSString * weekStr = [NSString stringWithFormat:@"%@-%@周",startWeek,endWeek];
+        
+        
         
         NSString * nextSection = [NSString stringWithFormat:@"%ld",([section integerValue] + [duration integerValue] - 1)];
         switch ([weekDay integerValue]) {

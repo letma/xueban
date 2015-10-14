@@ -38,8 +38,14 @@ alpha:1.0]
 
 #define DLUT_IP @"http://210.30.100.93:8089/api/dlut/"
 #define TEST_IP @"http://210.30.100.93:8089/"
-#define DLUT_SSDUTNEWS_IP @"http://210.30.100.93:8087/"
 
+/*
+ 0 学生周知
+ 1 校园新闻
+ 2 活动公告
+ */
+#define DLUT_NEWS_IP @"http://210.30.100.93:8087/"
+#define DLUT_SOCIAL_IP @"http://210.30.100.93:8089/common/"
 
 //是否登陆
 #define IF_Login @"IF_Login"
@@ -53,6 +59,8 @@ alpha:1.0]
 #define MyName_Key @"MyName_Key"
 //用户的学号
 #define MyStudentId_Key @"MyStudentId_Key"
+//用户的本学期成绩信息
+#define MyScore_Key @"MyScore_Key"
 //用户的全部课程信息
 #define MyCourse_Key @"MyCourse_Key"
 //已经排序的课程信息

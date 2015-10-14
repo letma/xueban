@@ -134,8 +134,8 @@
         NSDictionary * courseDic = [contentArr objectAtIndex:i];
         NSString * courseName = [courseDic objectForKey:@"Name"];
         NSString * buildingName = [courseDic objectForKey:@"Location"];
-        NSString * classroomName = [courseDic objectForKey:@"Classroom"];
-        NSString * localName = [NSString stringWithFormat:@"%@%@",buildingName,classroomName];
+        
+
         
         NSDictionary * courseTimeDic = [courseDic objectForKey:@"Lesson"];
         NSInteger weekDay = [[courseTimeDic objectForKey:@"WeekDay"] integerValue];
@@ -144,6 +144,10 @@
         
         NSInteger startWeek = [[courseTimeDic objectForKey:@"StartWeek"] integerValue];
         NSInteger endWeek = [[courseTimeDic objectForKey:@"EndWeek"] integerValue];
+        
+        NSString * classroomName = [courseTimeDic objectForKey:@"Classroom"];
+        
+        NSString * localName = [NSString stringWithFormat:@"%@\n %@",buildingName,classroomName];
         
         if (weekIndex >= startWeek && weekIndex <= endWeek) {
             NSInteger colorNum;

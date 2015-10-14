@@ -21,6 +21,7 @@
 #import "ERPExamViewController.h"
 #import "ERPDUTViewController.h"
 #import "ERPSSDUTViewController.h"
+#import "ERPSSDUTTableViewController.h"
 #import "ERPNoticeViewController.h"
 
 #endif

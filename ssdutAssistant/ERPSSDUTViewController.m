@@ -9,7 +9,7 @@
 #import "ERPSSDUTViewController.h"
 #import "SSDUTNewsCell.h"
 #import "SSDUTNewsWebViewController.h"
-#import "TestViewController.h"
+
 
 @interface ERPSSDUTViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -36,7 +36,7 @@
     
     self.newsNetWorking = [[NetWorking alloc] init];
     
-    NSString * urlStr = [NSString stringWithFormat:@"%@list/0/%ld",DLUT_SSDUTNEWS_IP,page];
+    NSString * urlStr = [NSString stringWithFormat:@"%@list/0/%ld",DLUT_NEWS_IP,page];
     
     self.newsArr = [self.newsNetWorking synchronousGetContentWithUrl:urlStr];
     
@@ -45,6 +45,10 @@
     
     self.NewsTableView.delegate = self;
     self.NewsTableView.dataSource = self;
+    
+    //下拉刷新
+    UIRefreshControl * refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
     
 }
 

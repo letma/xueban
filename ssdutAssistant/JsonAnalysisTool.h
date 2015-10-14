@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//json解析的工具类
 @interface JsonAnalysisTool : NSObject
 @property (nonatomic,readonly) NSString * timeStr;
 @property (nonatomic,readonly) NSString * titleStr;

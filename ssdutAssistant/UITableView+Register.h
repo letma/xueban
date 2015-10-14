@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//注册tableviewcelld的类目
 @interface UITableView (Register)
 
 - (void)registerNibWithClass:(Class)classid;

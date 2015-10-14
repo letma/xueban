@@ -111,21 +111,36 @@
         
         switch (button.tag) {
             case 0:
-                viewControllerStr = @"ERPSSDUTViewController";
+            {
+                ERPSSDUTTableViewController * viewController = [[ERPSSDUTTableViewController alloc] init];
+                viewController.NewsIndex = 0;
+                [self.navigationController pushViewController:viewController animated:YES];
+
                 break;
+            }
+        
             case 2:
                 viewControllerStr = @"ERPExamViewController";
                 break;
             case 4:
-                viewControllerStr = @"ERPDUTViewController";
+            {
+
+                ERPSSDUTTableViewController * viewController = [[ERPSSDUTTableViewController alloc] init];
+                viewController.NewsIndex = 1;
+                [self.navigationController pushViewController:viewController animated:YES];
+
+            }
                 break;
                 
             default:
                 break;
         }
-        
+
+
         UIViewController * viewController = [[NSClassFromString(viewControllerStr) alloc]init];
         [self.navigationController pushViewController:viewController animated:YES];
+
+
         
     }else{
         SignInViewController * signInController  = [[SignInViewController alloc]init];
@@ -141,7 +156,12 @@
         
         switch (button.tag) {
             case 1:
-                viewControllerStr = @"ERPNoticeViewController";
+            {
+                ERPSSDUTTableViewController * viewController = [[ERPSSDUTTableViewController alloc] init];
+                viewController.NewsIndex = 2;
+                [self.navigationController pushViewController:viewController animated:YES];
+
+            }
                 break;
             case 3:
                 viewControllerStr = @"ERPScoreViewController";

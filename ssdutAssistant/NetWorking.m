@@ -11,6 +11,9 @@
 @property (nonatomic) NSURLConnection * getConnection;
 @property (nonatomic) NSURLConnection * postConnection;
 
+//试试block 没什么卵用
+@property (nonatomic , copy) NSArray * (^ asnchronousGetContent)(NSString * url) ;
+
 @end
 
 @implementation NetWorking
@@ -25,7 +28,6 @@
     NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
     
     contentData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
     contentArr = [[NSMutableArray alloc] init];
     contentArr = [NSJSONSerialization JSONObjectWithData:contentData options:NSJSONReadingMutableLeaves error:nil];
     

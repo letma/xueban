@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//本地化存储图片的工具类
 @interface ImageProcess : NSObject
 - (void)storageImgWithStudentID:(NSString *)studentID WithImage:(UIImage *)headImage WithImageIP:(NSString *)imageIP;
 

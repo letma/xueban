@@ -141,7 +141,7 @@
                     NSString * urlStr = [NSString stringWithFormat:@"%@register",DLUT_IP];
                     NSURL * url = [NSURL URLWithString:urlStr];
                     NSString * postStr = [NSString stringWithFormat:@"student_id=%@&pwd=%@&pwd_lib=%@",self.userTf.text,self.passwordTf.text,self.libPasswordTf.text];
-//                    NSString * postStr = [NSString stringWithFormat:@"student_id=%@&pwd=%@&pwd_lib=%@",@"201393149",@"1995211MSJ",@"201393149"];
+
                     NSData * postData = [postStr dataUsingEncoding:NSUTF8StringEncoding];
                     NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:4];
                     [request setHTTPMethod:@"POST"];
@@ -285,29 +285,27 @@
                     NSArray * courseArr = [contentDic objectForKey:@"msg"];
                     [self.userDefaults setObject:courseArr forKey:MyCourse_Key];
                     
-                    
-//                    NSArray * keyArray = @[@"Name",@"Teacher",@"Type",@"Classroom",@"Credit",@"Location",@"Lesson"];
-//                    
-//                    NSMutableArray * allCourseArr = [[NSMutableArray alloc]init];
-//                    
-//                    for (NSInteger i = 0 ; i < [courseArr count] ; i ++) {
-//                        NSDictionary * dic = [courseArr objectAtIndex:i];
-//                        
-//                        NSMutableArray * singleCourseArr = [[NSMutableArray alloc]init];
-//                        for (NSInteger j = 0; j < [keyArray count]; j ++) {
-//                            NSString * singleCourse = [dic objectForKey:[keyArray objectAtIndex:j]];
-//                            [singleCourseArr addObject:singleCourse];
-//                            NSLog(@"------%@",singleCourse);
-//                        }
-//                        NSLog(@"+++++%@",singleCourseArr);
-//                        [allCourseArr addObject:singleCourseArr];
-//                    }
-//                    
-//                    NSLog(@"****%@",[allCourseArr objectAtIndex:0]);
                 }
                 
             }];
             
+            //异步获取成绩                                   
+            NSString * scoreUrlStr = [NSString stringWithFormat:@"%@scores",DLUT_IP];
+            NSURL * scoreUrl = [NSURL URLWithString:scoreUrlStr];
+            NSMutableURLRequest * scoreRequest = [[NSMutableURLRequest alloc] initWithURL:scoreUrl];
+            //NSLog(@"%@",[self.userDefaults objectForKey:LoginToken_Str]);
+            [scoreRequest setValue:[self.userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
+            [NSURLConnection sendAsynchronousRequest:scoreRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                
+                NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                NSLog(@"%@",contentDic);
+                if ([[contentDic objectForKey:@"status"] boolValue]) {
+                    NSArray * courseArr = [contentDic objectForKey:@"msg"];
+                    [self.userDefaults setObject:courseArr forKey:MyScore_Key];
+                    
+                }
+                
+            }];
             
             
         }else{

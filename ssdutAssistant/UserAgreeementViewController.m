@@ -1,22 +1,30 @@
 //
-//  TestViewController.m
+//  UserAgreeementViewController.m
 //  ssdutAssistant
 //
-//  Created by OurEDA on 15/10/11.
+//  Created by OurEDA on 15/10/13.
 //  Copyright (c) 2015年 OurEDA. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "UserAgreeementViewController.h"
 
-@interface TestViewController ()
+@interface UserAgreeementViewController ()
 
 @end
 
-@implementation TestViewController
+@implementation UserAgreeementViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = UIColorFromRGB(0xf7f7f7);
+    
+    NSString * urlStr = [NSString stringWithFormat:@"%@agreement",DLUT_SOCIAL_IP];
+    NSURL * url = [NSURL URLWithString:urlStr];
+    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
+    
+    UIWebView * webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, WINWIDTH, WINHEIGHT-64)];
+    [webView loadRequest:request];
+    [self.view addSubview:webView];
     // Do any additional setup after loading the view.
 }
 

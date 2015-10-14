@@ -233,17 +233,17 @@
     }
     
     //打印
-    NSArray * keyArray = @[@"Name",@"Teacher",@"Type",@"Classroom",@"Credit",@"Location",@"Lesson"];
-    
-    for (NSInteger i = 0 ; i < [realCourseList count] ; i ++) {
-        NSLog(@"///////////////////////////////");
-        NSDictionary * dic = [realCourseList objectAtIndex:i];
-        
-        for (NSInteger j = 0; j < [keyArray count]; j ++) {
-            NSLog(@"%@",[dic objectForKey:[keyArray objectAtIndex:j]]);
-        }
-        
-    }
+//    NSArray * keyArray = @[@"Name",@"Teacher",@"Type",@"Classroom",@"Credit",@"Location",@"Lesson"];
+//    
+//    for (NSInteger i = 0 ; i < [realCourseList count] ; i ++) {
+//        NSLog(@"///////////////////////////////");
+//        NSDictionary * dic = [realCourseList objectAtIndex:i];
+//        
+//        for (NSInteger j = 0; j < [keyArray count]; j ++) {
+//            NSLog(@"%@",[dic objectForKey:[keyArray objectAtIndex:j]]);
+//        }
+//        
+//    }
     [self.userDefualts setObject:realCourseList forKey:MyCourseSorted_Key];
     [self.userDefualts synchronize];
     
@@ -341,21 +341,21 @@
 {
     NSDictionary * courseDic = [NSJSONSerialization JSONObjectWithData:self.courseData options:NSJSONReadingMutableContainers error:nil];
     
-//    NSLog(@"++++++++++++%@",courseDic);
+    NSLog(@"++++++++++++%@",courseDic);
     
-    NSArray * courseArray = [courseDic objectForKey:@"msg"];
-
-    NSArray * keyArray = @[@"Name",@"Teacher",@"Type",@"Classroom",@"Credit",@"Location",@"Lesson"];
-
-    for (NSInteger i = 0 ; i < [courseArray count] ; i ++) {
-        NSLog(@"///////////////////////////////");
-        NSDictionary * dic = [courseArray objectAtIndex:i];
-
-        for (NSInteger j = 0; j < [keyArray count]; j ++) {
-            NSLog(@"%@",[dic objectForKey:[keyArray objectAtIndex:j]]);
-        }
-        
-    }
+//    NSArray * courseArray = [courseDic objectForKey:@"msg"];
+//
+//    NSArray * keyArray = @[@"Name",@"Teacher",@"Type",@"Classroom",@"Credit",@"Location",@"Lesson"];
+//
+//    for (NSInteger i = 0 ; i < [courseArray count] ; i ++) {
+//        NSLog(@"///////////////////////////////");
+//        NSDictionary * dic = [courseArray objectAtIndex:i];
+//
+//        for (NSInteger j = 0; j < [keyArray count]; j ++) {
+//            NSLog(@"%@",[dic objectForKey:[keyArray objectAtIndex:j]]);
+//        }
+//        
+//    }
 }
 
 #pragma mark - ToCourseContentDelegate
