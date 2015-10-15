@@ -18,10 +18,10 @@
 //同步GET 通过url获取数据 返回 (id)类型
 - (id)synchronousGetContentWithUrl:(NSString *)urlStr;
 
-//异步GET 通过url获取数据并传给contentArr (id)类型
-- (void)getContentWithUrl:(NSString *)urlStr ToArr:(NSArray *)contentArr;
+//异步GET 通过url获取数据并传给存储到userdefaults里
+- (void)getContentWithUrl:(NSString *)urlStr SaveWithStr:(NSString *)saveKey;
 
-//POST 通过url获取数据并传给contentArr (id)类型
-- (void)postContentWithUrl:(NSString *)urlStr PostStr:(NSString *)postStr ToArr:(id)contentArr;
+//POST 通过url获取数据并传给存储到userdefaults里
+- (void)postContentWithUrl:(NSString *)urlStr PostStr:(NSString *)postStr SaveWithStr:(NSString *)saveKey;
 
 @end

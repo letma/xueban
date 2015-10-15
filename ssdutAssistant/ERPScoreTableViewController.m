@@ -7,9 +7,11 @@
 //
 
 #import "ERPScoreTableViewController.h"
+#import "ERPScoreTableViewCell.h"
 
 @interface ERPScoreTableViewController ()
-
+@property (nonatomic) NSMutableArray * scoreArr;
+@property (nonatomic) NSUserDefaults * userDefaults;
 @end
 
 @implementation ERPScoreTableViewController
@@ -19,13 +21,16 @@
     
     self.tableView.backgroundColor = UIColorFromRGB(0xefefef);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     self.title = @"本学期课表";
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.scoreArr = [[NSMutableArray alloc] initWithArray:[self.userDefaults objectForKey:MyScore_Key]];
+    NSLog(@"scoreArr : %@",self.scoreArr);
+    
+    [self.tableView registerNibWithClass:[ERPScoreTableViewCell class]];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,69 +41,45 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return [self.scoreArr count];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary * scoreDic = [[NSDictionary alloc] initWithDictionary:[self.scoreArr objectAtIndex:indexPath.row]];
     
-    // Configure the cell...
+    ERPScoreTableViewCell * scoreCell = [tableView dequeueReusableCellWithIdentifier:@"ERPScoreTableViewCell" forIndexPath:indexPath];
     
-    return cell;
+    NSString * titleStr = [scoreDic objectForKey:@"Name"];
+    NSString * creditStr = [scoreDic objectForKey:@"Credit"];
+    NSString * typeStr = [scoreDic objectForKey:@"Type"];
+    NSString * scoreStr = [scoreDic objectForKey:@"Score"];
+    NSString * statusStr;
+    if ([scoreStr integerValue] >= 60) {
+        statusStr = @"已通过";
+    }else{
+        statusStr = @"未通过";
+    }
+    
+    [scoreCell insertScoreCardWithTitle:titleStr Type:typeStr Score:scoreStr Credit:creditStr Status:statusStr];
+    return scoreCell;
+    
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (WINWIDTH > 375) {
+        return 110;
+    }else {
+        return 100;
+    }
+    
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

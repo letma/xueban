@@ -28,6 +28,9 @@
     [self registerNibCells];
     self.scoreTableView.dataSource = self;
     self.scoreTableView.delegate = self;
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"%@",[userDefaults objectForKey:MyScore_Key]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,23 +60,6 @@
     return 8;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ERPScoreTableViewCell * scoreCell = [tableView dequeueReusableCellWithIdentifier:@"ERPScoreTableViewCell" forIndexPath:indexPath];
-    [scoreCell insertScoreCardWithTitle:@"综合日语" Type:@"必修" Score:@"95" Credit:@"6" Status:@"已通过"];
-    return scoreCell;
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (WINWIDTH > 375) {
-        return 110;
-    }else {
-        return 100;
-    }
-    
-}
 
 
 @end

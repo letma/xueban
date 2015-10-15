@@ -139,6 +139,7 @@
                 }else{
                     //网络申请
                     NSString * urlStr = [NSString stringWithFormat:@"%@register",DLUT_IP];
+                    NSLog(@"%@",urlStr);
                     NSURL * url = [NSURL URLWithString:urlStr];
                     NSString * postStr = [NSString stringWithFormat:@"student_id=%@&pwd=%@&pwd_lib=%@",self.userTf.text,self.passwordTf.text,self.libPasswordTf.text];
 
@@ -280,7 +281,7 @@
             [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                 
                 NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                //NSLog(@"%@",contentDic);
+                NSLog(@"%@",contentDic);
                 if ([[contentDic objectForKey:@"status"] boolValue]) {
                     NSArray * courseArr = [contentDic objectForKey:@"msg"];
                     [self.userDefaults setObject:courseArr forKey:MyCourse_Key];
@@ -288,7 +289,7 @@
                 }
                 
             }];
-            
+//
             //异步获取成绩                                   
             NSString * scoreUrlStr = [NSString stringWithFormat:@"%@scores",DLUT_IP];
             NSURL * scoreUrl = [NSURL URLWithString:scoreUrlStr];
@@ -298,15 +299,22 @@
             [NSURLConnection sendAsynchronousRequest:scoreRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                 
                 NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                NSLog(@"%@",contentDic);
+                NSLog(@"%@",scoreUrlStr);
                 if ([[contentDic objectForKey:@"status"] boolValue]) {
                     NSArray * courseArr = [contentDic objectForKey:@"msg"];
                     [self.userDefaults setObject:courseArr forKey:MyScore_Key];
-                    
+                    NSLog(@"%@",courseArr);
                 }
                 
             }];
+        
+            NSString * courseUrlStr = [NSString stringWithFormat:@"%@curriculum",DLUT_IP];
+            //NSString * scoreUrlStr = [NSString stringWithFormat:@"%@scores",DLUT_IP];
             
+            NetWorking * erpNetWork = [[NetWorking alloc] init];
+            [erpNetWork getContentWithUrl:courseUrlStr SaveWithStr:MyCourse_Key];
+            [erpNetWork getContentWithUrl:scoreUrlStr SaveWithStr:MyScore_Key];
+            //[erpNetWork getContentWithUrl:<#(NSString *)#> SaveWithStr:<#(NSString *)#>]
             
         }else{
             UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"用户名或密码错误" message:@"请重新输入用户名或密码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];

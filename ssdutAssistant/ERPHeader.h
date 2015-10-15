@@ -18,6 +18,7 @@
 #import "ERPCourseViewController.h"
 #import "ERPLibraryViewController.h"
 #import "ERPScoreViewController.h"
+#import "ERPScoreTableViewController.h"
 #import "ERPExamViewController.h"
 #import "ERPDUTViewController.h"
 #import "ERPSSDUTViewController.h"

@@ -11,8 +11,9 @@
 @property (nonatomic) NSURLConnection * getConnection;
 @property (nonatomic) NSURLConnection * postConnection;
 
+
 //试试block 没什么卵用
-@property (nonatomic , copy) NSArray * (^ asnchronousGetContent)(NSString * url) ;
+//@property (nonatomic , copy) NSArray * (^ asnchronousGetContent)(NSString * url) ;
 
 @end
 
@@ -21,6 +22,8 @@
 @synthesize contentData;
 @synthesize errorStr;
 @synthesize contentArr;
+
+
 
 - (id)synchronousGetContentWithUrl:(NSString *)urlStr
 {
@@ -36,13 +39,35 @@
     //NSLog(@"-----%@",contentArr);
 }
 
-- (void)getContentWithUrl:(NSString *)urlStr ToArr:(id)contentArr
+- (void)getContentWithUrl:(NSString *)urlStr SaveWithStr:(NSString *)saveKey
 {
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    
+
+
+    url = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url];
+    NSLog(@"%@",[userDefaults objectForKey:LoginToken_Str]);
+    [request setValue:[userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        
+        NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        //NSLog(@"%@",contentDic);
+        if ([[contentDic objectForKey:@"status"] boolValue]) {
+            NSArray * courseArr = [contentDic objectForKey:@"msg"];
+            [userDefaults setObject:courseArr forKey:saveKey];
+            
+            NSLog(@"UserDfaults Array: %@",courseArr);
+        }
+        
+    }];
     
 }
-- (void)postContentWithUrl:(NSString *)urlStr PostStr:(NSString *)postStr ToArr:(id)contentArr
+
+
+- (void)postContentWithUrl:(NSString *)urlStr PostStr:(NSString *)postStr SaveWithStr:(NSString *)saveKey
 {
-    
+
 }
 
 @end

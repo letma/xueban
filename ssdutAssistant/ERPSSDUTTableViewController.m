@@ -60,8 +60,8 @@
     self.tableView.delegate = self;
     //下拉刷新
     self.rC = [[UIRefreshControl alloc] init];
-    self.rC.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
-    
+    //self.rC.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    self.rC.tintColor = UIColorFromRGB(0x00a4e9);
     [self.rC  addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = self.rC;
     
@@ -91,7 +91,7 @@
 -(void)refreshTableView
 {
     if (self.refreshControl.refreshing) {
-        self.rC.attributedTitle = [[NSAttributedString alloc] initWithString: @"加载中..."];
+        //self.rC.attributedTitle = [[NSAttributedString alloc] initWithString: @"加载中..."];
         [self loadData];
         
 
@@ -144,7 +144,7 @@
 {
     self.newsArr = [NSJSONSerialization JSONObjectWithData:self.NewsData options:NSJSONReadingMutableContainers error:nil];
     [self.rC endRefreshing];
-    self.rC.attributedTitle = [[NSAttributedString alloc] initWithString: @"下拉刷新"];
+    //self.rC.attributedTitle = [[NSAttributedString alloc] initWithString: @"下拉刷新"];
     [self.tableView reloadData];
 
 }

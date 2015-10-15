@@ -36,7 +36,7 @@ alpha:1.0]
 //#define Setting_SwitchKey @"Setting_SwitchKey"
 
 
-#define DLUT_IP @"http://210.30.100.93:8089/api/dlut/"
+#define DLUT_IP @"http://210.30.100.93/xueban/api/dlut/"
 #define TEST_IP @"http://210.30.100.93:8089/"
 
 /*
@@ -44,7 +44,7 @@ alpha:1.0]
  1 校园新闻
  2 活动公告
  */
-#define DLUT_NEWS_IP @"http://210.30.100.93:8087/"
+#define DLUT_NEWS_IP @"http://210.30.100.93/ssdutNews/"
 #define DLUT_SOCIAL_IP @"http://210.30.100.93:8089/common/"
 
 //是否登陆

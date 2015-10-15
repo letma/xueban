@@ -152,7 +152,7 @@
                 break;
             }
             case 3:
-                viewControllerStr = @"ERPScoreViewController";
+                viewControllerStr = @"ERPScoreTableViewController";
                 break;
             case 5:
                 viewControllerStr = @"";
