@@ -61,6 +61,8 @@ alpha:1.0]
 #define MyStudentId_Key @"MyStudentId_Key"
 //用户的本学期成绩信息
 #define MyScore_Key @"MyScore_Key"
+//用户的所有成绩信息
+#define AllMyScore_Key @"AllMyScore_Key"
 //用户的全部课程信息
 #define MyCourse_Key @"MyCourse_Key"
 //已经排序的课程信息

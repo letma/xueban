@@ -88,6 +88,8 @@
 		FA7C50DB1BCE54A400824112 /* ERPScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C50DA1BCE54A400824112 /* ERPScoreTableViewController.m */; };
 		FA7C50DE1BCE6C8300824112 /* ERPUniversityNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C50DD1BCE6C8300824112 /* ERPUniversityNewsTableViewController.m */; };
 		FA8139311B5CD74600848D96 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8139301B5CD74600848D96 /* NSTimer+Addition.m */; };
+		FA84D7FE1BD25402003893A6 /* LibraryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84D7FC1BD25402003893A6 /* LibraryTableViewCell.m */; };
+		FA84D7FF1BD25402003893A6 /* LibraryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA84D7FD1BD25402003893A6 /* LibraryTableViewCell.xib */; };
 		FA88B4621BA12D0000B8AAD6 /* MySettingSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88B4601BA12D0000B8AAD6 /* MySettingSwitchTableViewCell.m */; };
 		FA88B4631BA12D0100B8AAD6 /* MySettingSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA88B4611BA12D0000B8AAD6 /* MySettingSwitchTableViewCell.xib */; };
 		FA88B4671BA12D3000B8AAD6 /* MySettingCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA88B4651BA12D3000B8AAD6 /* MySettingCustomTableViewCell.m */; };
@@ -269,6 +271,9 @@
 		FA7C50DD1BCE6C8300824112 /* ERPUniversityNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPUniversityNewsTableViewController.m; sourceTree = "<group>"; };
 		FA81392F1B5CD74600848D96 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
 		FA8139301B5CD74600848D96 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		FA84D7FB1BD25402003893A6 /* LibraryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryTableViewCell.h; sourceTree = "<group>"; };
+		FA84D7FC1BD25402003893A6 /* LibraryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryTableViewCell.m; sourceTree = "<group>"; };
+		FA84D7FD1BD25402003893A6 /* LibraryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryTableViewCell.xib; sourceTree = "<group>"; };
 		FA88B45F1BA12D0000B8AAD6 /* MySettingSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingSwitchTableViewCell.h; sourceTree = "<group>"; };
 		FA88B4601BA12D0000B8AAD6 /* MySettingSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingSwitchTableViewCell.m; sourceTree = "<group>"; };
 		FA88B4611BA12D0000B8AAD6 /* MySettingSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySettingSwitchTableViewCell.xib; sourceTree = "<group>"; };
@@ -694,6 +699,7 @@
 				FA5B71ED1B4809A500F6870C /* ERPLibraryViewController.h */,
 				FA5B71EE1B4809A500F6870C /* ERPLibraryViewController.m */,
 				FA5B71EF1B4809A600F6870C /* ERPLibraryViewController.xib */,
+				FA84D7FA1BD253C1003893A6 /* libraryCell */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -764,6 +770,16 @@
 				FA6734A51BC93E9900E950B9 /* SSDUTNewsWebViewController.m */,
 			);
 			name = SSDUTNewsDetail;
+			sourceTree = "<group>";
+		};
+		FA84D7FA1BD253C1003893A6 /* libraryCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA84D7FB1BD25402003893A6 /* LibraryTableViewCell.h */,
+				FA84D7FC1BD25402003893A6 /* LibraryTableViewCell.m */,
+				FA84D7FD1BD25402003893A6 /* LibraryTableViewCell.xib */,
+			);
+			name = libraryCell;
 			sourceTree = "<group>";
 		};
 		FA88B45D1BA12CA800B8AAD6 /* AboutUs */ = {
@@ -1105,6 +1121,7 @@
 				FA5991561BA03DF70097D3E5 /* MySettingViewController.xib in Resources */,
 				FA9303711BA289E100406094 /* AboutXueCustomTableViewCell.xib in Resources */,
 				FA93035C1BA27A9800406094 /* AboutXueBanViewController.xib in Resources */,
+				FA84D7FF1BD25402003893A6 /* LibraryTableViewCell.xib in Resources */,
 				FAD275191B9F1125000839BD /* MineTableViewCell.xib in Resources */,
 				FA5800F61B57DE3D00478AAF /* LessonCardView.xib in Resources */,
 				FA78A22F1BABF4C70015F606 /* ERPCommonTableViewCell.xib in Resources */,
@@ -1185,6 +1202,7 @@
 				FA5B71D41B4781DE00F6870C /* BigTableViewCell.m in Sources */,
 				FAD827D81BBBF98D008D4E07 /* ChangeWeekTableViewCell.m in Sources */,
 				FA8139311B5CD74600848D96 /* NSTimer+Addition.m in Sources */,
+				FA84D7FE1BD25402003893A6 /* LibraryTableViewCell.m in Sources */,
 				FA5B71FA1B480A5900F6870C /* ERPScoreViewController.m in Sources */,
 				FA5B71D91B4781F400F6870C /* SmallTableViewCell.m in Sources */,
 				FA5800EA1B57BEED00478AAF /* SectionPartView.m in Sources */,

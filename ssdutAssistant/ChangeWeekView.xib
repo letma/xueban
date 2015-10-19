@@ -82,7 +82,7 @@
                 <outlet property="backGroundView" destination="ggm-MV-wId" id="zIk-7m-E6i"/>
                 <outlet property="weekTableView" destination="tK0-lI-yle" id="8Aa-lx-QNk"/>
             </connections>
-            <point key="canvasLocation" x="379" y="279"/>
+            <point key="canvasLocation" x="168" y="282"/>
         </view>
     </objects>
     <resources>

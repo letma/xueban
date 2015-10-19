@@ -122,6 +122,7 @@
             case 2:
                 viewControllerStr = @"ERPExamViewController";
                 break;
+                
             case 4:
             {
 
@@ -167,7 +168,12 @@
                 viewControllerStr = @"ERPScoreTableViewController";
                 break;
             case 5:
-                viewControllerStr = @"";
+            {
+                ERPSSDUTTableViewController * viewController = [[ERPSSDUTTableViewController alloc] init];
+                viewController.NewsIndex = 3;
+                [self.navigationController pushViewController:viewController animated:YES];
+                
+            }
                 break;
                 
             default:

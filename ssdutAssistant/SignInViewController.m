@@ -272,49 +272,51 @@
 
             [[UIApplication sharedApplication] setStatusBarHidden:NO];
             
-            //异步获取课表
-            NSString * urlStr = [NSString stringWithFormat:@"%@curriculum",DLUT_IP];
-            NSURL * url = [NSURL URLWithString:urlStr];
-            NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url];
-            NSLog(@"%@",[self.userDefaults objectForKey:LoginToken_Str]);
-            [request setValue:[self.userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
-            [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                
-                NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                NSLog(@"%@",contentDic);
-                if ([[contentDic objectForKey:@"status"] boolValue]) {
-                    NSArray * courseArr = [contentDic objectForKey:@"msg"];
-                    [self.userDefaults setObject:courseArr forKey:MyCourse_Key];
-                    
-                }
-                
-            }];
-//
-            //异步获取成绩                                   
-            NSString * scoreUrlStr = [NSString stringWithFormat:@"%@scores",DLUT_IP];
-            NSURL * scoreUrl = [NSURL URLWithString:scoreUrlStr];
-            NSMutableURLRequest * scoreRequest = [[NSMutableURLRequest alloc] initWithURL:scoreUrl];
-            //NSLog(@"%@",[self.userDefaults objectForKey:LoginToken_Str]);
-            [scoreRequest setValue:[self.userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
-            [NSURLConnection sendAsynchronousRequest:scoreRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                
-                NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                NSLog(@"%@",scoreUrlStr);
-                if ([[contentDic objectForKey:@"status"] boolValue]) {
-                    NSArray * courseArr = [contentDic objectForKey:@"msg"];
-                    [self.userDefaults setObject:courseArr forKey:MyScore_Key];
-                    NSLog(@"%@",courseArr);
-                }
-                
-            }];
+//            //异步获取课表
+//            NSString * urlStr = [NSString stringWithFormat:@"%@curriculum",DLUT_IP];
+//            NSURL * url = [NSURL URLWithString:urlStr];
+//            NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url];
+//            NSLog(@"%@",[self.userDefaults objectForKey:LoginToken_Str]);
+//            [request setValue:[self.userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
+//            [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//                
+//                NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//                NSLog(@"%@",contentDic);
+//                if ([[contentDic objectForKey:@"status"] boolValue]) {
+//                    NSArray * courseArr = [contentDic objectForKey:@"msg"];
+//                    [self.userDefaults setObject:courseArr forKey:MyCourse_Key];
+//                    
+//                }
+//                
+//            }];
+////
+//            //异步获取成绩                                   
+//            NSString * scoreUrlStr = [NSString stringWithFormat:@"%@scores",DLUT_IP];
+//            NSURL * scoreUrl = [NSURL URLWithString:scoreUrlStr];
+//            NSMutableURLRequest * scoreRequest = [[NSMutableURLRequest alloc] initWithURL:scoreUrl];
+//            //NSLog(@"%@",[self.userDefaults objectForKey:LoginToken_Str]);
+//            [scoreRequest setValue:[self.userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
+//            [NSURLConnection sendAsynchronousRequest:scoreRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//                
+//                NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//                NSLog(@"%@",scoreUrlStr);
+//                if ([[contentDic objectForKey:@"status"] boolValue]) {
+//                    NSArray * courseArr = [contentDic objectForKey:@"msg"];
+//                    [self.userDefaults setObject:courseArr forKey:MyScore_Key];
+//                    NSLog(@"%@",courseArr);
+//                }
+//                
+//            }];
         
             NSString * courseUrlStr = [NSString stringWithFormat:@"%@curriculum",DLUT_IP];
-            //NSString * scoreUrlStr = [NSString stringWithFormat:@"%@scores",DLUT_IP];
+            NSString * scoreUrlStr = [NSString stringWithFormat:@"%@scores",DLUT_IP];
+            NSString * allScoreUrlStr = [NSString stringWithFormat:@"%@scores_by_term",DLUT_IP];
             
             NetWorking * erpNetWork = [[NetWorking alloc] init];
             [erpNetWork getContentWithUrl:courseUrlStr SaveWithStr:MyCourse_Key];
             [erpNetWork getContentWithUrl:scoreUrlStr SaveWithStr:MyScore_Key];
-            //[erpNetWork getContentWithUrl:<#(NSString *)#> SaveWithStr:<#(NSString *)#>]
+            [erpNetWork getContentWithUrl:allScoreUrlStr SaveWithStr:AllMyScore_Key];
+
             
         }else{
             UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"用户名或密码错误" message:@"请重新输入用户名或密码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];

@@ -56,6 +56,7 @@
         if ([[contentDic objectForKey:@"status"] boolValue]) {
             NSArray * courseArr = [contentDic objectForKey:@"msg"];
             [userDefaults setObject:courseArr forKey:saveKey];
+            [userDefaults synchronize];
             
             NSLog(@"UserDfaults Array: %@",courseArr);
         }
