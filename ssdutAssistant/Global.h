@@ -71,6 +71,9 @@ alpha:1.0]
 #define IF_CourseHave @"IF_CourseHave"
 //纪录课表色块的颜色使用情况
 #define MyCourseColor_Key @"MyCourseColor_Key"
+//用户的借阅信息
+#define MyBorrowMessage_Key @"MyBorrowMessage_Key"
+
 
 //课程临时颜色
 #define TempCourseColor @"TempCourseColor"

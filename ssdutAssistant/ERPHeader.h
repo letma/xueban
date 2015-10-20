@@ -16,7 +16,7 @@
 
 #import "UITableView+Register.h"
 #import "ERPCourseViewController.h"
-#import "ERPLibraryViewController.h"
+#import "ERPLibraryTableViewController.h"
 #import "ERPScoreViewController.h"
 #import "ERPScoreTableViewController.h"
 #import "ERPExamViewController.h"

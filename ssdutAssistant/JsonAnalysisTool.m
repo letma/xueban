@@ -18,8 +18,12 @@
 {
     NSDictionary * dic = [[NSDictionary alloc] initWithDictionary:[newsArr objectAtIndex:index]];
 
-    NSString * time = [dic objectForKey:@"time"];
-    NSDate * contentTime = [[NSDate alloc] initWithTimeIntervalSince1970:[time integerValue]/1000.0];
+    NSString * time =  [NSString stringWithFormat:@"%@",[dic objectForKey:@"time"]];
+    NSString * tttt = [time substringToIndex:10];
+    NSDate * contentTime = [[NSDate alloc] initWithTimeIntervalSince1970:[tttt integerValue]];
+
+    NSLog(@"++%ld",[tttt integerValue]);
+    //NSDate * cccc = [[NSDate alloc] initWithTimeIntervalSinceNow:[time integerValue]/1000000.0];
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy/MM/dd HH:MM"];
     timeStr = [dateFormatter stringFromDate:contentTime];

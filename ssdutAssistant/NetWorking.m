@@ -44,7 +44,6 @@
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     
 
-
     url = [NSURL URLWithString:urlStr];
     NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url];
     NSLog(@"%@",[userDefaults objectForKey:LoginToken_Str]);

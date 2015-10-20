@@ -192,7 +192,7 @@
 -(IBAction)pushToLibrary:(id)sender
 {
     if ([self.userDefaults boolForKey:IF_Login]) {
-        ERPLibraryViewController * viewController = [[ERPLibraryViewController alloc]init];
+        ERPLibraryTableViewController * viewController = [[ERPLibraryTableViewController alloc]init];
         [self.navigationController pushViewController:viewController animated:YES];
     }else{
         SignInViewController * signInController  = [[SignInViewController alloc]init];

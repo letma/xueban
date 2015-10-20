@@ -37,7 +37,7 @@
 {
     self.borrowBtn.userInteractionEnabled = NO;
     
-    self.borrowNumLbl.text = nameStr;
+    self.bookNameLbl.text = nameStr;
     self.locationLbl.text = locationStr;
     self.startTimeLbl.text = startTimeStr;
     self.endTimeLbl.text = endTimeStr;
