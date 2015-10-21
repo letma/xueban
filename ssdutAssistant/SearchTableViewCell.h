@@ -10,4 +10,7 @@
 
 @interface SearchTableViewCell : UITableViewCell
 - (void)creatCellWithTitle:(NSString *)titleStr Publish:(NSString *)publishStr Num:(NSString *)numStr;
+
+//已经考完的;
+- (void)haveGone;
 @end

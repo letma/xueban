@@ -43,27 +43,34 @@
     self.endTimeLbl.text = endTimeStr;
     self.borrowNumLbl.text = numStr;
     
-    NSString * btnImgName;
+    NSString * titleStr;
+    NSInteger colorNum;
+    
     switch (borrowStatus) {
         case 0:
-            btnImgName = @"erp_library_icon_borrowSucceed";
+            titleStr = @"无须续借";
+            colorNum = 0xA0A0A0;
             break;
         case 1:
             self.borrowBtn.userInteractionEnabled = YES;
-            btnImgName = @"erp_library_icon_borrowNow";
+            titleStr = @"立即续借";
+            colorNum = 0x16ADC7;
             break;
         case 2:
-            btnImgName = @"erp_library_icon_borrowSucceed";
+            titleStr = @"续借成功";
+            colorNum = 0xA0A0A0;
             break;
         case 3:
-            btnImgName = @"erp_library_icon_timeOut";
+            titleStr = @"图书到期";
+            colorNum = 0xE44F64;
             break;
             
         default:
             break;
     }
     
-    [self.borrowBtn setImage:UIIMGName(btnImgName) forState:UIControlStateNormal];
+    [self.borrowBtn setTitle:titleStr forState:UIControlStateNormal];
+    [self.borrowBtn setTitleColor:UIColorFromRGB(colorNum) forState:UIControlStateNormal];
 
 }
 @end

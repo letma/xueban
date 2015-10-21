@@ -112,7 +112,7 @@
                 break;
             }
             case 2:
-                viewControllerStr = @"ERPExamViewController";
+                viewControllerStr = @"ERPExamTableViewController";
                 break;
             case 4:
             {

@@ -120,7 +120,7 @@
             }
         
             case 2:
-                viewControllerStr = @"ERPExamViewController";
+                viewControllerStr = @"ERPExamTableViewController";
                 break;
                 
             case 4:
@@ -205,6 +205,8 @@
 }
 -(IBAction)pushToLibrary:(id)sender
 {
+//    ERPLibraryTableViewController * viewController = [[ERPLibraryTableViewController alloc]init];
+//    [self.navigationController pushViewController:viewController animated:YES];
 
     if ([self.userDefaults boolForKey:IF_Login]) {
         ERPLibraryTableViewController * viewController = [[ERPLibraryTableViewController alloc]init];

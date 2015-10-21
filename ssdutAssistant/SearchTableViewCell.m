@@ -36,4 +36,10 @@
     self.numLbl.text = numStr;
 }
 
+- (void)haveGone
+{
+    [self.titleLbl setTextColor:UIColorFromRGB(0xefefef)];
+    [self.publishLbl setTextColor:UIColorFromRGB(0xefefef)];
+    [self.numLbl setTextColor:UIColorFromRGB(0xefefef)];
+}
 @end

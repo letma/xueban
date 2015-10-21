@@ -17,12 +17,8 @@
 #import "UITableView+Register.h"
 #import "ERPCourseViewController.h"
 #import "ERPLibraryTableViewController.h"
-#import "ERPScoreViewController.h"
 #import "ERPScoreTableViewController.h"
-#import "ERPExamViewController.h"
-#import "ERPDUTViewController.h"
-#import "ERPSSDUTViewController.h"
+#import "ERPExamTableViewController.h"
 #import "ERPSSDUTTableViewController.h"
-#import "ERPNoticeViewController.h"
 
 #endif

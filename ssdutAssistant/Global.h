@@ -73,6 +73,8 @@ alpha:1.0]
 #define MyCourseColor_Key @"MyCourseColor_Key"
 //用户的借阅信息
 #define MyBorrowMessage_Key @"MyBorrowMessage_Key"
+//用户的考场安排
+#define MyExamMessage_Key @"MyExamMessage_Key"
 
 
 //课程临时颜色

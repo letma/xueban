@@ -66,16 +66,9 @@
 		FA5B71DF1B47841500F6870C /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B71DD1B47841500F6870C /* EmptyTableViewCell.xib */; };
 		FA5B71E31B47AB4700F6870C /* UITableView+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B71E21B47AB4700F6870C /* UITableView+Register.m */; };
 		FA5B71EA1B47DFC500F6870C /* ERPCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B71E81B47DFC500F6870C /* ERPCourseViewController.m */; };
-		FA5B71FA1B480A5900F6870C /* ERPScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B71F81B480A5900F6870C /* ERPScoreViewController.m */; };
-		FA5B71FB1B480A5900F6870C /* ERPScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B71F91B480A5900F6870C /* ERPScoreViewController.xib */; };
-		FA5B71FF1B480A7700F6870C /* ERPExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B71FD1B480A7700F6870C /* ERPExamViewController.m */; };
-		FA5B72001B480A7700F6870C /* ERPExamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B71FE1B480A7700F6870C /* ERPExamViewController.xib */; };
-		FA5B72041B480A8900F6870C /* ERPDUTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B72021B480A8900F6870C /* ERPDUTViewController.m */; };
-		FA5B72051B480A8900F6870C /* ERPDUTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B72031B480A8900F6870C /* ERPDUTViewController.xib */; };
-		FA5B72091B480A9B00F6870C /* ERPSSDUTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B72071B480A9B00F6870C /* ERPSSDUTViewController.m */; };
-		FA5B720A1B480A9B00F6870C /* ERPSSDUTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B72081B480A9B00F6870C /* ERPSSDUTViewController.xib */; };
-		FA5B720E1B480AB300F6870C /* ERPNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B720C1B480AB300F6870C /* ERPNoticeViewController.m */; };
-		FA5B720F1B480AB300F6870C /* ERPNoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B720D1B480AB300F6870C /* ERPNoticeViewController.xib */; };
+		FA601B431BD7B7D90006F331 /* ERPExamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA601B421BD7B7D90006F331 /* ERPExamTableViewController.m */; };
+		FA601B471BD7B8F30006F331 /* NothingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA601B451BD7B8F30006F331 /* NothingTableViewCell.m */; };
+		FA601B481BD7B8F30006F331 /* NothingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA601B461BD7B8F30006F331 /* NothingTableViewCell.xib */; };
 		FA67349E1BC900F200E950B9 /* NetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67349D1BC900F200E950B9 /* NetWorking.m */; };
 		FA6734A11BC936CD00E950B9 /* JsonAnalysisTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6734A01BC936CD00E950B9 /* JsonAnalysisTool.m */; };
 		FA6734A61BC93E9900E950B9 /* SSDUTNewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6734A51BC93E9900E950B9 /* SSDUTNewsWebViewController.m */; };
@@ -84,7 +77,6 @@
 		FA78A2331BAC1F610015F606 /* ERPViewController4s.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78A2311BAC1F610015F606 /* ERPViewController4s.m */; };
 		FA78A2341BAC1F610015F606 /* ERPViewController4s.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA78A2321BAC1F610015F606 /* ERPViewController4s.xib */; };
 		FA7C50DB1BCE54A400824112 /* ERPScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C50DA1BCE54A400824112 /* ERPScoreTableViewController.m */; };
-		FA7C50DE1BCE6C8300824112 /* ERPUniversityNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C50DD1BCE6C8300824112 /* ERPUniversityNewsTableViewController.m */; };
 		FA8139311B5CD74600848D96 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8139301B5CD74600848D96 /* NSTimer+Addition.m */; };
 		FA84D7FE1BD25402003893A6 /* LibraryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84D7FC1BD25402003893A6 /* LibraryTableViewCell.m */; };
 		FA84D7FF1BD25402003893A6 /* LibraryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA84D7FD1BD25402003893A6 /* LibraryTableViewCell.xib */; };
@@ -238,22 +230,12 @@
 		FA5B71E21B47AB4700F6870C /* UITableView+Register.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Register.m"; sourceTree = "<group>"; };
 		FA5B71E71B47DFC500F6870C /* ERPCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPCourseViewController.h; sourceTree = "<group>"; };
 		FA5B71E81B47DFC500F6870C /* ERPCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPCourseViewController.m; sourceTree = "<group>"; };
-		FA5B71F71B480A5900F6870C /* ERPScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPScoreViewController.h; sourceTree = "<group>"; };
-		FA5B71F81B480A5900F6870C /* ERPScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPScoreViewController.m; sourceTree = "<group>"; };
-		FA5B71F91B480A5900F6870C /* ERPScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERPScoreViewController.xib; sourceTree = "<group>"; };
-		FA5B71FC1B480A7700F6870C /* ERPExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPExamViewController.h; sourceTree = "<group>"; };
-		FA5B71FD1B480A7700F6870C /* ERPExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPExamViewController.m; sourceTree = "<group>"; };
-		FA5B71FE1B480A7700F6870C /* ERPExamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERPExamViewController.xib; sourceTree = "<group>"; };
-		FA5B72011B480A8900F6870C /* ERPDUTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPDUTViewController.h; sourceTree = "<group>"; };
-		FA5B72021B480A8900F6870C /* ERPDUTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPDUTViewController.m; sourceTree = "<group>"; };
-		FA5B72031B480A8900F6870C /* ERPDUTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERPDUTViewController.xib; sourceTree = "<group>"; };
-		FA5B72061B480A9B00F6870C /* ERPSSDUTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPSSDUTViewController.h; sourceTree = "<group>"; };
-		FA5B72071B480A9B00F6870C /* ERPSSDUTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPSSDUTViewController.m; sourceTree = "<group>"; };
-		FA5B72081B480A9B00F6870C /* ERPSSDUTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERPSSDUTViewController.xib; sourceTree = "<group>"; };
-		FA5B720B1B480AB300F6870C /* ERPNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPNoticeViewController.h; sourceTree = "<group>"; };
-		FA5B720C1B480AB300F6870C /* ERPNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPNoticeViewController.m; sourceTree = "<group>"; };
-		FA5B720D1B480AB300F6870C /* ERPNoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERPNoticeViewController.xib; sourceTree = "<group>"; };
 		FA5B72101B480C2700F6870C /* ERPHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPHeader.h; sourceTree = "<group>"; };
+		FA601B411BD7B7D90006F331 /* ERPExamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPExamTableViewController.h; sourceTree = "<group>"; };
+		FA601B421BD7B7D90006F331 /* ERPExamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPExamTableViewController.m; sourceTree = "<group>"; };
+		FA601B441BD7B8F30006F331 /* NothingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NothingTableViewCell.h; sourceTree = "<group>"; };
+		FA601B451BD7B8F30006F331 /* NothingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NothingTableViewCell.m; sourceTree = "<group>"; };
+		FA601B461BD7B8F30006F331 /* NothingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingTableViewCell.xib; sourceTree = "<group>"; };
 		FA67349C1BC900F200E950B9 /* NetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorking.h; sourceTree = "<group>"; };
 		FA67349D1BC900F200E950B9 /* NetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorking.m; sourceTree = "<group>"; };
 		FA67349F1BC936CD00E950B9 /* JsonAnalysisTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonAnalysisTool.h; sourceTree = "<group>"; };
@@ -268,8 +250,6 @@
 		FA78A2321BAC1F610015F606 /* ERPViewController4s.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERPViewController4s.xib; sourceTree = "<group>"; };
 		FA7C50D91BCE54A400824112 /* ERPScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPScoreTableViewController.h; sourceTree = "<group>"; };
 		FA7C50DA1BCE54A400824112 /* ERPScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPScoreTableViewController.m; sourceTree = "<group>"; };
-		FA7C50DC1BCE6C8300824112 /* ERPUniversityNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPUniversityNewsTableViewController.h; sourceTree = "<group>"; };
-		FA7C50DD1BCE6C8300824112 /* ERPUniversityNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPUniversityNewsTableViewController.m; sourceTree = "<group>"; };
 		FA81392F1B5CD74600848D96 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
 		FA8139301B5CD74600848D96 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		FA84D7FB1BD25402003893A6 /* LibraryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryTableViewCell.h; sourceTree = "<group>"; };
@@ -361,6 +341,9 @@
 			children = (
 				18C744731B46F25000FAAC12 /* TabBarViewController.h */,
 				18C744741B46F25000FAAC12 /* TabBarViewController.m */,
+				FA601B441BD7B8F30006F331 /* NothingTableViewCell.h */,
+				FA601B451BD7B8F30006F331 /* NothingTableViewCell.m */,
+				FA601B461BD7B8F30006F331 /* NothingTableViewCell.xib */,
 				18C7447B1B46F2AE00FAAC12 /* ERP */,
 				18C7447C1B46F2F600FAAC12 /* Discovery */,
 				18C7447D1B46F33300FAAC12 /* Mine */,
@@ -390,10 +373,8 @@
 				FA5B71E61B47DF7A00F6870C /* Course */,
 				FA5B71EC1B48095500F6870C /* Library */,
 				FA5B71F51B480A1300F6870C /* SSDUTNews */,
-				FA5B71F61B480A3A00F6870C /* Notice */,
 				FA5B71F31B4809DF00F6870C /* Exam */,
 				FA5B71F21B4809B000F6870C /* Score */,
-				FA5B71F41B4809F500F6870C /* UniversityNews */,
 			);
 			name = ERP;
 			sourceTree = "<group>";
@@ -717,9 +698,6 @@
 		FA5B71F21B4809B000F6870C /* Score */ = {
 			isa = PBXGroup;
 			children = (
-				FA5B71F71B480A5900F6870C /* ERPScoreViewController.h */,
-				FA5B71F81B480A5900F6870C /* ERPScoreViewController.m */,
-				FA5B71F91B480A5900F6870C /* ERPScoreViewController.xib */,
 				FA7C50D91BCE54A400824112 /* ERPScoreTableViewController.h */,
 				FA7C50DA1BCE54A400824112 /* ERPScoreTableViewController.m */,
 				FA9303511BA25C9400406094 /* ScoreCells */,
@@ -730,47 +708,21 @@
 		FA5B71F31B4809DF00F6870C /* Exam */ = {
 			isa = PBXGroup;
 			children = (
-				FA5B71FC1B480A7700F6870C /* ERPExamViewController.h */,
-				FA5B71FD1B480A7700F6870C /* ERPExamViewController.m */,
-				FA5B71FE1B480A7700F6870C /* ERPExamViewController.xib */,
+				FA601B411BD7B7D90006F331 /* ERPExamTableViewController.h */,
+				FA601B421BD7B7D90006F331 /* ERPExamTableViewController.m */,
 			);
 			name = Exam;
-			sourceTree = "<group>";
-		};
-		FA5B71F41B4809F500F6870C /* UniversityNews */ = {
-			isa = PBXGroup;
-			children = (
-				FA5B72011B480A8900F6870C /* ERPDUTViewController.h */,
-				FA5B72021B480A8900F6870C /* ERPDUTViewController.m */,
-				FA5B72031B480A8900F6870C /* ERPDUTViewController.xib */,
-				FA7C50DC1BCE6C8300824112 /* ERPUniversityNewsTableViewController.h */,
-				FA7C50DD1BCE6C8300824112 /* ERPUniversityNewsTableViewController.m */,
-			);
-			name = UniversityNews;
 			sourceTree = "<group>";
 		};
 		FA5B71F51B480A1300F6870C /* SSDUTNews */ = {
 			isa = PBXGroup;
 			children = (
-				FA5B72061B480A9B00F6870C /* ERPSSDUTViewController.h */,
-				FA5B72071B480A9B00F6870C /* ERPSSDUTViewController.m */,
-				FA5B72081B480A9B00F6870C /* ERPSSDUTViewController.xib */,
 				FA3CA1EB1BCCF5E10052423B /* ERPSSDUTTableViewController.h */,
 				FA3CA1EC1BCCF5E10052423B /* ERPSSDUTTableViewController.m */,
 				FA58BAB61BC7E801008797AE /* SSDUTNewsCells */,
 				FA6734A21BC93E1700E950B9 /* SSDUTNewsDetail */,
 			);
 			name = SSDUTNews;
-			sourceTree = "<group>";
-		};
-		FA5B71F61B480A3A00F6870C /* Notice */ = {
-			isa = PBXGroup;
-			children = (
-				FA5B720B1B480AB300F6870C /* ERPNoticeViewController.h */,
-				FA5B720C1B480AB300F6870C /* ERPNoticeViewController.m */,
-				FA5B720D1B480AB300F6870C /* ERPNoticeViewController.xib */,
-			);
-			name = Notice;
 			sourceTree = "<group>";
 		};
 		FA6734A21BC93E1700E950B9 /* SSDUTNewsDetail */ = {
@@ -1104,15 +1056,13 @@
 			files = (
 				FACD9AEC1BBAC20E00DD5E85 /* ChangeWeekView.xib in Resources */,
 				FA59915C1BA04B530097D3E5 /* MyDetaliHeadTableViewCell.xib in Resources */,
-				FA5B72051B480A8900F6870C /* ERPDUTViewController.xib in Resources */,
 				FA88B4631BA12D0100B8AAD6 /* MySettingSwitchTableViewCell.xib in Resources */,
 				FA5B71DF1B47841500F6870C /* EmptyTableViewCell.xib in Resources */,
+				FA601B481BD7B8F30006F331 /* NothingTableViewCell.xib in Resources */,
 				FA2992731B4AA5510088DC7E /* CourseListView56.xib in Resources */,
 				FA5991661BA04BA80097D3E5 /* MyDetailLoveTableViewCell.xib in Resources */,
 				FAD275211B9F1160000839BD /* MyHeadTableViewCell.xib in Resources */,
 				FA9303671BA2800100406094 /* AboutXueHeaderTableViewCell.xib in Resources */,
-				FA5B720A1B480A9B00F6870C /* ERPSSDUTViewController.xib in Resources */,
-				FA5B720F1B480AB300F6870C /* ERPNoticeViewController.xib in Resources */,
 				FA5991611BA04B7A0097D3E5 /* MyDetailCustomTableViewCell.xib in Resources */,
 				FAD827D91BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib in Resources */,
 				FA93036C1BA2803B00406094 /* AboutXueFooterTableViewCell.xib in Resources */,
@@ -1148,13 +1098,11 @@
 				FACB03941BA8582700C8BE63 /* FreshView.xib in Resources */,
 				FAF3BAC81B9DBEB400DFDE0D /* DiscoveryTableViewCell.xib in Resources */,
 				FA88B46E1BA178C600B8AAD6 /* AboutUsViewController.xib in Resources */,
-				FA5B71FB1B480A5900F6870C /* ERPScoreViewController.xib in Resources */,
 				FA88B4681BA12D3000B8AAD6 /* MySettingCustomTableViewCell.xib in Resources */,
 				FA58BABB1BC7E876008797AE /* SSDUTNewsCell.xib in Resources */,
 				18C7448D1B46F42400FAAC12 /* MineViewController.xib in Resources */,
 				FA2992751B4AA5EA0088DC7E /* CourseListView67.xib in Resources */,
 				FA59914C1BA03DCF0097D3E5 /* MyFilesViewController.xib in Resources */,
-				FA5B72001B480A7700F6870C /* ERPExamViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1208,9 +1156,9 @@
 				FACB038D1BA810C100C8BE63 /* NetworkingNoticeView.m in Sources */,
 				FA6734A11BC936CD00E950B9 /* JsonAnalysisTool.m in Sources */,
 				FA2B314E1B4C02E900C040BD /* WeekDayButton.m in Sources */,
-				FA5B720E1B480AB300F6870C /* ERPNoticeViewController.m in Sources */,
 				FABD9E8A1BD66BF20022CDC6 /* HintTableViewCell.m in Sources */,
 				FA29926F1B4A85A40088DC7E /* CourseListView.m in Sources */,
+				FA601B431BD7B7D90006F331 /* ERPExamTableViewController.m in Sources */,
 				18C744791B46F2A900FAAC12 /* ERPViewController.m in Sources */,
 				FA5991651BA04BA80097D3E5 /* MyDetailLoveTableViewCell.m in Sources */,
 				FA59916C1BA065FF0097D3E5 /* MyFileFolderTableViewCell.m in Sources */,
@@ -1223,7 +1171,6 @@
 				FAD827D81BBBF98D008D4E07 /* ChangeWeekTableViewCell.m in Sources */,
 				FA8139311B5CD74600848D96 /* NSTimer+Addition.m in Sources */,
 				FA84D7FE1BD25402003893A6 /* LibraryTableViewCell.m in Sources */,
-				FA5B71FA1B480A5900F6870C /* ERPScoreViewController.m in Sources */,
 				FA5B71D91B4781F400F6870C /* SmallTableViewCell.m in Sources */,
 				FA5800EA1B57BEED00478AAF /* SectionPartView.m in Sources */,
 				FAD275181B9F1125000839BD /* MineTableViewCell.m in Sources */,
@@ -1232,12 +1179,12 @@
 				FA5B71DE1B47841500F6870C /* EmptyTableViewCell.m in Sources */,
 				FA5991601BA04B7A0097D3E5 /* MyDetailCustomTableViewCell.m in Sources */,
 				FABD9E801BD62ED20022CDC6 /* ERPLibraryTableViewController.m in Sources */,
-				FA5B72041B480A8900F6870C /* ERPDUTViewController.m in Sources */,
 				FA5800F41B57DE1100478AAF /* LessonCardView.m in Sources */,
 				FA88B4721BA184C000B8AAD6 /* SignInViewController.m in Sources */,
 				FA41B0141B4667BC0043A439 /* AppDelegate.m in Sources */,
 				FA3CA1EA1BCCF23C0052423B /* UserAgreeementViewController.m in Sources */,
 				FA9303661BA2800100406094 /* AboutXueHeaderTableViewCell.m in Sources */,
+				FA601B471BD7B8F30006F331 /* NothingTableViewCell.m in Sources */,
 				FA59913B1BA03D330097D3E5 /* MyDetailViewController.m in Sources */,
 				FA88B46D1BA178C600B8AAD6 /* AboutUsViewController.m in Sources */,
 				FA5B71E31B47AB4700F6870C /* UITableView+Register.m in Sources */,
@@ -1248,12 +1195,10 @@
 				FA67349E1BC900F200E950B9 /* NetWorking.m in Sources */,
 				FA9303701BA289E100406094 /* AboutXueCustomTableViewCell.m in Sources */,
 				18C7448C1B46F42400FAAC12 /* MineViewController.m in Sources */,
-				FA7C50DE1BCE6C8300824112 /* ERPUniversityNewsTableViewController.m in Sources */,
 				FAD275201B9F1160000839BD /* MyHeadTableViewCell.m in Sources */,
 				FA3CA1ED1BCCF5E10052423B /* ERPSSDUTTableViewController.m in Sources */,
 				FACD9AEA1BBAC1E300DD5E85 /* ChangeWeekView.m in Sources */,
 				FA41B0111B4667BC0043A439 /* main.m in Sources */,
-				FA5B72091B480A9B00F6870C /* ERPSSDUTViewController.m in Sources */,
 				FA58BABA1BC7E876008797AE /* SSDUTNewsCell.m in Sources */,
 				FA78A22E1BABF4C70015F606 /* ERPCommonTableViewCell.m in Sources */,
 				FA5B71EA1B47DFC500F6870C /* ERPCourseViewController.m in Sources */,
@@ -1264,7 +1209,6 @@
 				FA78A2331BAC1F610015F606 /* ERPViewController4s.m in Sources */,
 				18C744841B46F3FF00FAAC12 /* DiscoveryViewController.m in Sources */,
 				FA93036B1BA2803B00406094 /* AboutXueFooterTableViewCell.m in Sources */,
-				FA5B71FF1B480A7700F6870C /* ERPExamViewController.m in Sources */,
 				FA5800E51B57A95800478AAF /* LessonButton.m in Sources */,
 				FAF3BAC71B9DBEB400DFDE0D /* DiscoveryTableViewCell.m in Sources */,
 				FA7C50DB1BCE54A400824112 /* ERPScoreTableViewController.m in Sources */,

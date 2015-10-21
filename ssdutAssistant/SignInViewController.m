@@ -273,16 +273,25 @@
             [[UIApplication sharedApplication] setStatusBarHidden:NO];
 
         
+            /*异步获取
+             *课程表
+             *本学期考试成绩
+             *所有成绩
+             *借阅图书
+             *考场信息
+             */
             NSString * courseUrlStr = [NSString stringWithFormat:@"%@curriculum",DLUT_IP];
             NSString * scoreUrlStr = [NSString stringWithFormat:@"%@scores",DLUT_IP];
             NSString * allScoreUrlStr = [NSString stringWithFormat:@"%@scores_by_term",DLUT_IP];
             NSString * borrowUrlStr = [NSString stringWithFormat:@"%@lib/borrow_info",DLUT_IP];
+            NSString * examUrlStr = [NSString stringWithFormat:@"%@exam",DLUT_IP];
             
             NetWorking * erpNetWork = [[NetWorking alloc] init];
             [erpNetWork getContentWithUrl:courseUrlStr SaveWithStr:MyCourse_Key];
             [erpNetWork getContentWithUrl:scoreUrlStr SaveWithStr:MyScore_Key];
             [erpNetWork getContentWithUrl:allScoreUrlStr SaveWithStr:AllMyScore_Key];
             [erpNetWork getContentWithUrl:borrowUrlStr SaveWithStr:MyBorrowMessage_Key];
+            [erpNetWork getContentWithUrl:examUrlStr SaveWithStr:MyExamMessage_Key];
 
             
         }else{
