@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
     self.title = @"图书馆";
-    self.view.backgroundColor = UIColorFromRGB(0xefefef);
+    self.tableView.backgroundColor = UIColorFromRGB(0xefefef);
 
     self.userDefaults = [NSUserDefaults standardUserDefaults];
     self.borrowArray = [[NSMutableArray alloc] initWithArray:[self.userDefaults objectForKey:MyBorrowMessage_Key]];
@@ -38,6 +38,7 @@
     
     HintFlag = YES;
     [self.tableView registerNibWithClass:[LibraryTableViewCell class]];
+    [self.tableView registerNibWithClass:[NothingTableViewCell class]];
     [self.searchDisplayController.searchResultsTableView registerNibWithClass:[SearchTableViewCell class]];
 //    [self.searchDisplayController.searchResultsTableView registerNibWithClass:[HintTableViewCell class]];
     
@@ -90,24 +91,30 @@
 
     NSString * urlStr = [NSString stringWithFormat:@"%@lib/borrow_info",DLUT_IP];
     NSURL * url = [NSURL URLWithString:urlStr];
-    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url];
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:4];
     NSLog(@"%@",[self.userDefaults objectForKey:LoginToken_Str]);
     [request setValue:[self.userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
-    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    
+    NSData * contentData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+
+    NSDictionary * contentDic ;
+
+    if (contentData) {
+        contentDic = [NSJSONSerialization JSONObjectWithData:contentData options:NSJSONReadingMutableContainers error:nil];
+    }
+
+
+    if ([[contentDic objectForKey:@"status"] boolValue]) {
         
-        NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        //NSLog(@"%@",contentDic);
-        if ([[contentDic objectForKey:@"status"] boolValue]) {
-            
-            NSArray * courseArr = [contentDic objectForKey:@"msg"];
-            [self.userDefaults setObject:courseArr forKey:MyBorrowMessage_Key];
-            [self.userDefaults synchronize];
-            self.borrowArray = [contentDic objectForKey:@"msg"];
-            [self.tableView reloadData];
-        }
-        [self.rC endRefreshing];
-        
-    }];
+        NSArray * courseArr = [contentDic objectForKey:@"msg"];
+        [self.userDefaults setObject:courseArr forKey:MyBorrowMessage_Key];
+        [self.userDefaults synchronize];
+        self.borrowArray = [contentDic objectForKey:@"msg"];
+        [self.tableView reloadData];
+    }
+    [self.rC endRefreshing];
+
+
 }
 
 #pragma mark - 搜图书
@@ -120,8 +127,11 @@
     
     NSData * dddd = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
-    NSDictionary * contentDic = [NSJSONSerialization JSONObjectWithData:dddd options:NSJSONReadingMutableContainers error:nil];
-    //NSLog(@"%@",contentDic);
+    NSDictionary * contentDic;
+    if (dddd) {
+        contentDic = [NSJSONSerialization JSONObjectWithData:dddd options:NSJSONReadingMutableContainers error:nil];
+    }
+
     if ([[contentDic objectForKey:@"status"] boolValue]) {
         
         NSMutableArray * arr =[NSMutableArray arrayWithArray:[contentDic objectForKey:@"msg"]] ;
@@ -146,7 +156,12 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([tableView isEqual:self.tableView]) {
-        return [self.borrowArray count];
+        if ([self.borrowArray count] == 0) {
+            return 1;
+        }else{
+            return [self.borrowArray count];
+        }
+        
     }else{
 
         if (HintFlag) {
@@ -164,14 +179,21 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([tableView isEqual:self.tableView]) {
-        NSDictionary * dic = [self.borrowArray objectAtIndex:indexPath.row];
-        NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:20]};
-         NSString * strContent = [dic objectForKey:@"Title"];
         
-        CGSize contentSize = [strContent boundingRectWithSize:CGSizeMake(WINWIDTH - 40, 0) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
-        NSLog(@"%f",contentSize.height);
-        return 175 + contentSize.height;
+        if ([self.borrowArray count] == 0) {
+            return WINHEIGHT - 64;
+        }else{
+            NSDictionary * dic = [self.borrowArray objectAtIndex:indexPath.row];
+            NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:20]};
+            NSString * strContent = [dic objectForKey:@"Title"];
+            
+            CGSize contentSize = [strContent boundingRectWithSize:CGSizeMake(WINWIDTH - 40, 0) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+            NSLog(@"%f",contentSize.height);
+            return 175 + contentSize.height;
 
+        }
+        
+        
     }else{
 
         NSDictionary * dic = [self.searchArray objectAtIndex:indexPath.row];
@@ -179,9 +201,9 @@
         NSString * authorStr = [dic objectForKey:@"Author"];
         NSString * strContent = [NSString stringWithFormat:@"%@【%@】",titleStr,authorStr];
         NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:20]};
-        CGSize contentSize = [strContent boundingRectWithSize:CGSizeMake(WINWIDTH - 36, 0) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+        CGSize contentSize = [strContent boundingRectWithSize:CGSizeMake(WINWIDTH - 40, 0) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
         NSLog(@"%f",contentSize.height);
-        return 98 + contentSize.height;
+        return 96 + contentSize.height;
 
     }
 }
@@ -190,17 +212,24 @@
 {
     if ([tableView isEqual:self.tableView]) {
         
-        NSDictionary * dic = [self.borrowArray objectAtIndex:indexPath.row];
-        NSString * title = [dic objectForKey:@"Title"];
-        NSString * startTime = [dic objectForKey:@"TimeBorrow"];
-        NSString * endTime = [dic objectForKey:@"TimeReturn"];
-        NSString * renewCounts = [dic objectForKey:@"RenewCounts"];
-        NSString * location = [dic objectForKey:@"Location"];
+        if ([self.borrowArray count] == 0) {
+            NothingTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"NothingTableViewCell"];
+            return cell;
+        }else{
+            NSDictionary * dic = [self.borrowArray objectAtIndex:indexPath.row];
+            NSString * title = [dic objectForKey:@"Title"];
+            NSString * startTime = [dic objectForKey:@"TimeBorrow"];
+            NSString * endTime = [dic objectForKey:@"TimeReturn"];
+            NSString * renewCounts = [dic objectForKey:@"RenewCounts"];
+            NSString * location = [dic objectForKey:@"Location"];
+            
+            LibraryTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LibraryTableViewCell"];
+            [cell creatCellWithName:title Location:location StartTime:startTime EndTime:endTime NumStr:renewCounts BorrowStatus:0];
+            
+            return cell;
+ 
+        }
         
-        LibraryTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LibraryTableViewCell"];
-        [cell creatCellWithName:title Location:location StartTime:startTime EndTime:endTime NumStr:renewCounts BorrowStatus:0];
-        
-        return cell;
     }else {
         
         NSDictionary * dic = [self.searchArray objectAtIndex:indexPath.row];
@@ -235,10 +264,7 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    if ([searchText isEqual:@""]) {
-        //[self.searchArray removeAllObjects];;
-    }
-     //[self connectToSearchInfo:searchText];
+  
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -248,9 +274,6 @@
     
 }
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    //[self.searchArray removeAllObjects];
-}
+
 
 @end

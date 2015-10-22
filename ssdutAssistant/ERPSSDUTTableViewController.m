@@ -56,6 +56,7 @@
     [self loadData];
     
     [self.tableView registerNibWithClass:[SSDUTNewsCell class]];
+    [self.tableView registerNibWithClass:[NothingTableViewCell class]];
     
     self.tableView.delegate = self;
     //下拉刷新
@@ -80,8 +81,9 @@
     page = 1;
     NSString * urlStr = [NSString stringWithFormat:@"%@list/%ld/1",DLUT_NEWS_IP,NewsIndex];
     NSURL * url = [NSURL URLWithString:urlStr];
-    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
+    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:4.0];
     NSURLConnection * connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    
     
     if (connection) {
         self.NewsData = [NSMutableData new];
@@ -130,12 +132,13 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"error!!!!:%@",error);
-    
-    UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150*598/445.0)];
-    imgView.center = CGPointMake(WINWIDTH/2.0, WINHEIGHT/3.0);
-    imgView.image = UIIMGName(@"logo_nothing");
-    [self.tableView addSubview:imgView];
+    [self.rC endRefreshing];
+//    NSLog(@"error!!!!:%@",error);
+//    
+//    UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150*598/445.0)];
+//    imgView.center = CGPointMake(WINWIDTH/2.0, WINHEIGHT/3.0);
+//    imgView.image = UIIMGName(@"logo_nothing");
+//    [self.tableView addSubview:imgView];
 }
 
 
@@ -159,27 +162,42 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [self.newsArr count] ;
+    if ([self.newsArr count] == 0) {
+        return 1;
+    }else{
+         return [self.newsArr count] ;
+    }
+   
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    SSDUTNewsCell * cell = [tableView  dequeueReusableCellWithIdentifier:@"SSDUTNewsCell" forIndexPath:indexPath];
-    JsonAnalysisTool * tools = [[JsonAnalysisTool alloc] init];
-    [tools getSSDutNewsContentWith:self.newsArr Index:indexPath.row];
-    [cell setCellWithTitle:tools.titleStr Time:tools.timeStr ClickCount:tools.clickCountStr];
+    
+    if ([self.newsArr count] == 0) {
+        NothingTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"NothingTableViewCell"];
+        return cell;
+    }else{
+        SSDUTNewsCell * cell = [tableView  dequeueReusableCellWithIdentifier:@"SSDUTNewsCell" forIndexPath:indexPath];
+        JsonAnalysisTool * tools = [[JsonAnalysisTool alloc] init];
+        [tools getSSDutNewsContentWith:self.newsArr Index:indexPath.row];
+        [cell setCellWithTitle:tools.titleStr Time:tools.timeStr ClickCount:tools.clickCountStr];
+        [self.IDArr setObject:tools.articalIDStr atIndexedSubscript:indexPath.row];
+        return cell;
+    }
+    
 
-    
-    [self.IDArr setObject:tools.articalIDStr atIndexedSubscript:indexPath.row];
-    
-    return cell;
 
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 85;
+    if ([self.newsArr count] == 0) {
+        return WINHEIGHT - 64;
+    }else{
+        return 85;
+    }
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -15,31 +15,31 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8r-bx-nnG">
-                        <rect key="frame" x="10" y="5" width="300" height="106"/>
+                        <rect key="frame" x="10" y="5" width="300" height="109"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18D-ds-Lqg" userLabel="lineView">
-                                <rect key="frame" x="0.0" y="40" width="300" height="1"/>
+                                <rect key="frame" x="0.0" y="42" width="300" height="1"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="lWc-Q0-Cfb"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小马哥小马哥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzz-YJ-YzH">
-                                <rect key="frame" x="10" y="10" width="280" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小马哥小马哥" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzz-YJ-YzH">
+                                <rect key="frame" x="10" y="10" width="280" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小马哥出版社" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPV-jz-CPs">
-                                <rect key="frame" x="10" y="51" width="280" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你猜多少本" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pX-nR-ulk">
-                                <rect key="frame" x="10" y="77" width="280" height="17"/>
+                                <rect key="frame" x="10" y="80" width="280" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.62745098040000002" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小马哥出版社" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPV-jz-CPs">
+                                <rect key="frame" x="10" y="53" width="280" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -50,13 +50,13 @@
                             <constraint firstItem="7pX-nR-ulk" firstAttribute="trailing" secondItem="Jzz-YJ-YzH" secondAttribute="trailing" id="Fmd-dn-7M9"/>
                             <constraint firstAttribute="trailing" secondItem="18D-ds-Lqg" secondAttribute="trailing" id="JoQ-2l-mbj"/>
                             <constraint firstItem="BPV-jz-CPs" firstAttribute="leading" secondItem="Jzz-YJ-YzH" secondAttribute="leading" id="ODs-Iv-nHo"/>
+                            <constraint firstItem="7pX-nR-ulk" firstAttribute="top" secondItem="BPV-jz-CPs" secondAttribute="bottom" constant="10" id="OWu-Fo-syd"/>
                             <constraint firstItem="18D-ds-Lqg" firstAttribute="top" secondItem="Jzz-YJ-YzH" secondAttribute="bottom" constant="8" id="QAG-zG-boS"/>
-                            <constraint firstItem="18D-ds-Lqg" firstAttribute="top" secondItem="E8r-bx-nnG" secondAttribute="top" constant="40" id="QgD-To-R8U"/>
                             <constraint firstItem="BPV-jz-CPs" firstAttribute="trailing" secondItem="Jzz-YJ-YzH" secondAttribute="trailing" id="VsA-8Y-5z1"/>
+                            <constraint firstItem="18D-ds-Lqg" firstAttribute="top" secondItem="Jzz-YJ-YzH" secondAttribute="bottom" constant="8" id="XDz-E5-71L"/>
                             <constraint firstAttribute="bottom" secondItem="7pX-nR-ulk" secondAttribute="bottom" constant="12" id="gHV-5u-hba"/>
                             <constraint firstItem="18D-ds-Lqg" firstAttribute="leading" secondItem="E8r-bx-nnG" secondAttribute="leading" id="oLn-jw-heD"/>
                             <constraint firstItem="Jzz-YJ-YzH" firstAttribute="top" secondItem="E8r-bx-nnG" secondAttribute="top" constant="10" id="sjU-nD-eFb"/>
-                            <constraint firstItem="7pX-nR-ulk" firstAttribute="top" secondItem="BPV-jz-CPs" secondAttribute="bottom" constant="9" id="tzc-7R-QXv"/>
                             <constraint firstItem="Jzz-YJ-YzH" firstAttribute="leading" secondItem="E8r-bx-nnG" secondAttribute="leading" constant="10" id="uOO-vp-KWG"/>
                             <constraint firstItem="BPV-jz-CPs" firstAttribute="top" secondItem="18D-ds-Lqg" secondAttribute="bottom" constant="10" id="uv1-Qi-enf"/>
                         </constraints>
@@ -64,7 +64,7 @@
                 </subviews>
                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="E8r-bx-nnG" secondAttribute="bottom" constant="8" id="Lli-tQ-vMl"/>
+                    <constraint firstAttribute="bottom" secondItem="E8r-bx-nnG" secondAttribute="bottom" constant="5" id="Lli-tQ-vMl"/>
                     <constraint firstItem="E8r-bx-nnG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ZlP-Zd-gVN"/>
                     <constraint firstItem="E8r-bx-nnG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="f78-vy-Npl"/>
                     <constraint firstAttribute="trailing" secondItem="E8r-bx-nnG" secondAttribute="trailing" constant="10" id="kBE-yM-5AG"/>

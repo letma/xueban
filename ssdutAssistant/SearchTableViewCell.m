@@ -17,8 +17,8 @@
 @implementation SearchTableViewCell
 
 - (void)awakeFromNib {
-    self.backGroundView.layer.shadowColor = UIColorFromRGB(0xaaaaaa).CGColor;
-    self.backGroundView.layer.shadowOffset = CGSizeMake(6, 6);
+    self.backGroundView.layer.shadowColor = UIColorFromRGB(0xbbbbbb).CGColor;
+    self.backGroundView.layer.shadowOffset = CGSizeMake(4, 4);
     self.backGroundView.layer.shadowOpacity = 0.8;
     self.backGroundView.layer.shadowRadius = 4;
 }
@@ -38,8 +38,8 @@
 
 - (void)haveGone
 {
-    [self.titleLbl setTextColor:UIColorFromRGB(0xefefef)];
-    [self.publishLbl setTextColor:UIColorFromRGB(0xefefef)];
-    [self.numLbl setTextColor:UIColorFromRGB(0xefefef)];
+    [self.titleLbl setTextColor:UIColorFromRGB(0xd0d0d0)];
+    [self.publishLbl setTextColor:UIColorFromRGB(0xd0d0d0)];
+    [self.numLbl setTextColor:UIColorFromRGB(0xd0d0d0)];
 }
 @end
