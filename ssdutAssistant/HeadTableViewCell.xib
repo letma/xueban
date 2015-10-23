@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HeadTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_noimage" translatesAutoresizingMaskIntoConstraints="NO" id="Q2e-bi-MIg">
+                        <rect key="frame" x="10" y="5" width="70" height="69"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="aQH-jY-nDQ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小马哥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cZ-eJ-hgy">
+                        <rect key="frame" x="90" y="15" width="54" height="22"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" red="0.23921568627450981" green="0.30588235294117649" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="软件工程(日语强化)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qy-th-UAh">
+                        <rect key="frame" x="90" y="42" width="120" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单身" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ik-Zc-gGO">
+                        <rect key="frame" x="272" y="42" width="28" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discovery_icon_sex_boy" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-tT-hVV">
+                        <rect key="frame" x="275" y="14" width="23" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="1Jj-Q6-jFO"/>
+                            <constraint firstAttribute="width" constant="23" id="rlA-0F-L1g"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoE-14-quw">
+                        <rect key="frame" x="0.0" y="78" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="tMe-OB-9x7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1cZ-eJ-hgy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="2GA-eL-UhV"/>
+                    <constraint firstAttribute="bottom" secondItem="0qy-th-UAh" secondAttribute="bottom" constant="20" id="4U8-wj-ZN4"/>
+                    <constraint firstItem="3ik-Zc-gGO" firstAttribute="top" secondItem="0qy-th-UAh" secondAttribute="top" id="6pQ-H0-zvD"/>
+                    <constraint firstItem="1cZ-eJ-hgy" firstAttribute="leading" secondItem="Q2e-bi-MIg" secondAttribute="trailing" constant="10" id="E5m-fl-9Gb"/>
+                    <constraint firstItem="Q2e-bi-MIg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ICX-VC-xwM"/>
+                    <constraint firstAttribute="bottom" secondItem="MoE-14-quw" secondAttribute="bottom" id="M7Q-qG-cOk"/>
+                    <constraint firstItem="3ik-Zc-gGO" firstAttribute="centerX" secondItem="Ghg-tT-hVV" secondAttribute="centerX" id="PcJ-4E-Iyw"/>
+                    <constraint firstItem="0qy-th-UAh" firstAttribute="leading" secondItem="1cZ-eJ-hgy" secondAttribute="leading" id="ckM-g5-g4e"/>
+                    <constraint firstAttribute="trailing" secondItem="MoE-14-quw" secondAttribute="trailing" id="ezF-nI-o45"/>
+                    <constraint firstAttribute="trailing" secondItem="3ik-Zc-gGO" secondAttribute="trailing" constant="20" id="jpI-RC-kNF"/>
+                    <constraint firstItem="Q2e-bi-MIg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="npN-30-uej"/>
+                    <constraint firstItem="3ik-Zc-gGO" firstAttribute="top" secondItem="Ghg-tT-hVV" secondAttribute="bottom" constant="5" id="qAN-NG-jU8"/>
+                    <constraint firstAttribute="bottom" secondItem="Q2e-bi-MIg" secondAttribute="bottom" constant="5" id="qlZ-2g-kSg"/>
+                    <constraint firstItem="MoE-14-quw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qt3-ru-Nbe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="departmentLbl" destination="0qy-th-UAh" id="6tv-LS-iaH"/>
+                <outlet property="headImgView" destination="Q2e-bi-MIg" id="U0L-rO-UGi"/>
+                <outlet property="nameLbl" destination="1cZ-eJ-hgy" id="II3-fC-vzr"/>
+                <outlet property="sexImgView" destination="Ghg-tT-hVV" id="B2p-Ma-Bhg"/>
+                <outlet property="singleLbl" destination="3ik-Zc-gGO" id="x4F-tJ-Eat"/>
+            </connections>
+            <point key="canvasLocation" x="370" y="273"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="discovery_icon_sex_boy" width="64" height="64"/>
+        <image name="logo_noimage" width="395" height="395"/>
+    </resources>
+</document>

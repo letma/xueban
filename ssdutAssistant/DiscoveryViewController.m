@@ -83,21 +83,39 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.userDefaults boolForKey:IF_Login]) {
-
+        
+        NSString * viewControllerStr;
+        
+        switch (indexPath.row) {
+            case 1:
+                viewControllerStr = @"AlumnusTableViewController";
+                break;
+            case 3:
+                viewControllerStr = @"ClassmateTableViewController";
+                break;
+            case 4:
+                viewControllerStr = @"FolksTableViewController";
+                break;
+            case 6:
+                ;
+                break;
+            case 7:
+                ;
+                break;
+                
+            default:
+                break;
+        }
+        
+        UIViewController * viewController = [[NSClassFromString(viewControllerStr) alloc]init];
+        [self.navigationController pushViewController:viewController animated:YES];
+        
     }else{
         SignInViewController * signInController  = [[SignInViewController alloc]init];
         [self presentViewController:signInController animated:YES completion:nil];
     }
     [self.discoveryTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

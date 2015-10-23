@@ -20,15 +20,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_nothing" translatesAutoresizingMaskIntoConstraints="NO" id="YSN-r2-2of">
-                                <rect key="frame" x="80" y="50" width="160" height="215"/>
+                                <rect key="frame" x="120" y="61" width="80" height="108"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YSN-r2-2of" firstAttribute="top" secondItem="ueA-Od-n1t" secondAttribute="top" constant="50" id="Av5-bC-GGc"/>
-                            <constraint firstItem="YSN-r2-2of" firstAttribute="width" secondItem="ueA-Od-n1t" secondAttribute="width" multiplier="1:2" id="G8f-1T-MEI"/>
+                            <constraint firstItem="YSN-r2-2of" firstAttribute="width" secondItem="ueA-Od-n1t" secondAttribute="width" multiplier="1:4" id="G8f-1T-MEI"/>
+                            <constraint firstAttribute="centerY" secondItem="YSN-r2-2of" secondAttribute="centerY" constant="100" id="cWP-aH-xxb"/>
                             <constraint firstAttribute="centerX" secondItem="YSN-r2-2of" secondAttribute="centerX" id="pny-la-qVj"/>
-                            <constraint firstItem="YSN-r2-2of" firstAttribute="height" secondItem="ueA-Od-n1t" secondAttribute="width" multiplier="598:890" id="zrM-kM-0Iw"/>
+                            <constraint firstItem="YSN-r2-2of" firstAttribute="height" secondItem="ueA-Od-n1t" secondAttribute="width" multiplier="299:890" id="zrM-kM-0Iw"/>
                         </constraints>
                     </view>
                 </subviews>

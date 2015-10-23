@@ -186,6 +186,9 @@
         return cell;
     }
     
+    
+    
+    
 
 
 }
@@ -202,13 +205,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    SSDUTNewsWebViewController * webView = [[SSDUTNewsWebViewController alloc] init];
-    webView.articalID = [NSString stringWithFormat:@"%@",[self.IDArr objectAtIndex:indexPath.row]];
-    //[self.navigationController pushViewController:webView animated:YES];
-    NSLog(@"%@",self.IDArr);
-    [webView setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-    [self presentViewController:webView animated:YES completion:nil];
+    if ([self.newsArr count] != 0)
+    {
+        SSDUTNewsWebViewController * webView = [[SSDUTNewsWebViewController alloc] init];
+        webView.articalID = [NSString stringWithFormat:@"%@",[self.IDArr objectAtIndex:indexPath.row]];
+        NSLog(@"%@",self.IDArr);
+        [webView setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentViewController:webView animated:YES completion:nil];
+    }
+
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

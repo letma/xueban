@@ -12,4 +12,9 @@
 //cells
 #import "DiscoveryTableViewCell.h"
 #import "EmptyTableViewCell.h"
+
+//viewController
+#import "AlumnusTableViewController.h"
+#import "ClassmateTableViewController.h"
+#import "FolksTableViewController.h"
 #endif
