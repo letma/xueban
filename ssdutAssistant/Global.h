@@ -43,9 +43,10 @@ alpha:1.0]
  0 学生周知
  1 校园新闻
  2 活动公告
+ 3 教务新闻
  */
 #define DLUT_NEWS_IP @"http://210.30.100.93/ssdutNews/"
-#define DLUT_SOCIAL_IP @"http://210.30.100.93:8089/common/"
+#define DLUT_SOCIAL_IP @"http://210.30.100.93/xueban/common/"
 
 //是否登陆
 #define IF_Login @"IF_Login"
@@ -75,7 +76,8 @@ alpha:1.0]
 #define MyBorrowMessage_Key @"MyBorrowMessage_Key"
 //用户的考场安排
 #define MyExamMessage_Key @"MyExamMessage_Key"
-
+//用户的性取向 all boy girl  数组 0 是 classmate 1 是 townee
+#define MySexuality_Key @"MySexuality_Key"
 
 //课程临时颜色
 #define TempCourseColor @"TempCourseColor"
@@ -87,7 +89,7 @@ alpha:1.0]
 #define TempNowWeek @"TempNowWeek"
 
 
-//判断视图是进入课程详情
+//判断视图是否进入课程详情
 #define IFPresentToCourseContent @"IFPresentToCourseContent"
 
 

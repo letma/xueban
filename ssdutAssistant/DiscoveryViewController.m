@@ -90,12 +90,13 @@
             case 1:
                 viewControllerStr = @"AlumnusTableViewController";
                 break;
-            case 3:
-                viewControllerStr = @"ClassmateTableViewController";
+            case 3:case 4:
+            {
+                ClassmateTableViewController * viewController = [[ClassmateTableViewController alloc] init];
+                viewController.controllerIndex = indexPath.row - 3;
+                [self.navigationController pushViewController:viewController animated:YES];
                 break;
-            case 4:
-                viewControllerStr = @"FolksTableViewController";
-                break;
+            }
             case 6:
                 ;
                 break;

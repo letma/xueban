@@ -23,6 +23,7 @@
     
     [imageIP writeToFile:imgIPFile atomically:YES encoding:NSUTF8StringEncoding error:nil];
     [UIImagePNGRepresentation(headImage) writeToFile:imgFile atomically:YES];
+    
 
     //[fm createFileAtPath:imgFile contents:dddd attributes:nil];
     //NSLog(@"%@",ggggg);
@@ -41,22 +42,25 @@
     return image;
 }
 
-- (BOOL)ifImageHaveHadWithStudentID:(NSString *)studentID
+- (BOOL)ifImageHaveHadWithStudentID:(NSString *)studentID ImageIP:(NSString *)netImgIP
 {
-    NSUserDefaults * userDefualts = [NSUserDefaults standardUserDefaults];
+//    NSUserDefaults * userDefualts = [NSUserDefaults standardUserDefaults];
     
     NSArray * documentPaths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString * documentPath = [documentPaths objectAtIndex:0];
     NSString * studentFile = [documentPath stringByAppendingPathComponent:studentID];
     NSString * imgIPFile = [studentFile stringByAppendingPathComponent:@"imageIP"];
     NSString * imgIP = [NSString stringWithContentsOfFile:imgIPFile encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"%@",imgIP);
-    NSLog(@"%@",[[userDefualts objectForKey:UserContent_Key] objectForKey:@"HeadImage"]);
+    NSLog(@"%@",documentPath);
+    NSLog(@"%@",netImgIP);
     
     NSFileManager * fileManager = [NSFileManager defaultManager];
     NSArray * fileArr =[fileManager subpathsAtPath:documentPath];
 
-    if ([imgIP isEqual:[[userDefualts objectForKey:UserContent_Key] objectForKey:@"HeadImage"]]) {
+    NSString * imgFile = [studentFile stringByAppendingPathComponent:@"image"];
+    UIImage * image = [UIImage imageWithContentsOfFile:imgFile];
+    
+    if ([imgIP isEqual:netImgIP] && image) {
         for (NSInteger i = 0 ; i < [fileArr count]; i ++) {
             if ([studentID isEqual:[fileArr objectAtIndex:i]]) {
                 NSLog(@"dafadffd:%@",[fileArr objectAtIndex:i]);
@@ -66,6 +70,6 @@
 
     }
  
-        return NO;
+    return NO;
 }
 @end

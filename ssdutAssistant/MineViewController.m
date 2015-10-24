@@ -98,9 +98,11 @@
         MyHeadTableViewCell * myHeadCell = [tableView dequeueReusableCellWithIdentifier:@"MyHeadTableViewCell" forIndexPath:indexPath];
         
         ImageProcess * judgeImg = [[ImageProcess alloc]init];
+        NSString * studentID = [self.userDefaults objectForKey:MyStudentId_Key];
+        NSString * imgIP = [self.userDictionary objectForKey:@"HeadImage"];
         //判断图片是否存在
-        if ([judgeImg ifImageHaveHadWithStudentID:[self.userDefaults objectForKey:MyStudentId_Key]]) {
-            [myHeadCell setMyHeadImage:[judgeImg getImgWithStudentID:[self.userDefaults objectForKey:MyStudentId_Key]] MyName:[self.userDictionary objectForKey:@"Name"]];
+        if ([judgeImg ifImageHaveHadWithStudentID:studentID ImageIP:imgIP]) {
+            [myHeadCell setMyHeadImage:[judgeImg getImgWithStudentID:studentID] MyName:[self.userDictionary objectForKey:@"Name"]];
             [self.userDefaults setObject:[self.userDefaults objectForKey:@"Name"] forKey:MyName_Key];
         }else{
             

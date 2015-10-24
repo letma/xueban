@@ -52,7 +52,7 @@
             self.leftImgView.image = UIIMGName(@"erp_icon_DUTNews");
             self.rightImgView.image = UIIMGName(@"erp_icon_more");
             self.leftLabel.text = @"校园新闻";
-            self.rightLabel.text = @"教务新闻";
+            self.rightLabel.text = @"教学文件";
             break;
         default:
             break;

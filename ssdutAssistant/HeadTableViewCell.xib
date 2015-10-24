@@ -38,11 +38,11 @@
                         <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discovery_icon_sex_boy" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-tT-hVV">
-                        <rect key="frame" x="275" y="14" width="23" height="23"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-tT-hVV">
+                        <rect key="frame" x="276" y="17" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="23" id="1Jj-Q6-jFO"/>
-                            <constraint firstAttribute="width" constant="23" id="rlA-0F-L1g"/>
+                            <constraint firstAttribute="height" constant="20" id="1Jj-Q6-jFO"/>
+                            <constraint firstAttribute="width" constant="20" id="rlA-0F-L1g"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoE-14-quw">
@@ -81,7 +81,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="discovery_icon_sex_boy" width="64" height="64"/>
         <image name="logo_noimage" width="395" height="395"/>
     </resources>
 </document>

@@ -32,13 +32,12 @@
 		FA4468AE1BDA179C000C399F /* AlumnusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4468AC1BDA179C000C399F /* AlumnusTableViewController.m */; };
 		FA4468AF1BDA179C000C399F /* AlumnusTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4468AD1BDA179C000C399F /* AlumnusTableViewController.xib */; };
 		FA4468B31BDA1BC5000C399F /* ClassmateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4468B11BDA1BC5000C399F /* ClassmateTableViewController.m */; };
-		FA4468B41BDA1BC5000C399F /* ClassmateTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4468B21BDA1BC5000C399F /* ClassmateTableViewController.xib */; };
-		FA4468B81BDA1BED000C399F /* FolksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4468B61BDA1BED000C399F /* FolksTableViewController.m */; };
-		FA4468B91BDA1BED000C399F /* FolksTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4468B71BDA1BED000C399F /* FolksTableViewController.xib */; };
 		FA4468BD1BDA1C12000C399F /* GPATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4468BB1BDA1C12000C399F /* GPATableViewController.m */; };
 		FA4468BE1BDA1C12000C399F /* GPATableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4468BC1BDA1C12000C399F /* GPATableViewController.xib */; };
 		FA4468C21BDA1DD6000C399F /* HeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4468C01BDA1DD6000C399F /* HeadTableViewCell.m */; };
 		FA4468C31BDA1DD6000C399F /* HeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4468C11BDA1DD6000C399F /* HeadTableViewCell.xib */; };
+		FA4A9B4C1BDBA6ED00246B51 /* ClassmateDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A9B4A1BDBA6ED00246B51 /* ClassmateDetailViewController.m */; };
+		FA4A9B4D1BDBA6ED00246B51 /* ClassmateDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4A9B4B1BDBA6ED00246B51 /* ClassmateDetailViewController.xib */; };
 		FA5800E51B57A95800478AAF /* LessonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5800E41B57A95800478AAF /* LessonButton.m */; };
 		FA5800E71B57A96C00478AAF /* LessonButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5800E61B57A96C00478AAF /* LessonButton.xib */; };
 		FA5800EA1B57BEED00478AAF /* SectionPartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5800E91B57BEED00478AAF /* SectionPartView.m */; };
@@ -187,16 +186,15 @@
 		FA4468AD1BDA179C000C399F /* AlumnusTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlumnusTableViewController.xib; sourceTree = "<group>"; };
 		FA4468B01BDA1BC5000C399F /* ClassmateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassmateTableViewController.h; sourceTree = "<group>"; };
 		FA4468B11BDA1BC5000C399F /* ClassmateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassmateTableViewController.m; sourceTree = "<group>"; };
-		FA4468B21BDA1BC5000C399F /* ClassmateTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassmateTableViewController.xib; sourceTree = "<group>"; };
-		FA4468B51BDA1BED000C399F /* FolksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolksTableViewController.h; sourceTree = "<group>"; };
-		FA4468B61BDA1BED000C399F /* FolksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolksTableViewController.m; sourceTree = "<group>"; };
-		FA4468B71BDA1BED000C399F /* FolksTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FolksTableViewController.xib; sourceTree = "<group>"; };
 		FA4468BA1BDA1C12000C399F /* GPATableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPATableViewController.h; sourceTree = "<group>"; };
 		FA4468BB1BDA1C12000C399F /* GPATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPATableViewController.m; sourceTree = "<group>"; };
 		FA4468BC1BDA1C12000C399F /* GPATableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPATableViewController.xib; sourceTree = "<group>"; };
 		FA4468BF1BDA1DD6000C399F /* HeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadTableViewCell.h; sourceTree = "<group>"; };
 		FA4468C01BDA1DD6000C399F /* HeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadTableViewCell.m; sourceTree = "<group>"; };
 		FA4468C11BDA1DD6000C399F /* HeadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadTableViewCell.xib; sourceTree = "<group>"; };
+		FA4A9B491BDBA6ED00246B51 /* ClassmateDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassmateDetailViewController.h; sourceTree = "<group>"; };
+		FA4A9B4A1BDBA6ED00246B51 /* ClassmateDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassmateDetailViewController.m; sourceTree = "<group>"; };
+		FA4A9B4B1BDBA6ED00246B51 /* ClassmateDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassmateDetailViewController.xib; sourceTree = "<group>"; };
 		FA5800E31B57A95800478AAF /* LessonButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonButton.h; sourceTree = "<group>"; };
 		FA5800E41B57A95800478AAF /* LessonButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonButton.m; sourceTree = "<group>"; };
 		FA5800E61B57A96C00478AAF /* LessonButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LessonButton.xib; sourceTree = "<group>"; };
@@ -376,14 +374,6 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
-		18C744711B46F02A00FAAC12 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				18C744721B46F04800FAAC12 /* Global.h */,
-			);
-			name = Config;
-			sourceTree = "<group>";
-		};
 		18C7447B1B46F2AE00FAAC12 /* ERP */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,8 +403,7 @@
 				18C744831B46F3FF00FAAC12 /* DiscoveryViewController.xib */,
 				FAF3BAC31B9DBE4700DFDE0D /* DiscoveryCells */,
 				FAF3BABE1B9D8F7500DFDE0D /* Alumnus */,
-				FAF3BABF1B9D902300DFDE0D /* MyClassmate */,
-				FAF3BAC01B9D904C00DFDE0D /* FindFolks */,
+				FAF3BABF1B9D902300DFDE0D /* MyClassmateAndFolk */,
 				FAF3BAC11B9DBC9000DFDE0D /* EducationEvaluation */,
 				FAF3BAC21B9DBCF000DFDE0D /* GPACalculate */,
 			);
@@ -446,8 +435,8 @@
 				FA41B0131B4667BC0043A439 /* AppDelegate.m */,
 				FA1D6E871BCE79620056E4A2 /* ReadMe.h */,
 				18C7446B1B46E7B400FAAC12 /* PrefixHeader.pch */,
+				18C744721B46F04800FAAC12 /* Global.h */,
 				FA43A46B1BAFA1A8002E2E32 /* ClassTools */,
-				18C744711B46F02A00FAAC12 /* Config */,
 				FA5B71E01B47A8CE00F6870C /* Category */,
 			);
 			name = App;
@@ -596,6 +585,16 @@
 				FA6734A01BC936CD00E950B9 /* JsonAnalysisTool.m */,
 			);
 			name = ClassTools;
+			sourceTree = "<group>";
+		};
+		FA4A9B481BDBA5DD00246B51 /* ClassmateDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FA4A9B491BDBA6ED00246B51 /* ClassmateDetailViewController.h */,
+				FA4A9B4A1BDBA6ED00246B51 /* ClassmateDetailViewController.m */,
+				FA4A9B4B1BDBA6ED00246B51 /* ClassmateDetailViewController.xib */,
+			);
+			name = ClassmateDetail;
 			sourceTree = "<group>";
 		};
 		FA5800D81B5794E800478AAF /* Json */ = {
@@ -962,24 +961,14 @@
 			name = Alumnus;
 			sourceTree = "<group>";
 		};
-		FAF3BABF1B9D902300DFDE0D /* MyClassmate */ = {
+		FAF3BABF1B9D902300DFDE0D /* MyClassmateAndFolk */ = {
 			isa = PBXGroup;
 			children = (
 				FA4468B01BDA1BC5000C399F /* ClassmateTableViewController.h */,
 				FA4468B11BDA1BC5000C399F /* ClassmateTableViewController.m */,
-				FA4468B21BDA1BC5000C399F /* ClassmateTableViewController.xib */,
+				FA4A9B481BDBA5DD00246B51 /* ClassmateDetail */,
 			);
-			name = MyClassmate;
-			sourceTree = "<group>";
-		};
-		FAF3BAC01B9D904C00DFDE0D /* FindFolks */ = {
-			isa = PBXGroup;
-			children = (
-				FA4468B51BDA1BED000C399F /* FolksTableViewController.h */,
-				FA4468B61BDA1BED000C399F /* FolksTableViewController.m */,
-				FA4468B71BDA1BED000C399F /* FolksTableViewController.xib */,
-			);
-			name = FindFolks;
+			name = MyClassmateAndFolk;
 			sourceTree = "<group>";
 		};
 		FAF3BAC11B9DBC9000DFDE0D /* EducationEvaluation */ = {
@@ -1121,12 +1110,10 @@
 				FABD9E861BD640870022CDC6 /* SearchTableViewCell.xib in Resources */,
 				FA5991471BA03DB70097D3E5 /* MyMesBoardViewController.xib in Resources */,
 				FA4468BE1BDA1C12000C399F /* GPATableViewController.xib in Resources */,
-				FA4468B41BDA1BC5000C399F /* ClassmateTableViewController.xib in Resources */,
 				FA5B71DA1B4781F400F6870C /* SmallTableViewCell.xib in Resources */,
 				FA59916D1BA065FF0097D3E5 /* MyFileFolderTableViewCell.xib in Resources */,
 				FA2B31501B4C030500C040BD /* WeekDayButton.xib in Resources */,
 				FA41B01C1B4667BC0043A439 /* Images.xcassets in Resources */,
-				FA4468B91BDA1BED000C399F /* FolksTableViewController.xib in Resources */,
 				18C744851B46F3FF00FAAC12 /* DiscoveryViewController.xib in Resources */,
 				FABD9E811BD62ED20022CDC6 /* ERPLibraryTableViewController.xib in Resources */,
 				FA9303561BA2610E00406094 /* ERPScoreTableViewCell.xib in Resources */,
@@ -1145,6 +1132,7 @@
 				FA88B4681BA12D3000B8AAD6 /* MySettingCustomTableViewCell.xib in Resources */,
 				FA58BABB1BC7E876008797AE /* SSDUTNewsCell.xib in Resources */,
 				18C7448D1B46F42400FAAC12 /* MineViewController.xib in Resources */,
+				FA4A9B4D1BDBA6ED00246B51 /* ClassmateDetailViewController.xib in Resources */,
 				FA2992751B4AA5EA0088DC7E /* CourseListView67.xib in Resources */,
 				FA59914C1BA03DCF0097D3E5 /* MyFilesViewController.xib in Resources */,
 				FA4468C31BDA1DD6000C399F /* HeadTableViewCell.xib in Resources */,
@@ -1226,9 +1214,9 @@
 				FA5B71DE1B47841500F6870C /* EmptyTableViewCell.m in Sources */,
 				FA5991601BA04B7A0097D3E5 /* MyDetailCustomTableViewCell.m in Sources */,
 				FABD9E801BD62ED20022CDC6 /* ERPLibraryTableViewController.m in Sources */,
+				FA4A9B4C1BDBA6ED00246B51 /* ClassmateDetailViewController.m in Sources */,
 				FA5800F41B57DE1100478AAF /* LessonCardView.m in Sources */,
 				FA88B4721BA184C000B8AAD6 /* SignInViewController.m in Sources */,
-				FA4468B81BDA1BED000C399F /* FolksTableViewController.m in Sources */,
 				FA41B0141B4667BC0043A439 /* AppDelegate.m in Sources */,
 				FA3CA1EA1BCCF23C0052423B /* UserAgreeementViewController.m in Sources */,
 				FA9303661BA2800100406094 /* AboutXueHeaderTableViewCell.m in Sources */,

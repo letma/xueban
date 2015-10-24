@@ -293,6 +293,10 @@
             [erpNetWork getContentWithUrl:borrowUrlStr SaveWithStr:MyBorrowMessage_Key];
             [erpNetWork getContentWithUrl:examUrlStr SaveWithStr:MyExamMessage_Key];
 
+            //登陆时预设所有人的性取向都是双性 all
+            NSMutableArray * arr = [[NSMutableArray alloc] initWithArray:@[@"all",@"all"]];
+            [self.userDefaults setObject:arr forKey:MySexuality_Key];
+            [self.userDefaults synchronize];
             
         }else{
             UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"用户名或密码错误" message:@"请重新输入用户名或密码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];

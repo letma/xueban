@@ -13,5 +13,5 @@
 
 - (UIImage *)getImgWithStudentID:(NSString *)studentID;
 
-- (BOOL)ifImageHaveHadWithStudentID:(NSString *)studentID;
+- (BOOL)ifImageHaveHadWithStudentID:(NSString *)studentID ImageIP:(NSString *)netImgIP;
 @end

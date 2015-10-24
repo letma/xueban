@@ -18,7 +18,17 @@
 @implementation HeadTableViewCell
 
 - (void)awakeFromNib {
+    self.headImgView.layer.cornerRadius = 35;
     // Initialization code
+    
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    self.headImgView.layer.cornerRadius = 10;
+    self.headImgView.clipsToBounds = YES;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,6 +39,7 @@
 
 - (void)creatCellWithImage:(UIImage *)headImg Name:(NSString *)nameStr Department:(NSString *)departmentStr Sex:(BOOL)sex Single:(NSInteger)single
 {
+    
     [self.headImgView setImage:headImg];
     self.nameLbl.text = nameStr;
     self.departmentLbl.text = departmentStr;

@@ -16,5 +16,5 @@
 //viewController
 #import "AlumnusTableViewController.h"
 #import "ClassmateTableViewController.h"
-#import "FolksTableViewController.h"
+
 #endif

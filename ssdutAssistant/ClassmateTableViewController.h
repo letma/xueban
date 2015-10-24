@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ClassmateTableViewController : UITableViewController
-
+/*
+ *0 找同学
+ *1  找同乡
+ */
+@property NSInteger controllerIndex;
 @end
