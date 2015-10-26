@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ClassmateDetailViewController : UIViewController
-
+@property (nonatomic, strong) NSString * controllerName;
+@property (nonatomic, strong) NSString * controllerMajor;
+@property (nonatomic, strong) NSString * controllerStudentID;
+@property (nonatomic,strong) NSString * controllerAddress;
+@property (nonatomic, strong) UIImage * controllerHeadImg;
+@property (nonatomic, assign) BOOL controllerSex;
+@property (nonatomic, assign) NSInteger controllerSingle;
+@property (nonatomic, assign) NSInteger controllerMessageID;
 @end

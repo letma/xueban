@@ -47,6 +47,11 @@
 		FA5800F61B57DE3D00478AAF /* LessonCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5800F51B57DE3D00478AAF /* LessonCardView.xib */; };
 		FA58BABA1BC7E876008797AE /* SSDUTNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA58BAB81BC7E876008797AE /* SSDUTNewsCell.m */; };
 		FA58BABB1BC7E876008797AE /* SSDUTNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA58BAB91BC7E876008797AE /* SSDUTNewsCell.xib */; };
+		FA5948DC1BDCE84500C7D755 /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5948DA1BDCE84500C7D755 /* AddressTableViewCell.m */; };
+		FA5948DD1BDCE84500C7D755 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5948DB1BDCE84500C7D755 /* AddressTableViewCell.xib */; };
+		FA5948E11BDCED4700C7D755 /* ButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5948DF1BDCED4700C7D755 /* ButtonTableViewCell.m */; };
+		FA5948E21BDCED4700C7D755 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5948E01BDCED4700C7D755 /* ButtonTableViewCell.xib */; };
+		FA5948E81BDCFB1000C7D755 /* PrivateMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5948E61BDCFB1000C7D755 /* PrivateMessageViewController.m */; };
 		FA59913B1BA03D330097D3E5 /* MyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5991391BA03D330097D3E5 /* MyDetailViewController.m */; };
 		FA59913C1BA03D330097D3E5 /* MyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA59913A1BA03D330097D3E5 /* MyDetailViewController.xib */; };
 		FA5991401BA03D5E0097D3E5 /* MyLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59913E1BA03D5E0097D3E5 /* MyLetterViewController.m */; };
@@ -85,6 +90,12 @@
 		FA78A22F1BABF4C70015F606 /* ERPCommonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA78A22D1BABF4C70015F606 /* ERPCommonTableViewCell.xib */; };
 		FA78A2331BAC1F610015F606 /* ERPViewController4s.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78A2311BAC1F610015F606 /* ERPViewController4s.m */; };
 		FA78A2341BAC1F610015F606 /* ERPViewController4s.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA78A2321BAC1F610015F606 /* ERPViewController4s.xib */; };
+		FA7A4E1F1BDE097A00F820D8 /* WhiteMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A4E1D1BDE097A00F820D8 /* WhiteMessageTableViewCell.m */; };
+		FA7A4E201BDE097A00F820D8 /* WhiteMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A4E1E1BDE097A00F820D8 /* WhiteMessageTableViewCell.xib */; };
+		FA7A4E241BDE098F00F820D8 /* BlueMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A4E221BDE098F00F820D8 /* BlueMessageTableViewCell.m */; };
+		FA7A4E251BDE098F00F820D8 /* BlueMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A4E231BDE098F00F820D8 /* BlueMessageTableViewCell.xib */; };
+		FA7A4E291BDE105700F820D8 /* EmptyTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A4E271BDE105700F820D8 /* EmptyTimeTableViewCell.m */; };
+		FA7A4E2A1BDE105700F820D8 /* EmptyTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A4E281BDE105700F820D8 /* EmptyTimeTableViewCell.xib */; };
 		FA7C50DB1BCE54A400824112 /* ERPScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C50DA1BCE54A400824112 /* ERPScoreTableViewController.m */; };
 		FA8139311B5CD74600848D96 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8139301B5CD74600848D96 /* NSTimer+Addition.m */; };
 		FA84D7FE1BD25402003893A6 /* LibraryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84D7FC1BD25402003893A6 /* LibraryTableViewCell.m */; };
@@ -209,6 +220,14 @@
 		FA58BAB71BC7E876008797AE /* SSDUTNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDUTNewsCell.h; sourceTree = "<group>"; };
 		FA58BAB81BC7E876008797AE /* SSDUTNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDUTNewsCell.m; sourceTree = "<group>"; };
 		FA58BAB91BC7E876008797AE /* SSDUTNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSDUTNewsCell.xib; sourceTree = "<group>"; };
+		FA5948D91BDCE84500C7D755 /* AddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressTableViewCell.h; sourceTree = "<group>"; };
+		FA5948DA1BDCE84500C7D755 /* AddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressTableViewCell.m; sourceTree = "<group>"; };
+		FA5948DB1BDCE84500C7D755 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		FA5948DE1BDCED4700C7D755 /* ButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonTableViewCell.h; sourceTree = "<group>"; };
+		FA5948DF1BDCED4700C7D755 /* ButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonTableViewCell.m; sourceTree = "<group>"; };
+		FA5948E01BDCED4700C7D755 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
+		FA5948E51BDCFB1000C7D755 /* PrivateMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateMessageViewController.h; sourceTree = "<group>"; };
+		FA5948E61BDCFB1000C7D755 /* PrivateMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateMessageViewController.m; sourceTree = "<group>"; };
 		FA5991381BA03D330097D3E5 /* MyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDetailViewController.h; sourceTree = "<group>"; };
 		FA5991391BA03D330097D3E5 /* MyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDetailViewController.m; sourceTree = "<group>"; };
 		FA59913A1BA03D330097D3E5 /* MyDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDetailViewController.xib; sourceTree = "<group>"; };
@@ -271,6 +290,15 @@
 		FA78A2301BAC1F610015F606 /* ERPViewController4s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPViewController4s.h; sourceTree = "<group>"; };
 		FA78A2311BAC1F610015F606 /* ERPViewController4s.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPViewController4s.m; sourceTree = "<group>"; };
 		FA78A2321BAC1F610015F606 /* ERPViewController4s.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERPViewController4s.xib; sourceTree = "<group>"; };
+		FA7A4E1C1BDE097A00F820D8 /* WhiteMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteMessageTableViewCell.h; sourceTree = "<group>"; };
+		FA7A4E1D1BDE097A00F820D8 /* WhiteMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteMessageTableViewCell.m; sourceTree = "<group>"; };
+		FA7A4E1E1BDE097A00F820D8 /* WhiteMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhiteMessageTableViewCell.xib; sourceTree = "<group>"; };
+		FA7A4E211BDE098F00F820D8 /* BlueMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueMessageTableViewCell.h; sourceTree = "<group>"; };
+		FA7A4E221BDE098F00F820D8 /* BlueMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueMessageTableViewCell.m; sourceTree = "<group>"; };
+		FA7A4E231BDE098F00F820D8 /* BlueMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlueMessageTableViewCell.xib; sourceTree = "<group>"; };
+		FA7A4E261BDE105700F820D8 /* EmptyTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyTimeTableViewCell.h; sourceTree = "<group>"; };
+		FA7A4E271BDE105700F820D8 /* EmptyTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyTimeTableViewCell.m; sourceTree = "<group>"; };
+		FA7A4E281BDE105700F820D8 /* EmptyTimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyTimeTableViewCell.xib; sourceTree = "<group>"; };
 		FA7C50D91BCE54A400824112 /* ERPScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPScoreTableViewController.h; sourceTree = "<group>"; };
 		FA7C50DA1BCE54A400824112 /* ERPScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPScoreTableViewController.m; sourceTree = "<group>"; };
 		FA81392F1B5CD74600848D96 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
@@ -593,6 +621,8 @@
 				FA4A9B491BDBA6ED00246B51 /* ClassmateDetailViewController.h */,
 				FA4A9B4A1BDBA6ED00246B51 /* ClassmateDetailViewController.m */,
 				FA4A9B4B1BDBA6ED00246B51 /* ClassmateDetailViewController.xib */,
+				FA5948E31BDCFA1200C7D755 /* ClassmateDetailCell */,
+				FA5948E41BDCFA2E00C7D755 /* PrivateMessage */,
 			);
 			name = ClassmateDetail;
 			sourceTree = "<group>";
@@ -632,6 +662,29 @@
 				FA58BAB91BC7E876008797AE /* SSDUTNewsCell.xib */,
 			);
 			name = SSDUTNewsCells;
+			sourceTree = "<group>";
+		};
+		FA5948E31BDCFA1200C7D755 /* ClassmateDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA5948D91BDCE84500C7D755 /* AddressTableViewCell.h */,
+				FA5948DA1BDCE84500C7D755 /* AddressTableViewCell.m */,
+				FA5948DB1BDCE84500C7D755 /* AddressTableViewCell.xib */,
+				FA5948DE1BDCED4700C7D755 /* ButtonTableViewCell.h */,
+				FA5948DF1BDCED4700C7D755 /* ButtonTableViewCell.m */,
+				FA5948E01BDCED4700C7D755 /* ButtonTableViewCell.xib */,
+			);
+			name = ClassmateDetailCell;
+			sourceTree = "<group>";
+		};
+		FA5948E41BDCFA2E00C7D755 /* PrivateMessage */ = {
+			isa = PBXGroup;
+			children = (
+				FA5948E51BDCFB1000C7D755 /* PrivateMessageViewController.h */,
+				FA5948E61BDCFB1000C7D755 /* PrivateMessageViewController.m */,
+				FA7A4E1B1BDE094800F820D8 /* MessageTableViewCell */,
+			);
+			name = PrivateMessage;
 			sourceTree = "<group>";
 		};
 		FA5991571BA04A540097D3E5 /* MyDetailCells */ = {
@@ -756,6 +809,22 @@
 				FA6734A51BC93E9900E950B9 /* SSDUTNewsWebViewController.m */,
 			);
 			name = SSDUTNewsDetail;
+			sourceTree = "<group>";
+		};
+		FA7A4E1B1BDE094800F820D8 /* MessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA7A4E1C1BDE097A00F820D8 /* WhiteMessageTableViewCell.h */,
+				FA7A4E1D1BDE097A00F820D8 /* WhiteMessageTableViewCell.m */,
+				FA7A4E1E1BDE097A00F820D8 /* WhiteMessageTableViewCell.xib */,
+				FA7A4E211BDE098F00F820D8 /* BlueMessageTableViewCell.h */,
+				FA7A4E221BDE098F00F820D8 /* BlueMessageTableViewCell.m */,
+				FA7A4E231BDE098F00F820D8 /* BlueMessageTableViewCell.xib */,
+				FA7A4E261BDE105700F820D8 /* EmptyTimeTableViewCell.h */,
+				FA7A4E271BDE105700F820D8 /* EmptyTimeTableViewCell.m */,
+				FA7A4E281BDE105700F820D8 /* EmptyTimeTableViewCell.xib */,
+			);
+			name = MessageTableViewCell;
 			sourceTree = "<group>";
 		};
 		FA84D7FA1BD253C1003893A6 /* libraryCell */ = {
@@ -1084,8 +1153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACD9AEC1BBAC20E00DD5E85 /* ChangeWeekView.xib in Resources */,
+				FA7A4E251BDE098F00F820D8 /* BlueMessageTableViewCell.xib in Resources */,
 				FA59915C1BA04B530097D3E5 /* MyDetaliHeadTableViewCell.xib in Resources */,
 				FA88B4631BA12D0100B8AAD6 /* MySettingSwitchTableViewCell.xib in Resources */,
+				FA7A4E2A1BDE105700F820D8 /* EmptyTimeTableViewCell.xib in Resources */,
 				FA5B71DF1B47841500F6870C /* EmptyTableViewCell.xib in Resources */,
 				FA601B481BD7B8F30006F331 /* NothingTableViewCell.xib in Resources */,
 				FA2992731B4AA5510088DC7E /* CourseListView56.xib in Resources */,
@@ -1106,6 +1177,7 @@
 				FABD9E8B1BD66BF20022CDC6 /* HintTableViewCell.xib in Resources */,
 				FA59913C1BA03D330097D3E5 /* MyDetailViewController.xib in Resources */,
 				FA5991411BA03D5E0097D3E5 /* MyLetterViewController.xib in Resources */,
+				FA7A4E201BDE097A00F820D8 /* WhiteMessageTableViewCell.xib in Resources */,
 				FA5991511BA03DE60097D3E5 /* MyFeedBackViewController.xib in Resources */,
 				FABD9E861BD640870022CDC6 /* SearchTableViewCell.xib in Resources */,
 				FA5991471BA03DB70097D3E5 /* MyMesBoardViewController.xib in Resources */,
@@ -1129,11 +1201,13 @@
 				FACB03941BA8582700C8BE63 /* FreshView.xib in Resources */,
 				FAF3BAC81B9DBEB400DFDE0D /* DiscoveryTableViewCell.xib in Resources */,
 				FA88B46E1BA178C600B8AAD6 /* AboutUsViewController.xib in Resources */,
+				FA5948DD1BDCE84500C7D755 /* AddressTableViewCell.xib in Resources */,
 				FA88B4681BA12D3000B8AAD6 /* MySettingCustomTableViewCell.xib in Resources */,
 				FA58BABB1BC7E876008797AE /* SSDUTNewsCell.xib in Resources */,
 				18C7448D1B46F42400FAAC12 /* MineViewController.xib in Resources */,
 				FA4A9B4D1BDBA6ED00246B51 /* ClassmateDetailViewController.xib in Resources */,
 				FA2992751B4AA5EA0088DC7E /* CourseListView67.xib in Resources */,
+				FA5948E21BDCED4700C7D755 /* ButtonTableViewCell.xib in Resources */,
 				FA59914C1BA03DCF0097D3E5 /* MyFilesViewController.xib in Resources */,
 				FA4468C31BDA1DD6000C399F /* HeadTableViewCell.xib in Resources */,
 			);
@@ -1187,6 +1261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACB038D1BA810C100C8BE63 /* NetworkingNoticeView.m in Sources */,
+				FA7A4E291BDE105700F820D8 /* EmptyTimeTableViewCell.m in Sources */,
 				FA6734A11BC936CD00E950B9 /* JsonAnalysisTool.m in Sources */,
 				FA2B314E1B4C02E900C040BD /* WeekDayButton.m in Sources */,
 				FABD9E8A1BD66BF20022CDC6 /* HintTableViewCell.m in Sources */,
@@ -1210,10 +1285,12 @@
 				FA5800EA1B57BEED00478AAF /* SectionPartView.m in Sources */,
 				FAD275181B9F1125000839BD /* MineTableViewCell.m in Sources */,
 				FA43A46E1BAFA252002E2E32 /* ImageProcess.m in Sources */,
+				FA7A4E1F1BDE097A00F820D8 /* WhiteMessageTableViewCell.m in Sources */,
 				FA9303551BA2610E00406094 /* ERPScoreTableViewCell.m in Sources */,
 				FA5B71DE1B47841500F6870C /* EmptyTableViewCell.m in Sources */,
 				FA5991601BA04B7A0097D3E5 /* MyDetailCustomTableViewCell.m in Sources */,
 				FABD9E801BD62ED20022CDC6 /* ERPLibraryTableViewController.m in Sources */,
+				FA5948E81BDCFB1000C7D755 /* PrivateMessageViewController.m in Sources */,
 				FA4A9B4C1BDBA6ED00246B51 /* ClassmateDetailViewController.m in Sources */,
 				FA5800F41B57DE1100478AAF /* LessonCardView.m in Sources */,
 				FA88B4721BA184C000B8AAD6 /* SignInViewController.m in Sources */,
@@ -1222,6 +1299,7 @@
 				FA9303661BA2800100406094 /* AboutXueHeaderTableViewCell.m in Sources */,
 				FA601B471BD7B8F30006F331 /* NothingTableViewCell.m in Sources */,
 				FA59913B1BA03D330097D3E5 /* MyDetailViewController.m in Sources */,
+				FA5948DC1BDCE84500C7D755 /* AddressTableViewCell.m in Sources */,
 				FA88B46D1BA178C600B8AAD6 /* AboutUsViewController.m in Sources */,
 				FA5B71E31B47AB4700F6870C /* UITableView+Register.m in Sources */,
 				FA88B4671BA12D3000B8AAD6 /* MySettingCustomTableViewCell.m in Sources */,
@@ -1231,12 +1309,14 @@
 				FA67349E1BC900F200E950B9 /* NetWorking.m in Sources */,
 				FA9303701BA289E100406094 /* AboutXueCustomTableViewCell.m in Sources */,
 				18C7448C1B46F42400FAAC12 /* MineViewController.m in Sources */,
+				FA5948E11BDCED4700C7D755 /* ButtonTableViewCell.m in Sources */,
 				FAD275201B9F1160000839BD /* MyHeadTableViewCell.m in Sources */,
 				FA3CA1ED1BCCF5E10052423B /* ERPSSDUTTableViewController.m in Sources */,
 				FACD9AEA1BBAC1E300DD5E85 /* ChangeWeekView.m in Sources */,
 				FA41B0111B4667BC0043A439 /* main.m in Sources */,
 				FA58BABA1BC7E876008797AE /* SSDUTNewsCell.m in Sources */,
 				FA78A22E1BABF4C70015F606 /* ERPCommonTableViewCell.m in Sources */,
+				FA7A4E241BDE098F00F820D8 /* BlueMessageTableViewCell.m in Sources */,
 				FA4468BD1BDA1C12000C399F /* GPATableViewController.m in Sources */,
 				FA5B71EA1B47DFC500F6870C /* ERPCourseViewController.m in Sources */,
 				FA93035B1BA27A9800406094 /* AboutXueBanViewController.m in Sources */,
@@ -1333,6 +1413,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1369,6 +1450,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

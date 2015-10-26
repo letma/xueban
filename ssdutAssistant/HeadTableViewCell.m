@@ -16,6 +16,14 @@
 @end
 
 @implementation HeadTableViewCell
+@synthesize cellName;
+@synthesize cellMajor;
+@synthesize cellStudentID;
+@synthesize cellSex;
+@synthesize cellSingle;
+@synthesize cellHeadImg;
+@synthesize cellAddress;
+@synthesize cellMessageID;
 
 - (void)awakeFromNib {
     self.headImgView.layer.cornerRadius = 35;
@@ -37,16 +45,33 @@
     // Configure the view for the selected state
 }
 
-- (void)creatCellWithImage:(UIImage *)headImg Name:(NSString *)nameStr Department:(NSString *)departmentStr Sex:(BOOL)sex Single:(NSInteger)single
+- (void)creatCellWithImage:(UIImage *)headImg Name:(NSString *)nameStr Department:(NSString *)departmentStr StudentID:(NSString *)studentIDStr Address:(NSString*)addressStr Sex:(BOOL)sex Single:(NSInteger)single MessageID:(NSInteger)messageID;
 {
     
-    [self.headImgView setImage:headImg];
+    cellName = nameStr;
+    cellMajor = departmentStr;
+    cellStudentID = studentIDStr;
+    cellAddress = addressStr;
+    cellSex = sex;
+    cellSingle = single;
+    cellHeadImg = headImg;
+    cellMessageID = messageID;
+
+    if (headImg) {
+        [self.headImgView setImage:headImg];
+    }else{
+        [self.headImgView setImage:UIIMGName(@"logo_noimage")];
+    }
+    
+    
     self.nameLbl.text = nameStr;
     self.departmentLbl.text = departmentStr;
     if (sex) {
         [self.sexImgView setImage:UIIMGName(@"discovery_icon_sex_boy")];
+
     }else{
         [self.sexImgView setImage:UIIMGName(@"discovery_icon_sex_girl")];
+
     }
     
     if (single == 0) {

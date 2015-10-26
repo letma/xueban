@@ -8,6 +8,8 @@
 
 #import "ClassmateTableViewController.h"
 #import "HeadTableViewCell.h"
+#import "ClassmateDetailViewController.h"
+
 
 @interface ClassmateTableViewController ()<UIAlertViewDelegate>
 {
@@ -200,15 +202,19 @@
         NSString * major = [dic objectForKey:@"Major"];
         NSString * studentID = [dic objectForKey:@"StudentId"];
         NSString * imgIP = [dic objectForKey:@"HeadImage"];
+        NSString * address = [dic objectForKeyedSubscript:@"Address"];
+        NSInteger messageID = [[dic objectForKey:@"Id"] integerValue];
         NSInteger single = [[dic objectForKey:@"Single"] integerValue];
         BOOL sex = [[dic objectForKey:@"Sex"] boolValue];
+       // NSLog(@"bool : %@",[dic objectForKey:@"Sex"]);
         
         ImageProcess * classmateImg = [[ImageProcess alloc] init];
 
         
         if ([classmateImg ifImageHaveHadWithStudentID:studentID ImageIP:imgIP]) {
             
-            [cell creatCellWithImage:[classmateImg getImgWithStudentID:studentID] Name:name Department:major Sex:sex Single:single];
+            [cell creatCellWithImage:[classmateImg getImgWithStudentID:studentID] Name:name Department:major StudentID:studentID Address:address Sex:sex Single:single MessageID:messageID];
+
             
         }else{
             NSString * urlStr = imgIP;
@@ -216,8 +222,8 @@
             NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:4.0];
             [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                 UIImage * img = [UIImage imageWithData:data];
-                [cell creatCellWithImage:img Name:name Department:major Sex:self Single:single];
                 
+                [cell creatCellWithImage:img Name:name Department:major StudentID:studentID Address:address Sex:sex Single:single MessageID:messageID];
                 //img 本地化
                 ImageProcess * storgeImg = [[ImageProcess alloc]init];
                 NSLog(@"%@  %@",studentID,imgIP);
@@ -235,7 +241,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.classmateArr count] != 0 )  {
-        ;
+        HeadTableViewCell * cell = (HeadTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+        ClassmateDetailViewController * viewController = [[ClassmateDetailViewController alloc] init];
+        viewController.controllerName = cell.cellName;
+        viewController.controllerMajor = cell.cellMajor;
+        viewController.controllerHeadImg = cell.cellHeadImg;
+        viewController.controllerStudentID = cell.cellStudentID;
+        viewController.controllerMessageID = cell.cellMessageID;
+        viewController.controllerSex = cell.cellSex;
+        viewController.controllerAddress = cell.cellAddress;
+        viewController.controllerSingle = cell.cellSingle;
+        [self.navigationController pushViewController:viewController animated:YES];
+        //[tableView cellForRowAtIndexPath:indexPath.row]
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

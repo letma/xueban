@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassmateDetailViewController">
             <connections>
+                <outlet property="detailTableView" destination="PBt-hB-lnB" id="3l7-lZ-zLu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,19 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PBt-hB-lnB">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="PBt-hB-lnB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="J0q-f7-8sV"/>
+                <constraint firstItem="PBt-hB-lnB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KJk-cX-t8R"/>
+                <constraint firstAttribute="trailing" secondItem="PBt-hB-lnB" secondAttribute="trailing" id="NJa-pT-NE7"/>
+                <constraint firstAttribute="bottom" secondItem="PBt-hB-lnB" secondAttribute="bottom" id="Pz1-Gm-sGV"/>
+            </constraints>
             <point key="canvasLocation" x="401" y="279"/>
         </view>
     </objects>

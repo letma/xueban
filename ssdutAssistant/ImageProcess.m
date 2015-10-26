@@ -35,9 +35,13 @@
     NSString * documentPath = [documentPaths objectAtIndex:0];
     NSString * studentFile = [documentPath stringByAppendingPathComponent:studentID];
     NSString * imgFile = [studentFile stringByAppendingPathComponent:@"image"];
-    NSLog(@"%@",imgFile);
-   // NSData * imgData = [NSData dataWithContentsOfFile:imgFile];
+    //NSLog(@"%@",imgFile);
+    NSData * imgData = [NSData dataWithContentsOfFile:imgFile];
     UIImage * image = [UIImage imageWithContentsOfFile:imgFile];
+    if ([studentID isEqual:@"201492111"]) {
+        NSLog(@"%@",imgData);
+    }
+
     
     return image;
 }
@@ -51,8 +55,8 @@
     NSString * studentFile = [documentPath stringByAppendingPathComponent:studentID];
     NSString * imgIPFile = [studentFile stringByAppendingPathComponent:@"imageIP"];
     NSString * imgIP = [NSString stringWithContentsOfFile:imgIPFile encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"%@",documentPath);
-    NSLog(@"%@",netImgIP);
+   // NSLog(@"%@",documentPath);
+   // NSLog(@"%@",netImgIP);
     
     NSFileManager * fileManager = [NSFileManager defaultManager];
     NSArray * fileArr =[fileManager subpathsAtPath:documentPath];
@@ -63,7 +67,7 @@
     if ([imgIP isEqual:netImgIP] && image) {
         for (NSInteger i = 0 ; i < [fileArr count]; i ++) {
             if ([studentID isEqual:[fileArr objectAtIndex:i]]) {
-                NSLog(@"dafadffd:%@",[fileArr objectAtIndex:i]);
+                //NSLog(@"dafadffd:%@",[fileArr objectAtIndex:i]);
                 return YES;
             }
         }

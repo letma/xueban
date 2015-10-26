@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface HeadTableViewCell : UITableViewCell
-- (void)creatCellWithImage:(UIImage *)headImg Name:(NSString *)nameStr Department:(NSString *)departmentStr Sex:(BOOL)sex Single:(NSInteger)single;
+
+@property (nonatomic, strong) NSString * cellName;
+@property (nonatomic, strong) NSString * cellMajor;
+@property (nonatomic, strong) NSString * cellStudentID;
+@property (nonatomic, strong) NSString * cellAddress;
+@property (nonatomic, strong) UIImage * cellHeadImg;
+@property (nonatomic, assign) BOOL cellSex;
+@property (nonatomic, assign) NSInteger cellSingle;
+@property (nonatomic, assign) NSInteger cellMessageID;
+
+- (void)creatCellWithImage:(UIImage *)headImg Name:(NSString *)nameStr Department:(NSString *)departmentStr StudentID:(NSString *)studentIDStr Address:(NSString*)addressStr Sex:(BOOL)sex Single:(NSInteger)single MessageID:(NSInteger)messageID;
 @end
