@@ -60,6 +60,8 @@ alpha:1.0]
 #define MyName_Key @"MyName_Key"
 //用户的学号
 #define MyStudentId_Key @"MyStudentId_Key"
+//用户的社交ID
+#define MySocialId_Key @"MySocialId_Key"
 //用户的本学期成绩信息
 #define MyScore_Key @"MyScore_Key"
 //用户的所有成绩信息

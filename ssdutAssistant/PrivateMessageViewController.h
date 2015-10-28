@@ -11,4 +11,5 @@
 @interface PrivateMessageViewController : UIViewController
 @property (nonatomic,strong)NSString * controllerName;
 @property (nonatomic ,strong) UIImage * guestHeadImg;
+@property (nonatomic, assign) NSInteger senderID;
 @end

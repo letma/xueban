@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BlueMessageTableViewCell : UITableViewCell
-
+- (void)creatCellWithImg:(UIImage *)img Content:(NSString *)content Time:(NSString *)time;
+- (void)setError;
 @end

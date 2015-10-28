@@ -104,17 +104,13 @@
 {
     if (scrollView.contentOffset.y > 25 * 85 * page - WINHEIGHT + 64) {
         NSLog(@"hhhhh");
-        //每次下拉加载都要清空idArr
-        //[self.IDArr removeAllObjects];
-    //    NSLog(@"%f",scrollView.contentOffset.y);
+
         page ++;
         NetWorking * tempNetWorking = [[NetWorking alloc] init];
         NSString * urlStr = [NSString stringWithFormat:@"%@list/%ld/%ld",DLUT_NEWS_IP,NewsIndex,page];
         
         NSArray * tempArr =[tempNetWorking synchronousGetContentWithUrl:urlStr];
-//        for (NSInteger i = 0; i <  [tempArr count]; i ++) {
-//            [self.newsArr addObject:[tempArr objectAtIndex:i]];
-//        }
+
         [self.newsArr addObjectsFromArray:tempArr];
         
         [self.tableView reloadData];
@@ -133,12 +129,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     [self.rC endRefreshing];
-//    NSLog(@"error!!!!:%@",error);
-//    
-//    UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150*598/445.0)];
-//    imgView.center = CGPointMake(WINWIDTH/2.0, WINHEIGHT/3.0);
-//    imgView.image = UIIMGName(@"logo_nothing");
-//    [self.tableView addSubview:imgView];
+
 }
 
 
@@ -213,8 +204,6 @@
         [webView setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
         [self presentViewController:webView animated:YES completion:nil];
     }
-
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

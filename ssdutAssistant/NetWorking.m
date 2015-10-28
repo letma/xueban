@@ -39,6 +39,24 @@
     //NSLog(@"-----%@",contentArr);
 }
 
+- (id)synchronousGetArrWithUrl:(NSString *)urlStr
+{
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    url = [NSURL URLWithString:urlStr];
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:4];
+    [request setValue:[userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
+    
+    contentData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    contentArr = [[NSMutableArray alloc] init];
+    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:contentData options:NSJSONReadingMutableLeaves error:nil];
+    NSLog(@"%@",dic);
+    if ([[dic objectForKey:@"status"] boolValue]) {
+            contentArr = [dic objectForKey:@"msg"];
+        NSLog(@"%@",contentArr);
+    }
+    return contentArr;
+}
+
 - (void)getContentWithUrl:(NSString *)urlStr SaveWithStr:(NSString *)saveKey
 {
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];

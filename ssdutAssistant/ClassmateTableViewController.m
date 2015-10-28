@@ -185,7 +185,7 @@
     if (([self.classmateArr count] == 0) && ifFirstLoad) {
         return WINHEIGHT - 64 ;
     }else{
-        return 80;
+        return 70;
     }
 }
 

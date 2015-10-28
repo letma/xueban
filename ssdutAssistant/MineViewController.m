@@ -180,7 +180,7 @@
                 controllerName = @"MyDetailViewController";
                 break;
             case 3:
-                controllerName = @"MyLetterViewController";
+                controllerName = @"MyLetterTableViewController";
                 break;
             case 4:
                 controllerName = @"MyMesBoardViewController";

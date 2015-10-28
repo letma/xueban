@@ -29,8 +29,6 @@
 		FA41B01F1B4667BC0043A439 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA41B01D1B4667BC0043A439 /* LaunchScreen.xib */; };
 		FA41B02B1B4667BC0043A439 /* ssdutAssistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA41B02A1B4667BC0043A439 /* ssdutAssistantTests.m */; };
 		FA43A46E1BAFA252002E2E32 /* ImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = FA43A46D1BAFA252002E2E32 /* ImageProcess.m */; };
-		FA4468AE1BDA179C000C399F /* AlumnusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4468AC1BDA179C000C399F /* AlumnusTableViewController.m */; };
-		FA4468AF1BDA179C000C399F /* AlumnusTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4468AD1BDA179C000C399F /* AlumnusTableViewController.xib */; };
 		FA4468B31BDA1BC5000C399F /* ClassmateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4468B11BDA1BC5000C399F /* ClassmateTableViewController.m */; };
 		FA4468BD1BDA1C12000C399F /* GPATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4468BB1BDA1C12000C399F /* GPATableViewController.m */; };
 		FA4468BE1BDA1C12000C399F /* GPATableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4468BC1BDA1C12000C399F /* GPATableViewController.xib */; };
@@ -54,8 +52,6 @@
 		FA5948E81BDCFB1000C7D755 /* PrivateMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5948E61BDCFB1000C7D755 /* PrivateMessageViewController.m */; };
 		FA59913B1BA03D330097D3E5 /* MyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5991391BA03D330097D3E5 /* MyDetailViewController.m */; };
 		FA59913C1BA03D330097D3E5 /* MyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA59913A1BA03D330097D3E5 /* MyDetailViewController.xib */; };
-		FA5991401BA03D5E0097D3E5 /* MyLetterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA59913E1BA03D5E0097D3E5 /* MyLetterViewController.m */; };
-		FA5991411BA03D5E0097D3E5 /* MyLetterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA59913F1BA03D5E0097D3E5 /* MyLetterViewController.xib */; };
 		FA5991461BA03DB70097D3E5 /* MyMesBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5991441BA03DB70097D3E5 /* MyMesBoardViewController.m */; };
 		FA5991471BA03DB70097D3E5 /* MyMesBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5991451BA03DB70097D3E5 /* MyMesBoardViewController.xib */; };
 		FA59914B1BA03DCF0097D3E5 /* MyFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5991491BA03DCF0097D3E5 /* MyFilesViewController.m */; };
@@ -86,6 +82,12 @@
 		FA67349E1BC900F200E950B9 /* NetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67349D1BC900F200E950B9 /* NetWorking.m */; };
 		FA6734A11BC936CD00E950B9 /* JsonAnalysisTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6734A01BC936CD00E950B9 /* JsonAnalysisTool.m */; };
 		FA6734A61BC93E9900E950B9 /* SSDUTNewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6734A51BC93E9900E950B9 /* SSDUTNewsWebViewController.m */; };
+		FA6B35AE1BDF1F7A00A45853 /* NSString+Height.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B35AD1BDF1F7A00A45853 /* NSString+Height.m */; };
+		FA6B35B21BDF229500A45853 /* AlumnusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B35B01BDF229500A45853 /* AlumnusTableViewController.m */; };
+		FA6B35B81BDF237400A45853 /* ContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B35B61BDF237400A45853 /* ContentTableViewCell.m */; };
+		FA6B35B91BDF237400A45853 /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6B35B71BDF237400A45853 /* ContentTableViewCell.xib */; };
+		FA6B35BD1BDF59D600A45853 /* CustomStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B35BC1BDF59D600A45853 /* CustomStatusBar.m */; };
+		FA6B35C01BDF7EED00A45853 /* MyLetterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B35BF1BDF7EED00A45853 /* MyLetterTableViewController.m */; };
 		FA78A22E1BABF4C70015F606 /* ERPCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78A22C1BABF4C70015F606 /* ERPCommonTableViewCell.m */; };
 		FA78A22F1BABF4C70015F606 /* ERPCommonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA78A22D1BABF4C70015F606 /* ERPCommonTableViewCell.xib */; };
 		FA78A2331BAC1F610015F606 /* ERPViewController4s.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78A2311BAC1F610015F606 /* ERPViewController4s.m */; };
@@ -130,6 +132,14 @@
 		FACB03941BA8582700C8BE63 /* FreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACB03931BA8582700C8BE63 /* FreshView.xib */; };
 		FACD9AEA1BBAC1E300DD5E85 /* ChangeWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD9AE91BBAC1E300DD5E85 /* ChangeWeekView.m */; };
 		FACD9AEC1BBAC20E00DD5E85 /* ChangeWeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD9AEB1BBAC20E00DD5E85 /* ChangeWeekView.xib */; };
+		FACFA2F61BE0B2E60070E3A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACFA2F51BE0B2E60070E3A4 /* UIKit.framework */; };
+		FACFA2F81BE0B2EF0070E3A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACFA2F71BE0B2EF0070E3A4 /* Foundation.framework */; };
+		FACFA2FA1BE0B2FA0070E3A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACFA2F91BE0B2FA0070E3A4 /* CoreGraphics.framework */; };
+		FACFA2FC1BE0B3020070E3A4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACFA2FB1BE0B3020070E3A4 /* CoreText.framework */; };
+		FACFA3071BE0D9540070E3A4 /* ReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FACFA3051BE0D9540070E3A4 /* ReviewTableViewCell.m */; };
+		FACFA3081BE0D9540070E3A4 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACFA3061BE0D9540070E3A4 /* ReviewTableViewCell.xib */; };
+		FACFA3111BE0FEF40070E3A4 /* ContentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACFA30F1BE0FEF40070E3A4 /* ContentDetailViewController.m */; };
+		FACFA3121BE0FEF40070E3A4 /* ContentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACFA3101BE0FEF40070E3A4 /* ContentDetailViewController.xib */; };
 		FAD275181B9F1125000839BD /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD275161B9F1125000839BD /* MineTableViewCell.m */; };
 		FAD275191B9F1125000839BD /* MineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD275171B9F1125000839BD /* MineTableViewCell.xib */; };
 		FAD275201B9F1160000839BD /* MyHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD2751E1B9F1160000839BD /* MyHeadTableViewCell.m */; };
@@ -192,9 +202,6 @@
 		FA41B02A1B4667BC0043A439 /* ssdutAssistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ssdutAssistantTests.m; sourceTree = "<group>"; };
 		FA43A46C1BAFA252002E2E32 /* ImageProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProcess.h; sourceTree = "<group>"; };
 		FA43A46D1BAFA252002E2E32 /* ImageProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageProcess.m; sourceTree = "<group>"; };
-		FA4468AB1BDA179C000C399F /* AlumnusTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlumnusTableViewController.h; sourceTree = "<group>"; };
-		FA4468AC1BDA179C000C399F /* AlumnusTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlumnusTableViewController.m; sourceTree = "<group>"; };
-		FA4468AD1BDA179C000C399F /* AlumnusTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlumnusTableViewController.xib; sourceTree = "<group>"; };
 		FA4468B01BDA1BC5000C399F /* ClassmateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassmateTableViewController.h; sourceTree = "<group>"; };
 		FA4468B11BDA1BC5000C399F /* ClassmateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassmateTableViewController.m; sourceTree = "<group>"; };
 		FA4468BA1BDA1C12000C399F /* GPATableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPATableViewController.h; sourceTree = "<group>"; };
@@ -231,9 +238,6 @@
 		FA5991381BA03D330097D3E5 /* MyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDetailViewController.h; sourceTree = "<group>"; };
 		FA5991391BA03D330097D3E5 /* MyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDetailViewController.m; sourceTree = "<group>"; };
 		FA59913A1BA03D330097D3E5 /* MyDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDetailViewController.xib; sourceTree = "<group>"; };
-		FA59913D1BA03D5E0097D3E5 /* MyLetterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLetterViewController.h; sourceTree = "<group>"; };
-		FA59913E1BA03D5E0097D3E5 /* MyLetterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLetterViewController.m; sourceTree = "<group>"; };
-		FA59913F1BA03D5E0097D3E5 /* MyLetterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLetterViewController.xib; sourceTree = "<group>"; };
 		FA5991421BA03D870097D3E5 /* MineHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeader.h; sourceTree = "<group>"; };
 		FA5991431BA03DB70097D3E5 /* MyMesBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMesBoardViewController.h; sourceTree = "<group>"; };
 		FA5991441BA03DB70097D3E5 /* MyMesBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMesBoardViewController.m; sourceTree = "<group>"; };
@@ -284,6 +288,17 @@
 		FA6734A01BC936CD00E950B9 /* JsonAnalysisTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonAnalysisTool.m; sourceTree = "<group>"; };
 		FA6734A41BC93E9900E950B9 /* SSDUTNewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDUTNewsWebViewController.h; sourceTree = "<group>"; };
 		FA6734A51BC93E9900E950B9 /* SSDUTNewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDUTNewsWebViewController.m; sourceTree = "<group>"; };
+		FA6B35AC1BDF1F7A00A45853 /* NSString+Height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Height.h"; sourceTree = "<group>"; };
+		FA6B35AD1BDF1F7A00A45853 /* NSString+Height.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Height.m"; sourceTree = "<group>"; };
+		FA6B35AF1BDF229500A45853 /* AlumnusTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlumnusTableViewController.h; sourceTree = "<group>"; };
+		FA6B35B01BDF229500A45853 /* AlumnusTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlumnusTableViewController.m; sourceTree = "<group>"; };
+		FA6B35B51BDF237400A45853 /* ContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTableViewCell.h; sourceTree = "<group>"; };
+		FA6B35B61BDF237400A45853 /* ContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTableViewCell.m; sourceTree = "<group>"; };
+		FA6B35B71BDF237400A45853 /* ContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
+		FA6B35BB1BDF59D600A45853 /* CustomStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomStatusBar.h; sourceTree = "<group>"; };
+		FA6B35BC1BDF59D600A45853 /* CustomStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomStatusBar.m; sourceTree = "<group>"; };
+		FA6B35BE1BDF7EED00A45853 /* MyLetterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLetterTableViewController.h; sourceTree = "<group>"; };
+		FA6B35BF1BDF7EED00A45853 /* MyLetterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLetterTableViewController.m; sourceTree = "<group>"; };
 		FA78A22B1BABF4C70015F606 /* ERPCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPCommonTableViewCell.h; sourceTree = "<group>"; };
 		FA78A22C1BABF4C70015F606 /* ERPCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPCommonTableViewCell.m; sourceTree = "<group>"; };
 		FA78A22D1BABF4C70015F606 /* ERPCommonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERPCommonTableViewCell.xib; sourceTree = "<group>"; };
@@ -353,6 +368,16 @@
 		FACD9AE81BBAC1E300DD5E85 /* ChangeWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeWeekView.h; sourceTree = "<group>"; };
 		FACD9AE91BBAC1E300DD5E85 /* ChangeWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeWeekView.m; sourceTree = "<group>"; };
 		FACD9AEB1BBAC20E00DD5E85 /* ChangeWeekView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeWeekView.xib; sourceTree = "<group>"; };
+		FACFA2F51BE0B2E60070E3A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FACFA2F71BE0B2EF0070E3A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FACFA2F91BE0B2FA0070E3A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FACFA2FB1BE0B3020070E3A4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		FACFA3041BE0D9540070E3A4 /* ReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewTableViewCell.h; sourceTree = "<group>"; };
+		FACFA3051BE0D9540070E3A4 /* ReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewTableViewCell.m; sourceTree = "<group>"; };
+		FACFA3061BE0D9540070E3A4 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
+		FACFA30E1BE0FEF40070E3A4 /* ContentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentDetailViewController.h; sourceTree = "<group>"; };
+		FACFA30F1BE0FEF40070E3A4 /* ContentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentDetailViewController.m; sourceTree = "<group>"; };
+		FACFA3101BE0FEF40070E3A4 /* ContentDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentDetailViewController.xib; sourceTree = "<group>"; };
 		FAD275151B9F1125000839BD /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
 		FAD275161B9F1125000839BD /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		FAD275171B9F1125000839BD /* MineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineTableViewCell.xib; sourceTree = "<group>"; };
@@ -373,6 +398,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACFA2FC1BE0B3020070E3A4 /* CoreText.framework in Frameworks */,
+				FACFA2FA1BE0B2FA0070E3A4 /* CoreGraphics.framework in Frameworks */,
+				FACFA2F81BE0B2EF0070E3A4 /* Foundation.framework in Frameworks */,
+				FACFA2F61BE0B2E60070E3A4 /* UIKit.framework in Frameworks */,
 				5DA5EFC3486DB763A62D0011 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +521,10 @@
 		2D05C114988520FF674AD478 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FACFA2FB1BE0B3020070E3A4 /* CoreText.framework */,
+				FACFA2F91BE0B2FA0070E3A4 /* CoreGraphics.framework */,
+				FACFA2F71BE0B2EF0070E3A4 /* Foundation.framework */,
+				FACFA2F51BE0B2E60070E3A4 /* UIKit.framework */,
 				7F80B9DAA5891B616BB885AB /* libPods.a */,
 			);
 			name = Frameworks;
@@ -682,6 +715,7 @@
 			children = (
 				FA5948E51BDCFB1000C7D755 /* PrivateMessageViewController.h */,
 				FA5948E61BDCFB1000C7D755 /* PrivateMessageViewController.m */,
+				FA6B35BA1BDF59A100A45853 /* NoticeView */,
 				FA7A4E1B1BDE094800F820D8 /* MessageTableViewCell */,
 			);
 			name = PrivateMessage;
@@ -746,6 +780,8 @@
 				FA5B71E21B47AB4700F6870C /* UITableView+Register.m */,
 				FA81392F1B5CD74600848D96 /* NSTimer+Addition.h */,
 				FA8139301B5CD74600848D96 /* NSTimer+Addition.m */,
+				FA6B35AC1BDF1F7A00A45853 /* NSString+Height.h */,
+				FA6B35AD1BDF1F7A00A45853 /* NSString+Height.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -809,6 +845,28 @@
 				FA6734A51BC93E9900E950B9 /* SSDUTNewsWebViewController.m */,
 			);
 			name = SSDUTNewsDetail;
+			sourceTree = "<group>";
+		};
+		FA6B35B41BDF234B00A45853 /* ContentCells */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B35B51BDF237400A45853 /* ContentTableViewCell.h */,
+				FA6B35B61BDF237400A45853 /* ContentTableViewCell.m */,
+				FA6B35B71BDF237400A45853 /* ContentTableViewCell.xib */,
+				FACFA3041BE0D9540070E3A4 /* ReviewTableViewCell.h */,
+				FACFA3051BE0D9540070E3A4 /* ReviewTableViewCell.m */,
+				FACFA3061BE0D9540070E3A4 /* ReviewTableViewCell.xib */,
+			);
+			name = ContentCells;
+			sourceTree = "<group>";
+		};
+		FA6B35BA1BDF59A100A45853 /* NoticeView */ = {
+			isa = PBXGroup;
+			children = (
+				FA6B35BB1BDF59D600A45853 /* CustomStatusBar.h */,
+				FA6B35BC1BDF59D600A45853 /* CustomStatusBar.m */,
+			);
+			name = NoticeView;
 			sourceTree = "<group>";
 		};
 		FA7A4E1B1BDE094800F820D8 /* MessageTableViewCell */ = {
@@ -941,6 +999,16 @@
 			name = WeekTableView;
 			sourceTree = "<group>";
 		};
+		FACFA3001BE0D6B60070E3A4 /* ContentDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FACFA30E1BE0FEF40070E3A4 /* ContentDetailViewController.h */,
+				FACFA30F1BE0FEF40070E3A4 /* ContentDetailViewController.m */,
+				FACFA3101BE0FEF40070E3A4 /* ContentDetailViewController.xib */,
+			);
+			name = ContentDetail;
+			sourceTree = "<group>";
+		};
 		FAD2750E1B9F0F46000839BD /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -989,9 +1057,8 @@
 		FAD275121B9F0F5B000839BD /* PrivateLetter */ = {
 			isa = PBXGroup;
 			children = (
-				FA59913D1BA03D5E0097D3E5 /* MyLetterViewController.h */,
-				FA59913E1BA03D5E0097D3E5 /* MyLetterViewController.m */,
-				FA59913F1BA03D5E0097D3E5 /* MyLetterViewController.xib */,
+				FA6B35BE1BDF7EED00A45853 /* MyLetterTableViewController.h */,
+				FA6B35BF1BDF7EED00A45853 /* MyLetterTableViewController.m */,
 			);
 			name = PrivateLetter;
 			sourceTree = "<group>";
@@ -1023,9 +1090,10 @@
 		FAF3BABE1B9D8F7500DFDE0D /* Alumnus */ = {
 			isa = PBXGroup;
 			children = (
-				FA4468AB1BDA179C000C399F /* AlumnusTableViewController.h */,
-				FA4468AC1BDA179C000C399F /* AlumnusTableViewController.m */,
-				FA4468AD1BDA179C000C399F /* AlumnusTableViewController.xib */,
+				FA6B35AF1BDF229500A45853 /* AlumnusTableViewController.h */,
+				FA6B35B01BDF229500A45853 /* AlumnusTableViewController.m */,
+				FA6B35B41BDF234B00A45853 /* ContentCells */,
+				FACFA3001BE0D6B60070E3A4 /* ContentDetail */,
 			);
 			name = Alumnus;
 			sourceTree = "<group>";
@@ -1157,6 +1225,7 @@
 				FA59915C1BA04B530097D3E5 /* MyDetaliHeadTableViewCell.xib in Resources */,
 				FA88B4631BA12D0100B8AAD6 /* MySettingSwitchTableViewCell.xib in Resources */,
 				FA7A4E2A1BDE105700F820D8 /* EmptyTimeTableViewCell.xib in Resources */,
+				FACFA3081BE0D9540070E3A4 /* ReviewTableViewCell.xib in Resources */,
 				FA5B71DF1B47841500F6870C /* EmptyTableViewCell.xib in Resources */,
 				FA601B481BD7B8F30006F331 /* NothingTableViewCell.xib in Resources */,
 				FA2992731B4AA5510088DC7E /* CourseListView56.xib in Resources */,
@@ -1166,6 +1235,7 @@
 				FA5991611BA04B7A0097D3E5 /* MyDetailCustomTableViewCell.xib in Resources */,
 				FAD827D91BBBF98D008D4E07 /* ChangeWeekTableViewCell.xib in Resources */,
 				FA93036C1BA2803B00406094 /* AboutXueFooterTableViewCell.xib in Resources */,
+				FACFA3121BE0FEF40070E3A4 /* ContentDetailViewController.xib in Resources */,
 				18C7447A1B46F2A900FAAC12 /* ERPViewController.xib in Resources */,
 				FA5800EC1B57BF1300478AAF /* SectionPartView.xib in Resources */,
 				FACB038F1BA810FD00C8BE63 /* NetworkingNoticeView.xib in Resources */,
@@ -1176,7 +1246,6 @@
 				FA41B01F1B4667BC0043A439 /* LaunchScreen.xib in Resources */,
 				FABD9E8B1BD66BF20022CDC6 /* HintTableViewCell.xib in Resources */,
 				FA59913C1BA03D330097D3E5 /* MyDetailViewController.xib in Resources */,
-				FA5991411BA03D5E0097D3E5 /* MyLetterViewController.xib in Resources */,
 				FA7A4E201BDE097A00F820D8 /* WhiteMessageTableViewCell.xib in Resources */,
 				FA5991511BA03DE60097D3E5 /* MyFeedBackViewController.xib in Resources */,
 				FABD9E861BD640870022CDC6 /* SearchTableViewCell.xib in Resources */,
@@ -1189,9 +1258,9 @@
 				18C744851B46F3FF00FAAC12 /* DiscoveryViewController.xib in Resources */,
 				FABD9E811BD62ED20022CDC6 /* ERPLibraryTableViewController.xib in Resources */,
 				FA9303561BA2610E00406094 /* ERPScoreTableViewCell.xib in Resources */,
+				FA6B35B91BDF237400A45853 /* ContentTableViewCell.xib in Resources */,
 				FA5991561BA03DF70097D3E5 /* MySettingViewController.xib in Resources */,
 				FA9303711BA289E100406094 /* AboutXueCustomTableViewCell.xib in Resources */,
-				FA4468AF1BDA179C000C399F /* AlumnusTableViewController.xib in Resources */,
 				FA93035C1BA27A9800406094 /* AboutXueBanViewController.xib in Resources */,
 				FA84D7FF1BD25402003893A6 /* LibraryTableViewCell.xib in Resources */,
 				FAD275191B9F1125000839BD /* MineTableViewCell.xib in Resources */,
@@ -1263,6 +1332,7 @@
 				FACB038D1BA810C100C8BE63 /* NetworkingNoticeView.m in Sources */,
 				FA7A4E291BDE105700F820D8 /* EmptyTimeTableViewCell.m in Sources */,
 				FA6734A11BC936CD00E950B9 /* JsonAnalysisTool.m in Sources */,
+				FA6B35C01BDF7EED00A45853 /* MyLetterTableViewController.m in Sources */,
 				FA2B314E1B4C02E900C040BD /* WeekDayButton.m in Sources */,
 				FABD9E8A1BD66BF20022CDC6 /* HintTableViewCell.m in Sources */,
 				FA29926F1B4A85A40088DC7E /* CourseListView.m in Sources */,
@@ -1270,10 +1340,11 @@
 				FA601B431BD7B7D90006F331 /* ERPExamTableViewController.m in Sources */,
 				18C744791B46F2A900FAAC12 /* ERPViewController.m in Sources */,
 				FA5991651BA04BA80097D3E5 /* MyDetailLoveTableViewCell.m in Sources */,
+				FA6B35BD1BDF59D600A45853 /* CustomStatusBar.m in Sources */,
 				FA59916C1BA065FF0097D3E5 /* MyFileFolderTableViewCell.m in Sources */,
+				FA6B35B81BDF237400A45853 /* ContentTableViewCell.m in Sources */,
 				FA59915B1BA04B530097D3E5 /* MyDetaliHeadTableViewCell.m in Sources */,
 				FABD9E851BD640870022CDC6 /* SearchTableViewCell.m in Sources */,
-				FA4468AE1BDA179C000C399F /* AlumnusTableViewController.m in Sources */,
 				18C744751B46F25000FAAC12 /* TabBarViewController.m in Sources */,
 				FA6734A61BC93E9900E950B9 /* SSDUTNewsWebViewController.m in Sources */,
 				FACB03921BA857FC00C8BE63 /* FreshView.m in Sources */,
@@ -1292,7 +1363,9 @@
 				FABD9E801BD62ED20022CDC6 /* ERPLibraryTableViewController.m in Sources */,
 				FA5948E81BDCFB1000C7D755 /* PrivateMessageViewController.m in Sources */,
 				FA4A9B4C1BDBA6ED00246B51 /* ClassmateDetailViewController.m in Sources */,
+				FA6B35AE1BDF1F7A00A45853 /* NSString+Height.m in Sources */,
 				FA5800F41B57DE1100478AAF /* LessonCardView.m in Sources */,
+				FACFA3111BE0FEF40070E3A4 /* ContentDetailViewController.m in Sources */,
 				FA88B4721BA184C000B8AAD6 /* SignInViewController.m in Sources */,
 				FA41B0141B4667BC0043A439 /* AppDelegate.m in Sources */,
 				FA3CA1EA1BCCF23C0052423B /* UserAgreeementViewController.m in Sources */,
@@ -1321,12 +1394,13 @@
 				FA5B71EA1B47DFC500F6870C /* ERPCourseViewController.m in Sources */,
 				FA93035B1BA27A9800406094 /* AboutXueBanViewController.m in Sources */,
 				FA5800F01B57D77B00478AAF /* LessonMesViewController.m in Sources */,
-				FA5991401BA03D5E0097D3E5 /* MyLetterViewController.m in Sources */,
+				FACFA3071BE0D9540070E3A4 /* ReviewTableViewCell.m in Sources */,
 				FA88B4621BA12D0000B8AAD6 /* MySettingSwitchTableViewCell.m in Sources */,
 				FA78A2331BAC1F610015F606 /* ERPViewController4s.m in Sources */,
 				18C744841B46F3FF00FAAC12 /* DiscoveryViewController.m in Sources */,
 				FA93036B1BA2803B00406094 /* AboutXueFooterTableViewCell.m in Sources */,
 				FA4468B31BDA1BC5000C399F /* ClassmateTableViewController.m in Sources */,
+				FA6B35B21BDF229500A45853 /* AlumnusTableViewController.m in Sources */,
 				FA5800E51B57A95800478AAF /* LessonButton.m in Sources */,
 				FAF3BAC71B9DBEB400DFDE0D /* DiscoveryTableViewCell.m in Sources */,
 				FA7C50DB1BCE54A400824112 /* ERPScoreTableViewController.m in Sources */,

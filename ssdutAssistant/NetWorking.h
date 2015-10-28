@@ -15,8 +15,10 @@
 @property (nonatomic,readonly) NSMutableArray * contentArr;
 
 
-//同步GET 通过url获取数据 返回 (id)类型
+//同步GET 通过url获取数据 返回 (id)类型 无dic
 - (id)synchronousGetContentWithUrl:(NSString *)urlStr;
+/*格式里有dic的*/
+- (id)synchronousGetArrWithUrl:(NSString *)urlStr;
 
 //异步GET 通过url获取数据并传给存储到userdefaults里
 - (void)getContentWithUrl:(NSString *)urlStr SaveWithStr:(NSString *)saveKey;

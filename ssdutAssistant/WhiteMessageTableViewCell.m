@@ -11,6 +11,7 @@
 @property (nonatomic,strong) IBOutlet UIImageView * headImgView;
 @property (nonatomic,strong) IBOutlet UIView * backView;
 @property (nonatomic,strong) IBOutlet UILabel * contentLbl;
+@property (nonatomic,strong) IBOutlet UILabel * timeLbl;
 @end
 
 @implementation WhiteMessageTableViewCell
@@ -34,5 +35,10 @@
 
     // Configure the view for the selected state
 }
-
+- (void)creatCellWithImg:(UIImage *)img Content:(NSString *)content Time:(NSString *)time
+{
+    [self.headImgView setImage:img];
+    self.contentLbl.text = content;
+    self.timeLbl.text = time;
+}
 @end

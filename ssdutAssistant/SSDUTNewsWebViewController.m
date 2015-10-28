@@ -167,6 +167,7 @@
     [self.progressView setProgress:1.0 animated:YES];
     
     NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(progressRemove) userInfo:nil repeats:YES];
+    NSLog(@"%@",timer);
     if (bottomViewFlag) {
         self.webView.scrollView.bounces = NO;
         self.bottomView.hidden = NO;

@@ -264,8 +264,10 @@
            
             [self.userDefaults setObject:[loginDic objectForKey:@"Token"] forKey:Token_Str];
             [self.userDefaults setObject:[loginDic objectForKey:@"User"] forKey:UserContent_Key];
+            [self.userDefaults setObject:[loginDic objectForKey:@"Id"] forKey:MySocialId_Key];
             [self.userDefaults setBool:YES forKey:IF_Login];
             [self.userDefaults setObject:self.userTf.text forKey:MyStudentId_Key];
+            
             [self.userDefaults synchronize];
             [self.warningView removeFromSuperview];
             [self dismissViewControllerAnimated:YES completion:nil];

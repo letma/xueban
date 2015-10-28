@@ -184,12 +184,12 @@
             return WINHEIGHT - 64;
         }else{
             NSDictionary * dic = [self.borrowArray objectAtIndex:indexPath.row];
-            NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:20]};
+            //NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:20]};
             NSString * strContent = [dic objectForKey:@"Title"];
             
-            CGSize contentSize = [strContent boundingRectWithSize:CGSizeMake(WINWIDTH - 40, 0) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
-            NSLog(@"%f",contentSize.height);
-            return 175 + contentSize.height;
+            //CGSize contentSize = [strContent boundingRectWithSize:CGSizeMake(WINWIDTH - 40, 0) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+            CGFloat content_height = [strContent getHeightWithFontSize:20 Width:WINWIDTH - 40];
+            return 175 + content_height;
 
         }
         
@@ -200,10 +200,11 @@
         NSString * titleStr = [dic objectForKey:@"Title"];
         NSString * authorStr = [dic objectForKey:@"Author"];
         NSString * strContent = [NSString stringWithFormat:@"%@【%@】",titleStr,authorStr];
-        NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:20]};
-        CGSize contentSize = [strContent boundingRectWithSize:CGSizeMake(WINWIDTH - 40, 0) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
-        NSLog(@"%f",contentSize.height);
-        return 96 + contentSize.height;
+//        NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:20]};
+//        CGSize contentSize = [strContent boundingRectWithSize:CGSizeMake(WINWIDTH - 40, 0) options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attribute context:nil].size;
+        //NSLog(@"%f",contentSize.height);
+        CGFloat content_height = [strContent getHeightWithFontSize:20 Width:WINWIDTH - 40];
+        return 96 + content_height;
 
     }
 }

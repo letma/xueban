@@ -32,6 +32,7 @@
     [self registerCells];
     self.detailTableView.delegate = self;
     self.detailTableView.dataSource = self;
+    NSLog(@"%ld",controllerMessageID);
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -100,7 +101,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
 }
 
 #pragma mark - cellBtn
@@ -110,6 +110,7 @@
         PrivateMessageViewController * viewController = [[PrivateMessageViewController alloc] init];;
         viewController.controllerName = self.controllerName;
         viewController.guestHeadImg = self.controllerHeadImg;
+        viewController.senderID = self.controllerMessageID;
         [self.navigationController pushViewController:viewController animated:YES];
     }else{
         ;

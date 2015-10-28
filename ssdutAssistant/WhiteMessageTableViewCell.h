@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WhiteMessageTableViewCell : UITableViewCell
-
+- (void)creatCellWithImg:(UIImage *)img Content:(NSString *)content Time:(NSString *)time;
 @end

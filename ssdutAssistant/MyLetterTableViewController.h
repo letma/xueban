@@ -1,5 +1,5 @@
 //
-//  AlumnusTableViewController.h
+//  MyLetterTableViewController.h
 //  ssdutAssistant
 //
 //  Created by OurEDA on 15/10/27.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlumnusTableViewController : UITableViewController
+@interface MyLetterTableViewController : UITableViewController
 
 @end

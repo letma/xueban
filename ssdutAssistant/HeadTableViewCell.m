@@ -34,8 +34,8 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
-    self.headImgView.layer.cornerRadius = 10;
-    self.headImgView.clipsToBounds = YES;
+//    self.headImgView.layer.cornerRadius = 10;
+//    self.headImgView.clipsToBounds = YES;
 
 }
 
@@ -73,7 +73,7 @@
         [self.sexImgView setImage:UIIMGName(@"discovery_icon_sex_girl")];
 
     }
-    
+
     if (single == 0) {
         self.singleLbl.text = @"单身";
     }else{
@@ -81,4 +81,33 @@
     }
 }
 
+- (void)creatCellWithImage:(UIImage *)headImg Name:(NSString *)nameStr Content:(NSString *)contentStr StudentID:(NSString *)studentIDStr Time:(NSString *)timeStr MessageID:(NSInteger)messageID IfReturn:(BOOL)ifReturn
+{
+    cellName = nameStr;
+    cellStudentID = studentIDStr;
+    cellHeadImg = headImg;
+    cellMessageID = messageID;
+    
+    if (headImg) {
+        [self.headImgView setImage:headImg];
+    }else{
+        [self.headImgView setImage:UIIMGName(@"logo_noimage")];
+    }
+    
+    
+    self.nameLbl.text = nameStr;
+    self.departmentLbl.text = contentStr;
+    self.singleLbl.text = timeStr;
+
+    if (ifReturn) {
+        [self.sexImgView setImage:UIIMGName(@"mine_letter_icon_return")];
+        
+    }else{
+        [self.sexImgView setImage:UIIMGName(@"")];
+        
+    }
+    
+
+
+}
 @end

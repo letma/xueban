@@ -14,9 +14,11 @@
 #import "Global.h"
 
 #import "UITableView+Register.h"
+#import "NSString+Height.h"
 #import "ImageProcess.h"
 #import "NetWorking.h"
 #import "JsonAnalysisTool.h"
+
 
 #import "SignInViewController.h"
 

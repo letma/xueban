@@ -16,7 +16,7 @@
 #import "UITableView+Register.h"
 
 #import "MyDetailViewController.h"
-#import "MyLetterViewController.h"
+#import "MyLetterTableViewController.h"
 #import "MyMesBoardViewController.h"
 #import "MyFilesViewController.h"
 #import "MyFeedBackViewController.h"
