@@ -13,6 +13,7 @@
 @property (nonatomic,readonly) NSString * titleStr;
 @property (nonatomic,readonly) NSString * clickCountStr;
 @property (nonatomic,readonly) NSString * articalIDStr;
+@property (nonatomic,readonly) NSMutableArray * fileLinkArr;
 
 //SSDUTNEWS获取time title clickCount articalID
 - (void)getSSDutNewsContentWith:(NSArray *)newsArr Index:(NSInteger)index;

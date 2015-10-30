@@ -17,7 +17,7 @@
 
 #import "MyDetailViewController.h"
 #import "MyLetterTableViewController.h"
-#import "MyMesBoardViewController.h"
+#import "LeaveMesViewController.h"
 #import "MyFilesViewController.h"
 #import "MyFeedBackViewController.h"
 #import "MySettingViewController.h"

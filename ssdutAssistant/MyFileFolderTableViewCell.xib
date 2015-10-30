@@ -15,18 +15,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_myfile_folder" translatesAutoresizingMaskIntoConstraints="NO" id="wqQ-mT-gU0">
-                        <rect key="frame" x="20" y="7" width="35" height="35"/>
+                        <rect key="frame" x="10" y="7" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="Piv-l8-90s"/>
                             <constraint firstAttribute="width" constant="35" id="tYU-xp-00A"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学生周知" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-rm-zE3">
-                        <rect key="frame" x="75" y="16" width="60" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wY-uk-7RO" userLabel="lineView">
                         <rect key="frame" x="0.0" y="48" width="320" height="1"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,19 +28,27 @@
                             <constraint firstAttribute="height" constant="1" id="X50-VR-hmf"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学生周知" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-rm-zE3">
+                        <rect key="frame" x="55" y="16" width="60" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="centerY" secondItem="gn3-rm-zE3" secondAttribute="centerY" id="Fwo-Rl-dYT"/>
                     <constraint firstItem="5wY-uk-7RO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UB6-96-Fq9"/>
-                    <constraint firstItem="gn3-rm-zE3" firstAttribute="leading" secondItem="wqQ-mT-gU0" secondAttribute="trailing" constant="20" id="UPY-Qv-8iu"/>
+                    <constraint firstItem="gn3-rm-zE3" firstAttribute="leading" secondItem="wqQ-mT-gU0" secondAttribute="trailing" constant="10" id="UPY-Qv-8iu"/>
                     <constraint firstAttribute="centerY" secondItem="wqQ-mT-gU0" secondAttribute="centerY" id="abm-z0-Ywt"/>
                     <constraint firstAttribute="trailing" secondItem="5wY-uk-7RO" secondAttribute="trailing" id="hXJ-Y4-vzb"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gn3-rm-zE3" secondAttribute="trailing" constant="10" id="q0t-8l-jo4"/>
                     <constraint firstAttribute="bottom" secondItem="5wY-uk-7RO" secondAttribute="bottom" id="sDN-q9-Alg"/>
-                    <constraint firstItem="wqQ-mT-gU0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="z1v-QG-CJK"/>
+                    <constraint firstItem="wqQ-mT-gU0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="z1v-QG-CJK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="folderTitle" destination="gn3-rm-zE3" id="ae8-Ev-IpF"/>
+                <outlet property="headImg" destination="wqQ-mT-gU0" id="H81-Kg-Cc6"/>
             </connections>
         </tableViewCell>
     </objects>

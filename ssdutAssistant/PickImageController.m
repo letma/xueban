@@ -1,24 +1,22 @@
 //
-//  MyMesBoardViewController.m
+//  PickImageController.m
 //  ssdutAssistant
 //
-//  Created by OurEDA on 15/9/9.
+//  Created by OurEDA on 15/10/30.
 //  Copyright (c) 2015年 OurEDA. All rights reserved.
 //
 
-#import "MyMesBoardViewController.h"
+#import "PickImageController.h"
 
-@interface MyMesBoardViewController ()
+@interface PickImageController ()
 
 @end
 
-@implementation MyMesBoardViewController
+@implementation PickImageController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"留言板";
-    self.view.backgroundColor = [UIColor whiteColor];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

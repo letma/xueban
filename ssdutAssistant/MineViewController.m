@@ -183,7 +183,12 @@
                 controllerName = @"MyLetterTableViewController";
                 break;
             case 4:
-                controllerName = @"MyMesBoardViewController";
+            {
+                LeaveMesViewController * viewController = [[LeaveMesViewController alloc] init];
+                viewController.controllerName = [self.userDefaults objectForKey:MyName_Key];
+                viewController.controllerMesID = [[self.userDefaults objectForKey:MySocialId_Key] integerValue];
+                [self.navigationController pushViewController:viewController animated:YES];
+            }
                 break;
             case 6:
                 controllerName = @"MyFilesViewController";
@@ -210,34 +215,6 @@
     [self.MineTableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
--(void)writeToPlist:(NSMutableArray *)_array
-{
-    
-    
-//    NSArray * paths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    
-//    NSString * path = [paths objectAtIndex:0];
-//    
-//    NSFileManager * fm = [NSFileManager defaultManager];
-//
-//    NSArray * files = [fm subpathsAtPath:path];
-//    
-//    NSLog(@"djkajfdkajfl:%@",files);
-//    NSString * fileName = [path stringByAppendingPathComponent:@"201393149"];
-//   // NSString * gggg = [path stringByAppendingString:@"45645"];
-//    [fm createDirectoryAtPath:fileName withIntermediateDirectories:YES attributes:nil error:nil];
-//    //[fm createDirectoryAtPath:gggg withIntermediateDirectories:YES attributes:nil error:nil];
-//    NSLog(@"%@",fileName);
-   // [_array writeToFile:fileName atomically:YES];
-}
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

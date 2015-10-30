@@ -14,7 +14,7 @@
 #import "UITableView+Register.h"
 #import "SignInViewController.h"
 
-@interface MyDetailViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
+@interface MyDetailViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,UIActionSheetDelegate>
 @property(nonatomic,strong)IBOutlet UITableView * detailTableView;
 @property(nonatomic,strong)MyDetailLoveTableViewCell * detailLoveCell;
 @property(nonatomic) NSUserDefaults * userDefualts;
@@ -120,9 +120,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(indexPath.row == 1)
+    {
+        UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"更改头像"delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"从手机相册选择", nil];
+        [sheet showInView:self.view];
+    }
+    
     if(indexPath.row == 10)
     {
-        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"请选择情感状态" message:@"" delegate:self cancelButtonTitle:@"单身狗" otherButtonTitles:@"恋爱中", nil];
+        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"请选择情感状态" message:@"" delegate:self cancelButtonTitle:@"单身" otherButtonTitles:@"恋爱中", nil];
         [alertView show];
     }
     
@@ -139,6 +145,13 @@
     }
 }
 
+#pragma mark - UIActivitySheet
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+
+    }
+}
 
 
 @end

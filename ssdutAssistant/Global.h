@@ -62,6 +62,10 @@ alpha:1.0]
 #define MyStudentId_Key @"MyStudentId_Key"
 //用户的社交ID
 #define MySocialId_Key @"MySocialId_Key"
+//用户的性别
+#define MySex_Key @"MySex_Key"
+//用户是否单身 0 是单身 1是恋爱
+#define MySingle_Key @"MySingle_Key"
 //用户的本学期成绩信息
 #define MyScore_Key @"MyScore_Key"
 //用户的所有成绩信息
@@ -80,6 +84,8 @@ alpha:1.0]
 #define MyExamMessage_Key @"MyExamMessage_Key"
 //用户的性取向 all boy girl  数组 0 是 classmate 1 是 townee
 #define MySexuality_Key @"MySexuality_Key"
+//校园广场里点击cell后存储的点赞状态 判断回来后点赞是否更改 数组 indexPath.row isLike
+#define MySelectCell_Key @"MySelectCell_Key"
 
 //课程临时颜色
 #define TempCourseColor @"TempCourseColor"
@@ -90,6 +96,8 @@ alpha:1.0]
 //当前的周次
 #define TempNowWeek @"TempNowWeek"
 
+//存放下载过的文件的url
+#define FilesList_Key @"FilesList_Key"
 
 //判断视图是否进入课程详情
 #define IFPresentToCourseContent @"IFPresentToCourseContent"

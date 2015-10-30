@@ -107,7 +107,8 @@
 {
     if (indexPath.row == 1) {
         UserAgreeementViewController * userAgreement = [[UserAgreeementViewController alloc] init];
-        [self.navigationController pushViewController:userAgreement animated:YES];
+        [userAgreement setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentViewController:userAgreement animated:YES completion:nil];
     }
     [self.aboutXueTableView deselectRowAtIndexPath:indexPath animated:YES];
 }

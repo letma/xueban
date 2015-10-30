@@ -11,9 +11,11 @@
 
 
 #import <AFNetworking/AFNetworking.h>
+#import <QuickLook/QuickLook.h>
 #import "Global.h"
 
 #import "UITableView+Register.h"
+#import "DownloadFIlesTool.h"
 #import "NSString+Height.h"
 #import "ImageProcess.h"
 #import "NetWorking.h"

@@ -14,7 +14,7 @@
 
 @end
 @implementation SSDUTNewsCell
-
+@synthesize fileLinkArr;
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -25,10 +25,11 @@
     // Configure the view for the selected state
 }
 
-- (void)setCellWithTitle:(NSString *)title Time:(NSString *)time ClickCount:(NSString *)clickCount
+- (void)setCellWithTitle:(NSString *)title Time:(NSString *)time ClickCount:(NSString *)clickCount FileLinks:(NSMutableArray *)fileLink
 {
     self.titleLbl.text = title;
     self.timeLbl.text = time;
     self.clickNumLbl.text = [NSString stringWithFormat:@"浏览量:%@",clickCount];
+    fileLinkArr = fileLink;
 }
 @end

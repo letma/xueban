@@ -172,7 +172,7 @@
         SSDUTNewsCell * cell = [tableView  dequeueReusableCellWithIdentifier:@"SSDUTNewsCell" forIndexPath:indexPath];
         JsonAnalysisTool * tools = [[JsonAnalysisTool alloc] init];
         [tools getSSDutNewsContentWith:self.newsArr Index:indexPath.row];
-        [cell setCellWithTitle:tools.titleStr Time:tools.timeStr ClickCount:tools.clickCountStr];
+        [cell setCellWithTitle:tools.titleStr Time:tools.timeStr ClickCount:tools.clickCountStr FileLinks:tools.fileLinkArr];
         [self.IDArr setObject:tools.articalIDStr atIndexedSubscript:indexPath.row];
         return cell;
     }
@@ -198,9 +198,12 @@
 {
     if ([self.newsArr count] != 0)
     {
+        SSDUTNewsCell * cell = (SSDUTNewsCell *)[tableView cellForRowAtIndexPath:indexPath];
+        
         SSDUTNewsWebViewController * webView = [[SSDUTNewsWebViewController alloc] init];
         webView.articalID = [NSString stringWithFormat:@"%@",[self.IDArr objectAtIndex:indexPath.row]];
         NSLog(@"%@",self.IDArr);
+        webView.controllerFileLinkArr = cell.fileLinkArr;
         [webView setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
         [self presentViewController:webView animated:YES completion:nil];
     }

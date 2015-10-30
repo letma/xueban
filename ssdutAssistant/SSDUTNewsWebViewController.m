@@ -17,15 +17,18 @@
 
 @property (nonatomic) UIView * bottomView;
 @property (nonatomic) UIWebView * webView;
+@property (nonatomic) NSUserDefaults * userDefaults;
 @end
 
 @implementation SSDUTNewsWebViewController
 @synthesize articalID;
+@synthesize controllerFileLinkArr;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     bottomViewFlag = NO;
-    
+    self.userDefaults = [NSUserDefaults standardUserDefaults];
     self.view.backgroundColor = UIColorFromRGB(0xf7f7f7);
     
     UIView * topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WINWIDTH, 64)];
@@ -81,6 +84,7 @@
 
     self.bottomView.hidden = YES;
     
+    NSLog(@"+++%@",controllerFileLinkArr);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,7 +130,52 @@
 {
     NSString * str = @"download.jsp";
     if ([[request.URL absoluteString] rangeOfString:str].location != NSNotFound) {
-        NSLog(@"hahhahahahaah");
+        NSLog(@"hahhahahahaah:%@",request.URL);
+        NSInteger location = [[request.URL absoluteString] rangeOfString:@"?"].location;
+        NSString *subUrlStr = [[request.URL absoluteString] substringFromIndex:location];
+        NSLog(@"sub:%@",subUrlStr);
+        NSString * savePath;
+        for (NSInteger i = 0; i < [controllerFileLinkArr count]; i ++) {
+            NSDictionary * dic = [controllerFileLinkArr objectAtIndex:i];
+            NSString * tempUrlStr = [dic objectForKey:@"link"];
+            NSInteger tempLocation = [tempUrlStr rangeOfString:@"?"].location;
+            NSString * tempSubUrlStr = [tempUrlStr substringFromIndex:tempLocation];
+            NSLog(@"temp:%@",tempSubUrlStr);
+
+            if ([subUrlStr isEqual:tempSubUrlStr]) {
+                savePath = [dic objectForKey:@"fileName"];
+            }
+        }
+        DownloadFIlesTool * downloadFile = [[DownloadFIlesTool alloc] init];
+        
+        if (![downloadFile ifHaveDownload:savePath]) {
+            [downloadFile downloadFileWithOption:@{@"userid":[self.userDefaults objectForKey:MyStudentId_Key]}
+                                   withInferface:[request.URL absoluteString]
+                                       savedPath:savePath
+                                 downloadSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                     
+                                 } downloadFailure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                     
+                                 } progress:^(float progress) {
+                                     
+                                 }];
+
+        }else{
+            NSLog(@"已经下载过了");
+        }
+
+//        [downloadFile downloadFileWithOption:@{@"userid":[self.userDefaults objectForKey:MyStudentId_Key]}
+//                               withInferface:[request.URL absoluteString]
+//                                   savedPath:savePath
+//                             downloadSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//                                 
+//                             } downloadFailure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//                                 
+//                             } progress:^(float progress) {
+//                                 
+//                             }];
+        
+
         return NO;
 
     }

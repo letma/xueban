@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SSDUTNewsCell : UITableViewCell
-- (void)setCellWithTitle:(NSString *)title Time:(NSString *)time ClickCount:(NSString *)clickCount;
+@property (nonatomic,strong)NSMutableArray * fileLinkArr;
+- (void)setCellWithTitle:(NSString *)title Time:(NSString *)time ClickCount:(NSString *)clickCount FileLinks:(NSMutableArray *)fileLink;
 @end

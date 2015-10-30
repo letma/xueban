@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MyFileFolderTableViewCell : UITableViewCell
+@property (nonatomic,strong)NSString * fileName;
+@property (nonatomic,strong)NSString * formate;
 - (void)setFolderTitleName:(NSString *)titleName;
 @end

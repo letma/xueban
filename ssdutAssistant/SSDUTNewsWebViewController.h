@@ -10,4 +10,5 @@
 
 @interface SSDUTNewsWebViewController : UIViewController
 @property (nonatomic,readwrite) NSString * articalID;
+@property (nonatomic,strong) NSMutableArray * controllerFileLinkArr;
 @end

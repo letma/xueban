@@ -12,6 +12,7 @@
 #import "HeadTableViewCell.h"
 #import "AddressTableViewCell.h"
 #import "ButtonTableViewCell.h"
+#import "LeaveMesViewController.h"
 
 @interface ClassmateDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) IBOutlet UITableView * detailTableView;
@@ -113,7 +114,10 @@
         viewController.senderID = self.controllerMessageID;
         [self.navigationController pushViewController:viewController animated:YES];
     }else{
-        ;
+        LeaveMesViewController * viewController = [[LeaveMesViewController alloc] init];
+        viewController.controllerName = self.controllerName;
+        viewController.controllerMesID = self.controllerMessageID;
+        [self.navigationController pushViewController:viewController animated:YES];
     }
 }
 /*

@@ -10,6 +10,7 @@
 #import "NetworkingNoticeView.h"
 #import "NSTimer+Addition.h"
 #import "MyDetailViewController.h"
+#import "UserAgreeementViewController.h"
 #import "FreshView.h"
 
 @interface SignInViewController () <UITextFieldDelegate,NSURLConnectionDataDelegate,NSURLConnectionDelegate>
@@ -26,6 +27,8 @@
 @property (nonatomic,strong) IBOutlet UITextField * userTf;
 @property (nonatomic,strong) IBOutlet UITextField * passwordTf;
 @property (nonatomic,strong) IBOutlet UITextField * libPasswordTf;
+
+
 
 @property (nonatomic,strong) NSMutableData * loginData;
 @property (nonatomic,strong) NSUserDefaults * userDefaults;
@@ -264,11 +267,43 @@
            
             [self.userDefaults setObject:[loginDic objectForKey:@"Token"] forKey:Token_Str];
             [self.userDefaults setObject:[loginDic objectForKey:@"User"] forKey:UserContent_Key];
-            [self.userDefaults setObject:[loginDic objectForKey:@"Id"] forKey:MySocialId_Key];
+            
+            NSDictionary * userDic = [loginDic objectForKey:@"User"];
+            [self.userDefaults setObject:[userDic objectForKey:@"Id"] forKey:MySocialId_Key];
+            [self.userDefaults setBool:[[userDic objectForKey:@"Sex"] boolValue] forKey:MySex_Key];
+            [self.userDefaults setObject:[userDic objectForKey:@"Name"] forKey:MyName_Key];
+            [self.userDefaults setObject:[NSString stringWithFormat:@"%ld",[[userDic objectForKey:@"Single"] integerValue]] forKey:MySingle_Key];
+            NSLog(@"%@",[userDic objectForKey:@"Single"]);
             [self.userDefaults setBool:YES forKey:IF_Login];
             [self.userDefaults setObject:self.userTf.text forKey:MyStudentId_Key];
             
+            NSMutableDictionary * tempDic = [self.userDefaults objectForKey:FilesList_Key];
+            if ([tempDic count] == 0) {
+                NSMutableDictionary * dic = [[NSMutableDictionary alloc] init];
+                [dic setObject:@"1" forKey:@"status"];
+                [self.userDefaults setObject:dic forKey:FilesList_Key];
+            }
+            if (![tempDic objectForKey:self.userTf.text]) {
+                [tempDic setObject:@"" forKey:self.userTf.text];
+            }
+            
             [self.userDefaults synchronize];
+            
+            //下载头像
+            NSString * urlStr = [userDic objectForKey:@"HeadImage"];
+            NSURL * url = [NSURL URLWithString:urlStr];
+            NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:4.0];
+            [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                UIImage * img = [UIImage imageWithData:data];
+
+                //img 本地化
+                ImageProcess * storgeImg = [[ImageProcess alloc]init];
+                [storgeImg storageImgWithStudentID:[self.userDefaults objectForKey:MyStudentId_Key] WithImage:img WithImageIP:urlStr];
+                
+            }];
+
+            
+            NSLog(@"+++%@",[self.userDefaults objectForKey:FilesList_Key]);
             [self.warningView removeFromSuperview];
             [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -361,6 +396,11 @@
     [UIView commitAnimations];
 }
 
+- (IBAction)sendToAgreement:(id)sender {
+    UserAgreeementViewController * viewController = [[UserAgreeementViewController alloc] init];
+    [viewController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:viewController animated:YES completion:nil];
+}
 
 #pragma mark - StatusBar
 - (BOOL)prefersStatusBarHidden

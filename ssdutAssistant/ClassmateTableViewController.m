@@ -11,7 +11,7 @@
 #import "ClassmateDetailViewController.h"
 
 
-@interface ClassmateTableViewController ()<UIAlertViewDelegate>
+@interface ClassmateTableViewController ()<UIAlertViewDelegate,NSURLConnectionDataDelegate,NSURLConnectionDelegate>
 {
     NSInteger page;
     //是否是第一次加载 如果是不用reload tableview
@@ -23,6 +23,7 @@
 @property (nonatomic,strong) UIBarButtonItem * rightBtnItem;
 @property (nonatomic,strong) UIButton * barButton;
 @property (nonatomic,strong) NSString * controllerType;
+@property (nonatomic,strong) NSMutableData * classmatesData;
 
 @end
 
@@ -140,18 +141,42 @@
     NSURL * url = [NSURL URLWithString:urlStr];
     NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:4];
   [request setValue:[self.userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
-    NSData * classmatesData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSDictionary * dic;
-    if (classmatesData) {
-        dic = [NSJSONSerialization JSONObjectWithData:classmatesData options:NSJSONReadingMutableContainers error:nil];
+    NSURLConnection * connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    if (connection) {
+        self.classmatesData = [[NSMutableData alloc] init];
+    }else{
+        [self.rC endRefreshing];
     }
 
+    
+}
+#pragma mark - NsUrlConnection
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.classmatesData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    [self.rC endRefreshing];
+    NSLog(@"%@",error);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSDictionary * dic;
+    if (self.classmatesData) {
+        dic = [NSJSONSerialization JSONObjectWithData:self.classmatesData options:NSJSONReadingMutableContainers error:nil];
+    }
+    
     if ([dic objectForKey:@"status"]) {
         if ([[dic objectForKey:@"msg"] count] != 0) {
             self.classmateArr = [dic objectForKey:@"msg"];
-            if (!ifFirstLoad) {
-                [self.tableView reloadData];
-            }
+//            if (!ifFirstLoad) {
+//                [self.tableView reloadData];
+//            }
+            [self.tableView reloadData];
             ifFirstLoad = NO;
             page ++;
         }
@@ -160,9 +185,8 @@
     if ([self.rC isRefreshing]) {
         [self.rC endRefreshing];
     }
-    
-}
 
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

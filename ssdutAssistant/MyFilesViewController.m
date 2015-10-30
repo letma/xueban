@@ -8,9 +8,12 @@
 
 #import "MyFilesViewController.h"
 #import "MyFileFolderTableViewCell.h"
+#import "PreviewViewController.h"
 
 @interface MyFilesViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)IBOutlet UITableView * FileTableView;
+@property (nonatomic) NSMutableArray * fileArr;
+@property (nonatomic) NSUserDefaults * userDefaults;
 @end
 
 @implementation MyFilesViewController
@@ -23,6 +26,16 @@
     [self registerNibCell];
     self.FileTableView.delegate = self;
     self.FileTableView.dataSource = self;
+    
+    self.userDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary * dic = [self.userDefaults objectForKey:FilesList_Key];
+    NSString * studentID = [self.userDefaults objectForKey:MyStudentId_Key];
+    self.fileArr = [[NSMutableArray alloc] initWithArray:[dic objectForKey:studentID]];
+    NSLog(@"%@",self.fileArr );
+    
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -43,12 +56,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return [self.fileArr count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString * fileName = [self.fileArr objectAtIndex:indexPath.row];
     MyFileFolderTableViewCell * fileFolderCell = [tableView dequeueReusableCellWithIdentifier:@"MyFileFolderTableViewCell" forIndexPath:indexPath];
+    [fileFolderCell setFolderTitleName:fileName];
     return fileFolderCell;
 }
 
@@ -65,6 +80,19 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    MyFileFolderTableViewCell * cell = (MyFileFolderTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray * documentPaths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * documentPath = [documentPaths objectAtIndex:0];
+    NSString * studentFile = [documentPath stringByAppendingPathComponent:[userDefaults objectForKey:MyStudentId_Key]];
+    NSString * filePath = [studentFile stringByAppendingPathComponent:cell.fileName];
+    NSLog(@"--------%@",filePath);
+
+    
+    PreviewViewController * viewController  = [[PreviewViewController alloc] init];
+    viewController.pathStr = filePath;
+    [self.navigationController pushViewController:viewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 @end

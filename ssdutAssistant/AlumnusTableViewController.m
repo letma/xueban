@@ -9,8 +9,9 @@
 #import "AlumnusTableViewController.h"
 #import "ContentTableViewCell.h"
 #import "ContentDetailViewController.h"
+#import "AddNewViewController.h"
 
-@interface AlumnusTableViewController ()<NSURLConnectionDataDelegate,NSURLConnectionDelegate,UIScrollViewDelegate>
+@interface AlumnusTableViewController ()<NSURLConnectionDataDelegate,NSURLConnectionDelegate,UIScrollViewDelegate,AddNewDelegate>
 {
     NSInteger page;
 }
@@ -18,6 +19,7 @@
 @property (nonatomic,strong) NSMutableData * contentData;
 @property (nonatomic,strong) NSMutableArray * contentArr;
 @property (nonatomic,strong) UIRefreshControl * rC;
+
 @end
 
 @implementation AlumnusTableViewController
@@ -39,11 +41,32 @@
     self.rC.tintColor = UIColorFromRGB(0x00a4e9);
     [self.rC addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
     
-//    RTLabel * lll = [[RTLabel alloc] initWithFrame:CGRectMake(20, 200, 40, 40)];
-//    NSString * sss = @"<font color=\"#f46200\">hahha <strong><i>V</i></strong></font>";
-//    [lll setText:sss];
-//    [self.tableView addSubview:lll];
+    UIButton * barButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    barButton.frame = CGRectMake(0, 0, 24, 24);
+    [barButton addTarget:self action:@selector(barBtnSelected) forControlEvents:UIControlEventTouchUpInside];
+    [barButton setImage:UIIMGName(@"discovery_icon_alumnus_edit") forState:UIControlStateNormal];
+     UIBarButtonItem * rightBtnItem = [[UIBarButtonItem alloc] initWithCustomView:barButton];
+    self.navigationItem.rightBarButtonItem = rightBtnItem;
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (![[self.userDefaults objectForKey:MySelectCell_Key] isEqual:@""]) {
+        NSMutableArray * arr = [self.userDefaults objectForKey:MySelectCell_Key];
+        NSInteger i = [[arr objectAtIndex:0] integerValue];
+        NSString * reviewIsLike = [arr objectAtIndex:1];
+        NSIndexPath * indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        ContentTableViewCell * cell = (ContentTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+        NSString * cellIsLike = cell.cellIsLike ? @"1": @"0";
+        if (![cellIsLike isEqualToString:reviewIsLike] ) {
+            [cell clickZan];
+        }
+        
+    }
+    [self.userDefaults setObject:@"" forKey:MySelectCell_Key];
+    [self.userDefaults synchronize];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -179,6 +202,13 @@
     viewController.controllerReplyCounts = cell.cellReplyCounts;
     viewController.controllerLikeNum = cell.cellLikeNum;
     viewController.controllerIsLike = cell.cellIsLike;
+    
+    NSString * cellIsLike = cell.cellIsLike ? @"1" :@"0";
+    NSMutableArray * selectArr = [[NSMutableArray alloc] init];
+    [selectArr addObject:[NSString stringWithFormat:@"%ld",indexPath.row]];
+    [selectArr addObject:cellIsLike];
+    [self.userDefaults setObject:selectArr forKey:MySelectCell_Key];
+    [self.userDefaults synchronize];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 #pragma mark - UIScrollView
@@ -202,6 +232,14 @@
     }
 }
 #pragma mark - Button
+- (void)barBtnSelected
+{
+    AddNewViewController * viewController = [[AddNewViewController alloc] init];
+    viewController.delegate = self;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+
 - (void)replyDo:(UIButton *)btn
 {
     NSLog(@"%ld",btn.tag);
@@ -218,6 +256,13 @@
     viewController.controllerReplyCounts = cell.cellReplyCounts;
     viewController.controllerLikeNum = cell.cellLikeNum;
     viewController.controllerIsLike = cell.cellIsLike;
+    
+    NSString * cellIsLike = cell.cellIsLike ? @"1" :@"0";
+    NSMutableArray * selectArr = [[NSMutableArray alloc] init];
+    [selectArr addObject:[NSString stringWithFormat:@"%ld",path.row]];
+    [selectArr addObject:cellIsLike];
+    [self.userDefaults setObject:selectArr forKey:MySelectCell_Key];
+    [self.userDefaults synchronize];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 - (void)likeDo:(UIButton *)btn
@@ -241,5 +286,11 @@
     if ([[dic objectForKey:@"status"] boolValue]) {
         [cell clickZan];
     }
+}
+
+#pragma mark - AddNewDelegate
+- (void)addNewTips
+{
+    [self loadData];
 }
 @end

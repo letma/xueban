@@ -123,15 +123,33 @@
                                 <constraint firstItem="1Mv-8i-nD6" firstAttribute="height" secondItem="4Vh-sS-cbD" secondAttribute="height" id="tQb-4m-LNA"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已阅读并同意" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fio-SC-flY">
+                            <rect key="frame" x="30" y="472" width="84" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUa-y2-E4p">
+                            <rect key="frame" x="124" y="466" width="108" height="27"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="使用条款和隐私政策">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="sendToAgreement:" destination="-1" eventType="touchUpInside" id="nSv-dL-RkZ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="43L-GV-VCU" secondAttribute="trailing" id="5FK-wy-Zho"/>
+                        <constraint firstItem="lhb-6x-pbG" firstAttribute="leading" secondItem="Fio-SC-flY" secondAttribute="leading" id="5LW-EC-65u"/>
                         <constraint firstItem="43L-GV-VCU" firstAttribute="height" secondItem="idh-dl-RTR" secondAttribute="width" multiplier="800:1080" id="7eZ-WL-LYB"/>
                         <constraint firstItem="yKA-UT-3Dv" firstAttribute="top" secondItem="1sq-QS-urd" secondAttribute="bottom" constant="15" id="BXS-Yf-FXd"/>
                         <constraint firstItem="43L-GV-VCU" firstAttribute="top" secondItem="idh-dl-RTR" secondAttribute="top" id="DU7-Gm-n0d"/>
                         <constraint firstItem="1sq-QS-urd" firstAttribute="leading" secondItem="yKA-UT-3Dv" secondAttribute="leading" id="Hi5-pj-yDS"/>
+                        <constraint firstItem="mUa-y2-E4p" firstAttribute="leading" secondItem="Fio-SC-flY" secondAttribute="trailing" constant="10" id="JhK-io-w9r"/>
                         <constraint firstItem="WOD-Pg-0nk" firstAttribute="leading" secondItem="idh-dl-RTR" secondAttribute="leading" constant="30" id="Kfx-w6-GD5"/>
                         <constraint firstAttribute="trailing" secondItem="GVp-gi-GA3" secondAttribute="trailing" constant="10" id="Qxe-Jf-ifr"/>
                         <constraint firstItem="lhb-6x-pbG" firstAttribute="height" secondItem="yKA-UT-3Dv" secondAttribute="height" id="R99-pS-geA"/>
@@ -148,6 +166,8 @@
                         <constraint firstItem="WOD-Pg-0nk" firstAttribute="leading" secondItem="1sq-QS-urd" secondAttribute="leading" id="jfk-cA-uqf"/>
                         <constraint firstItem="1sq-QS-urd" firstAttribute="top" secondItem="WOD-Pg-0nk" secondAttribute="bottom" constant="15" id="kD2-Zn-1ms"/>
                         <constraint firstItem="lhb-6x-pbG" firstAttribute="top" secondItem="yKA-UT-3Dv" secondAttribute="bottom" constant="15" id="lAJ-nW-UOW"/>
+                        <constraint firstItem="Fio-SC-flY" firstAttribute="top" secondItem="lhb-6x-pbG" secondAttribute="bottom" constant="10" id="qZP-yw-qnc"/>
+                        <constraint firstItem="mUa-y2-E4p" firstAttribute="baseline" secondItem="Fio-SC-flY" secondAttribute="baseline" id="rS7-Z5-eF7"/>
                         <constraint firstItem="GVp-gi-GA3" firstAttribute="top" secondItem="idh-dl-RTR" secondAttribute="top" constant="23" id="vbf-Pb-WFp"/>
                     </constraints>
                     <connections>

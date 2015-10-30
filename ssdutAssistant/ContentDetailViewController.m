@@ -80,7 +80,7 @@
     [self.bottomView addSubview:self.messageTv];
     
     self.placeholderLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 14, 200, 20)];
-    self.placeholderLbl.text = @"小马哥好帅啊";
+    self.placeholderLbl.text = @"快评论他吧";
     self.placeholderLbl.textColor = UIColorFromRGB(0xa0a0a0);
     self.placeholderLbl.font = [UIFont systemFontOfSize:16.0];
     [self.bottomView addSubview:self.placeholderLbl];
@@ -97,9 +97,45 @@
 
 - (void)sendMessage
 {
+    NSString * urlStr = [NSString stringWithFormat:@"%@leave_message",DLUT_SOCIAL_IP];
+    NSLog(@"%@",urlStr);
+    NSURL * url = [NSURL URLWithString:urlStr];
+    NSString * postStr = [NSString stringWithFormat:@"Content=%@&Type=4&Public=true&ToId=%@",self.messageTv.text,self.controllerMessageID];
     
+    NSData * postData = [postStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:4];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:postData];
+    [request setValue:[self.userDefaults objectForKey:LoginToken_Str] forHTTPHeaderField:@"Token"];
+    NSData * messageData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSDictionary * dic;
+    if (messageData) {
+        dic = [NSJSONSerialization JSONObjectWithData:messageData options:NSJSONReadingMutableContainers error:nil];
+        if ([dic objectForKey:@"status"]) {
+            page = 1;
+            [self.reviewArr removeAllObjects];
+            [self loadData];
+            [self.tableView reloadData];
+            self.messageTv.text = @"";
+            self.placeholderLbl.text = @"快评论他吧";
+            [self.messageTv resignFirstResponder];
+        }else{
+            UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"发送失败" message:[dic objectForKey:@"msg"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+    }
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    NSMutableArray * arr = [[NSMutableArray alloc] initWithArray:[self.userDefaults objectForKey:MySelectCell_Key]];
+    NSString * cellIsLike = self.controllerIsLike ? @"1" : @"0";
+    [arr replaceObjectAtIndex:1 withObject:cellIsLike];
+    [self.userDefaults setObject:arr forKey:MySelectCell_Key];
+    [self.userDefaults synchronize];
+}
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
@@ -286,7 +322,7 @@
 -(void)textViewDidChange:(UITextView *)textView
 {
     if (self.messageTv.text.length == 0) {
-        self.placeholderLbl.text = @"小马哥好帅啊";
+        self.placeholderLbl.text = @"快评论他吧";
     }else{
         self.placeholderLbl.text = @"";
     }
@@ -317,6 +353,7 @@
     if ([[dic objectForKey:@"status"] boolValue]) {
         [cell clickZan];
     }
+    self.controllerIsLike = cell.cellIsLike;
 }
 @end
 

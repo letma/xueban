@@ -98,10 +98,13 @@
                 break;
             }
             case 6:
-                ;
+            {
+                UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"功能暂未开放" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alertView show];
                 break;
+            }
             case 7:
-                ;
+                viewControllerStr = @"GPACalculateViewController";
                 break;
                 
             default:
